@@ -62,7 +62,7 @@ public class TInicial extends javax.swing.JFrame {
         jBSairDoUsuario = new javax.swing.JButton();
         jDPPrincipal = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMBTelaInicial = new javax.swing.JMenuBar();
         jMNovo = new javax.swing.JMenu();
         jMINovoPedido = new javax.swing.JMenuItem();
@@ -172,30 +172,30 @@ public class TInicial extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("© M.K. Corporation");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Kenda Logo-iloveimg-resized.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo Kenda.png"))); // NOI18N
 
         jDPPrincipal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDPPrincipal.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDPPrincipal.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDPPrincipalLayout = new javax.swing.GroupLayout(jDPPrincipal);
         jDPPrincipal.setLayout(jDPPrincipalLayout);
         jDPPrincipalLayout.setHorizontalGroup(
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDPPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDPPrincipalLayout.setVerticalGroup(
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDPPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
+            .addGroup(jDPPrincipalLayout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 34, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -427,7 +427,7 @@ public class TInicial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jPMenuAcessoRapido, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jDPPrincipal)
                 .addGap(0, 0, 0))
         );
@@ -754,7 +754,7 @@ public class TInicial extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCBMIVizualisarBarraDeAcessoRapido;
     private javax.swing.JDesktopPane jDPPrincipal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMBTelaInicial;
     private javax.swing.JMenu jMCadastrar;
     private javax.swing.JMenu jMConfiguracoes;
