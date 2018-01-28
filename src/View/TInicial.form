@@ -357,6 +357,9 @@
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Barra de Acesso R&#xe1;pido"/>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

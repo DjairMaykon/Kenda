@@ -68,7 +68,7 @@
                               <Component id="jLCodigoCliente1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLCodigoCliente2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="138" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jTFTelefone" max="32767" attributes="0"/>
                               <Component id="jTFCodigoCliente" alignment="1" max="32767" attributes="0"/>
@@ -81,7 +81,7 @@
                                   <Component id="jBuscarEndereco" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="130" max="32767" attributes="0"/>
+                          <EmptySpace pref="339" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jSeparator1" max="32767" attributes="0"/>

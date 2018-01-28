@@ -400,6 +400,11 @@ public class TInicial extends javax.swing.JFrame {
         jCBMIVizualisarBarraDeAcessoRapido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jCBMIVizualisarBarraDeAcessoRapido.setSelected(true);
         jCBMIVizualisarBarraDeAcessoRapido.setText("Barra de Acesso Rápido");
+        jCBMIVizualisarBarraDeAcessoRapido.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged(evt);
+            }
+        });
         jMConfiguracoes.add(jCBMIVizualisarBarraDeAcessoRapido);
 
         jMBTelaInicial.add(jMConfiguracoes);
@@ -490,6 +495,16 @@ public class TInicial extends javax.swing.JFrame {
         telaCadastrarCliente.setVisible(true);
         
     }//GEN-LAST:event_jMICadastrarClienteActionPerformed
+
+    private void jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged
+        // TODO add your handling code here:
+        
+        if(jCBMIVizualisarBarraDeAcessoRapido.isSelected())
+            jPMenuAcessoRapido.setVisible(true);
+        else
+            jPMenuAcessoRapido.setVisible(false);
+        
+    }//GEN-LAST:event_jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged
 
     /**
      * @param args the command line arguments
