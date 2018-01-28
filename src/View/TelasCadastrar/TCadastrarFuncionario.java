@@ -5,10 +5,6 @@
  */
 package View.TelasCadastrar;
 
-
-import javax.swing.JButton;
-import javax.swing.JTextField;
-
 /**
  *
  * @author Djair Maykon
