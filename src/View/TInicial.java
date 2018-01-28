@@ -6,7 +6,6 @@
 package View;
 
 import View.TelasCadastrar.TCadastrarCliente;
-import View.TelasCadastrar.TCadastrarFuncionario;
 import View.TelasCadastrar.TCadastrarTinta;
 import View.TelasNovo.TNovoAvaliacaoTinta;
 import View.TelasNovo.TNovoProducao;
@@ -274,11 +273,6 @@ public class TInicial extends javax.swing.JFrame {
 
         jMICadastrarFuncionario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarFuncionario.setText("Funcionário");
-        jMICadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMICadastrarFuncionarioActionPerformed(evt);
-            }
-        });
         jMCadastrar.add(jMICadastrarFuncionario);
 
         jMICadastrarTransportadora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -491,15 +485,6 @@ public class TInicial extends javax.swing.JFrame {
         telaCadastrarCliente.setVisible(true);
         
     }//GEN-LAST:event_jMICadastrarClienteActionPerformed
-
-    private void jMICadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarFuncionarioActionPerformed
-        // TODO add your handling code here:
-                
-        TCadastrarFuncionario telaCadastrarFuncionario = new TCadastrarFuncionario();
-        jDPPrincipal.add(telaCadastrarFuncionario);
-        telaCadastrarFuncionario.setVisible(true);
-        
-    }//GEN-LAST:event_jMICadastrarFuncionarioActionPerformed
 
   
     /**
