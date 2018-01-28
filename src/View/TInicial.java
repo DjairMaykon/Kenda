@@ -5,6 +5,10 @@
  */
 package View;
 
+import View.TelasCadastrar.TCadastrarCliente;
+import View.TelasCadastrar.TCadastrarFuncionario;
+import View.TelasCadastrar.TCadastrarTinta;
+import View.TelasNovo.TNovoAvaliacaoTinta;
 import View.TelasNovo.TNovoProducao;
 import View.TelasNovo.TNovoExpedicao;
 import View.TelasNovo.TNovoMateriaPrima;
@@ -239,6 +243,11 @@ public class TInicial extends javax.swing.JFrame {
 
         jMINovoAvaliacaoDeTinta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMINovoAvaliacaoDeTinta.setText("Avaliação de Tinta");
+        jMINovoAvaliacaoDeTinta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMINovoAvaliacaoDeTintaActionPerformed(evt);
+            }
+        });
         jMNovo.add(jMINovoAvaliacaoDeTinta);
 
         jMBTelaInicial.add(jMNovo);
@@ -247,14 +256,29 @@ public class TInicial extends javax.swing.JFrame {
 
         jMICadastrarTinta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarTinta.setText("Tinta");
+        jMICadastrarTinta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICadastrarTintaActionPerformed(evt);
+            }
+        });
         jMCadastrar.add(jMICadastrarTinta);
 
         jMICadastrarCliente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarCliente.setText("Cliente");
+        jMICadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICadastrarClienteActionPerformed(evt);
+            }
+        });
         jMCadastrar.add(jMICadastrarCliente);
 
         jMICadastrarFuncionario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarFuncionario.setText("Funcionário");
+        jMICadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICadastrarFuncionarioActionPerformed(evt);
+            }
+        });
         jMCadastrar.add(jMICadastrarFuncionario);
 
         jMICadastrarTransportadora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -440,6 +464,42 @@ public class TInicial extends javax.swing.JFrame {
         telaNovoMateriaPrima.setVisible(true);
         
     }//GEN-LAST:event_jMINovoMateriaPrimaActionPerformed
+
+    private void jMINovoAvaliacaoDeTintaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINovoAvaliacaoDeTintaActionPerformed
+        // TODO add your handling code here:
+        
+        TNovoAvaliacaoTinta telaNovoAvaliacaoTinta = new TNovoAvaliacaoTinta();
+        jDPPrincipal.add(telaNovoAvaliacaoTinta);
+        telaNovoAvaliacaoTinta.setVisible(true);
+        
+    }//GEN-LAST:event_jMINovoAvaliacaoDeTintaActionPerformed
+
+    private void jMICadastrarTintaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarTintaActionPerformed
+        // TODO add your handling code here:
+        
+        TCadastrarTinta telaCadastrarTinta = new TCadastrarTinta();
+        jDPPrincipal.add(telaCadastrarTinta);
+        telaCadastrarTinta.setVisible(true);
+        
+    }//GEN-LAST:event_jMICadastrarTintaActionPerformed
+
+    private void jMICadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarClienteActionPerformed
+        // TODO add your handling code here:
+        
+        TCadastrarCliente telaCadastrarCliente = new TCadastrarCliente();
+        jDPPrincipal.add(telaCadastrarCliente);
+        telaCadastrarCliente.setVisible(true);
+        
+    }//GEN-LAST:event_jMICadastrarClienteActionPerformed
+
+    private void jMICadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarFuncionarioActionPerformed
+        // TODO add your handling code here:
+                
+        TCadastrarFuncionario telaCadastrarFuncionario = new TCadastrarFuncionario();
+        jDPPrincipal.add(telaCadastrarFuncionario);
+        telaCadastrarFuncionario.setVisible(true);
+        
+    }//GEN-LAST:event_jMICadastrarFuncionarioActionPerformed
 
   
     /**
