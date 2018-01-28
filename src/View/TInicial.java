@@ -82,6 +82,7 @@ public class TInicial extends javax.swing.JFrame {
         jSMITintasAvaliacao = new javax.swing.JMenuItem();
         jSMListarPedidos = new javax.swing.JMenu();
         jSMIPedidosEmLaboratorio = new javax.swing.JMenuItem();
+        jSMIPedidosEmProducao = new javax.swing.JMenuItem();
         jSMIPedidosEmExpedição = new javax.swing.JMenuItem();
         jSMIPedidosFinalizados = new javax.swing.JMenuItem();
         jSMListarProducao = new javax.swing.JMenu();
@@ -307,6 +308,10 @@ public class TInicial extends javax.swing.JFrame {
         jSMIPedidosEmLaboratorio.setText("Em Laborátorio");
         jSMListarPedidos.add(jSMIPedidosEmLaboratorio);
 
+        jSMIPedidosEmProducao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jSMIPedidosEmProducao.setText("Em Produção");
+        jSMListarPedidos.add(jSMIPedidosEmProducao);
+
         jSMIPedidosEmExpedição.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jSMIPedidosEmExpedição.setText("Em Expedição");
         jSMListarPedidos.add(jSMIPedidosEmExpedição);
@@ -518,6 +523,10 @@ public class TInicial extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new TInicial().setVisible(true);
         });
+    }
+
+    public JMenuItem getjSMIPedidosEmProducao() {
+        return jSMIPedidosEmProducao;
     }
 
     public JButton getjBAjuda() {
@@ -762,6 +771,7 @@ public class TInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jSMIExpedicaoTransportadoras;
     private javax.swing.JMenuItem jSMIPedidosEmExpedição;
     private javax.swing.JMenuItem jSMIPedidosEmLaboratorio;
+    private javax.swing.JMenuItem jSMIPedidosEmProducao;
     private javax.swing.JMenuItem jSMIPedidosFinalizados;
     private javax.swing.JMenuItem jSMIProducaoEmAndamento;
     private javax.swing.JMenuItem jSMIProducaoFinalizados;

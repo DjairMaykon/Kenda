@@ -176,6 +176,14 @@
                     <Property name="text" type="java.lang.String" value="Em Labor&#xe1;torio"/>
                   </Properties>
                 </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jSMIPedidosEmProducao">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Arial" size="12" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Em Produ&#xe7;&#xe3;o"/>
+                  </Properties>
+                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jSMIPedidosEmExpedi&#xe7;&#xe3;o">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
