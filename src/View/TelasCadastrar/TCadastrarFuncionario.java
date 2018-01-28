@@ -205,42 +205,6 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JButton getjBCadastrarTinta() {
-        return jBCadastrarTinta;
-    }
-
-    public JButton getjBCancelarTinta() {
-        return jBCancelarTinta;
-    }
-
-    public JTextField getjTFCodigoTinta() {
-        return jTFCodigoTinta;
-    }
-
-    public JTextField getjTFCor() {
-        return jTFCusto;
-    }
-
-    public JTextField getjTFCusto() {
-        return jTFCor;
-    }
-
-    public JTextField getjTFFuncionalidade() {
-        return jTFFuncionalidade;
-    }
-
-    public JButton getjBProcurarMateriaPrima() {
-        return jBProcurarMateriaPrima;
-    }
-
-    public JTextField getjTFMateriaPrima() {
-        return jTFMateriaPrima;
-    }
-
-    public JTextField getjTFQuantidadeMateriaPrima() {
-        return jTFQuantidadeMateriaPrima;
-    }
-     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCadastrarTinta;
     private javax.swing.JButton jBCancelarTinta;
