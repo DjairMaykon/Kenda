@@ -7,6 +7,7 @@ package View.TelasCadastrar;
 
 
 import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -39,17 +40,17 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLCodigoOS = new javax.swing.JLabel();
         jTFFuncionalidade = new javax.swing.JTextField();
-        jLCodigoCliente = new javax.swing.JLabel();
         jTFCor = new javax.swing.JTextField();
         jLDescricao = new javax.swing.JLabel();
         jBCadastrarTinta = new javax.swing.JButton();
         jBCancelarTinta = new javax.swing.JButton();
-        jTFCusto = new javax.swing.JTextField();
         jLCodigoM = new javax.swing.JLabel();
-        jTFMateriaPrima = new javax.swing.JTextField();
-        jBProcurarMateriaPrima = new javax.swing.JButton();
-        jLCodigoCliente1 = new javax.swing.JLabel();
-        jTFQuantidadeMateriaPrima = new javax.swing.JTextField();
+        jBAdicionarMateriaPrima = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTMateriasPrimasUtilizadas = new javax.swing.JTable();
+        jTFCusto = new javax.swing.JTextField();
+        jLDescricao1 = new javax.swing.JLabel();
+        jBRemoverMateriaPrima = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -72,10 +73,6 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
 
         jTFFuncionalidade.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        jLCodigoCliente.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoCliente.setLabelFor(jTFCor);
-        jLCodigoCliente.setText("Custo:");
-
         jTFCor.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
@@ -87,26 +84,36 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
         jBCancelarTinta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
         jBCancelarTinta.setText("Cancelar");
 
+        jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLCodigoM.setLabelFor(jTFCor);
+        jLCodigoM.setText("Materias Primas:");
+
+        jBAdicionarMateriaPrima.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jBAdicionarMateriaPrima.setText("Adicionar");
+        jBAdicionarMateriaPrima.setBorder(null);
+        jBAdicionarMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTMateriasPrimasUtilizadas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Nome", "Custo"
+            }
+        ));
+        jScrollPane1.setViewportView(jTMateriasPrimasUtilizadas);
+
         jTFCusto.setEditable(false);
         jTFCusto.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoM.setLabelFor(jTFCor);
-        jLCodigoM.setText("Codigo da Materia Prima:");
+        jLDescricao1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLDescricao1.setText("Custo:");
 
-        jTFMateriaPrima.setEditable(false);
-        jTFMateriaPrima.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-
-        jBProcurarMateriaPrima.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
-        jBProcurarMateriaPrima.setText("...");
-        jBProcurarMateriaPrima.setBorder(null);
-        jBProcurarMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoCliente1.setLabelFor(jTFCor);
-        jLCodigoCliente1.setText("Quantidade de Materia Prima:");
-
-        jTFQuantidadeMateriaPrima.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jBRemoverMateriaPrima.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jBRemoverMateriaPrima.setText("Remover");
+        jBRemoverMateriaPrima.setBorder(null);
+        jBRemoverMateriaPrima.setEnabled(false);
+        jBRemoverMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,33 +128,34 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
                             .addComponent(jLCodigoM)
                             .addComponent(jLDescricao)
                             .addComponent(jLCodigoOS)
-                            .addComponent(jLCodigoPedido)
-                            .addComponent(jLCodigoCliente1)
-                            .addComponent(jLCodigoCliente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLCodigoPedido))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTFQuantidadeMateriaPrima)
-                            .addComponent(jTFCodigoTinta, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTFMateriaPrima, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jBProcurarMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTFCodigoTinta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                             .addComponent(jTFFuncionalidade)
-                            .addComponent(jTFCusto)
-                            .addComponent(jTFCor))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jTFCor)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jBAdicionarMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBRemoverMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLDescricao1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTFCusto))
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jBCancelarTinta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBCadastrarTinta, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jSeparator2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,18 +179,16 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
                                     .addComponent(jTFCor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(9, 9, 9)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBProcurarMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLCodigoM))
+                            .addComponent(jBAdicionarMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLCodigoM)
+                            .addComponent(jBRemoverMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFQuantidadeMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLCodigoCliente1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLCodigoCliente))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLDescricao1)
+                            .addComponent(jTFCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,7 +205,7 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addContainerGap())
         );
 
         pack();
@@ -230,35 +236,39 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
     }
 
     public JButton getjBProcurarMateriaPrima() {
-        return jBProcurarMateriaPrima;
+        return jBAdicionarMateriaPrima;
     }
 
-    public JTextField getjTFMateriaPrima() {
-        return jTFMateriaPrima;
+    public JButton getjBAdicionarMateriaPrima() {
+        return jBAdicionarMateriaPrima;
     }
 
-    public JTextField getjTFQuantidadeMateriaPrima() {
-        return jTFQuantidadeMateriaPrima;
+    public JButton getjBRemoverMateriaPrima() {
+        return jBRemoverMateriaPrima;
     }
-     
+
+    public JTable getjTMateriasPrimasUtilizadas() {
+        return jTMateriasPrimasUtilizadas;
+    }
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBAdicionarMateriaPrima;
     private javax.swing.JButton jBCadastrarTinta;
     private javax.swing.JButton jBCancelarTinta;
-    private javax.swing.JButton jBProcurarMateriaPrima;
-    private javax.swing.JLabel jLCodigoCliente;
-    private javax.swing.JLabel jLCodigoCliente1;
+    private javax.swing.JButton jBRemoverMateriaPrima;
     private javax.swing.JLabel jLCodigoM;
     private javax.swing.JLabel jLCodigoOS;
     private javax.swing.JLabel jLCodigoPedido;
     private javax.swing.JLabel jLDescricao;
+    private javax.swing.JLabel jLDescricao1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTFCodigoTinta;
     private javax.swing.JTextField jTFCor;
     private javax.swing.JTextField jTFCusto;
     private javax.swing.JTextField jTFFuncionalidade;
-    private javax.swing.JTextField jTFMateriaPrima;
-    private javax.swing.JTextField jTFQuantidadeMateriaPrima;
+    private javax.swing.JTable jTMateriasPrimasUtilizadas;
     // End of variables declaration//GEN-END:variables
 }
