@@ -99,7 +99,7 @@ public class TNovoPedido extends javax.swing.JInternalFrame {
         jLSituacao.setLabelFor(jTADescricao);
         jLSituacao.setText("Situação:");
 
-        jCBSituacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laboratório", "Produção", " " }));
+        jCBSituacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laboratório", "Produção" }));
 
         jLData.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLData.setLabelFor(jTFCodigoPedido);
@@ -196,7 +196,7 @@ public class TNovoPedido extends javax.swing.JInternalFrame {
                             .addComponent(jLSituacao)
                             .addComponent(jCBSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jSeparator2))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -213,7 +213,7 @@ public class TNovoPedido extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         pack();
