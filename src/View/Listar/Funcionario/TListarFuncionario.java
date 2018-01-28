@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View.Listar.Cliente;
+package View.Listar.Funcionario;
 
 
 import View.Listar.Estoque.*;
@@ -17,12 +17,12 @@ import javax.swing.JTextField;
  *
  * @author Djair Maykon
  */
-public class TListarCliente extends javax.swing.JInternalFrame {
+public class TListarFuncionario extends javax.swing.JInternalFrame {
     
     /**
      * Creates new form TNovoPedido
      */
-    public TListarCliente() {
+    public TListarFuncionario() {
         initComponents();
         
     }
@@ -38,8 +38,8 @@ public class TListarCliente extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTListarCliente = new javax.swing.JTable();
-        jTFListarCliente = new javax.swing.JTextField();
+        jTListarFuncionario = new javax.swing.JTable();
+        jTFListarFuncionario = new javax.swing.JTextField();
         jBBusca = new javax.swing.JButton();
 
         setClosable(true);
@@ -48,15 +48,15 @@ public class TListarCliente extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTListarCliente.setModel(new javax.swing.table.DefaultTableModel(
+        jTListarFuncionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Codigo do Cliente", "Email", "Nome", "Telefone", "CNPJ", "Código de Endereço"
+                "Codigo do Funcionario", "Email", "Nome", "Telefone", "CNPJ", "Codigo de Endereço", "Nível de acesso"
             }
         ));
-        jScrollPane1.setViewportView(jTListarCliente);
+        jScrollPane1.setViewportView(jTListarFuncionario);
 
         jBBusca.setText("Buscar");
 
@@ -69,7 +69,7 @@ public class TListarCliente extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTFListarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFListarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -79,7 +79,7 @@ public class TListarCliente extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFListarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFListarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBBusca))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -110,7 +110,7 @@ public class TListarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBBusca;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTFListarCliente;
-    private javax.swing.JTable jTListarCliente;
+    private javax.swing.JTextField jTFListarFuncionario;
+    private javax.swing.JTable jTListarFuncionario;
     // End of variables declaration//GEN-END:variables
 }
