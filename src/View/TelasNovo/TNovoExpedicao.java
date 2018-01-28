@@ -101,7 +101,7 @@ public class TNovoExpedicao extends javax.swing.JInternalFrame {
 
         jDCDataDeEntrega.setEnabled(false);
 
-        jCBSituacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Em andamento", "Finalizada", " " }));
+        jCBSituacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Em andamento", "Finalizada" }));
 
         jLSituacao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLSituacao.setText("Situação:");

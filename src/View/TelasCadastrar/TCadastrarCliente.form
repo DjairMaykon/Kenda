@@ -77,9 +77,9 @@
                               <Component id="jTFEmail" alignment="0" max="32767" attributes="0"/>
                               <Component id="jTFCPNJ" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jTFCPF" pref="136" max="32767" attributes="0"/>
+                                  <Component id="jTFCEP" pref="136" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jBuscar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jBuscarEndereco" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -139,9 +139,9 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTFCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTFCEP" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLCodigoCliente2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jBuscarEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -262,7 +262,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFCPF">
+        <Component class="javax.swing.JTextField" name="jTFCEP">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
@@ -280,7 +280,7 @@
             <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBuscar">
+        <Component class="javax.swing.JButton" name="jBuscarEndereco">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>

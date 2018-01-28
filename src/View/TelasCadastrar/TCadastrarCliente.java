@@ -23,6 +23,18 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
         
     }
 
+    public JButton getjBuscarEndereco() {
+        return jBuscarEndereco;
+    }
+
+    public JTextField getjTFCEP() {
+        return jTFCEP;
+    }
+
+    public JTextField getjTFNome() {
+        return jTFNome;
+    }
+
     public JButton getjBCadastrarCliente() {
         return jBCadastrarCliente;
     }
@@ -32,7 +44,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     }
 
     public JButton getjBuscar() {
-        return jBuscar;
+        return jBuscarEndereco;
     }
 
     public JTextField getjTFCPNJ() {
@@ -48,7 +60,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFEndereco() {
-        return jTFCPF;
+        return jTFCEP;
     }
 
     public JTextField getjTFTelefone() {
@@ -79,9 +91,9 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
         jTFCPNJ = new javax.swing.JTextField();
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
-        jTFCPF = new javax.swing.JTextField();
+        jTFCEP = new javax.swing.JTextField();
         jLCodigoCliente2 = new javax.swing.JLabel();
-        jBuscar = new javax.swing.JButton();
+        jBuscarEndereco = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -127,13 +139,13 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
 
         jTFTelefone.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        jTFCPF.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCEP.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente2.setLabelFor(jTFEmail);
         jLCodigoCliente2.setText("Endereço:");
 
-        jBuscar.setText("Buscar");
+        jBuscarEndereco.setText("Buscar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -159,9 +171,9 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
                             .addComponent(jTFEmail)
                             .addComponent(jTFCPNJ)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTFCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                .addComponent(jTFCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jBuscar)))))
+                                .addComponent(jBuscarEndereco)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -206,9 +218,9 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
                             .addComponent(jLCodigoCliente1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoCliente2)
-                            .addComponent(jBuscar))))
+                            .addComponent(jBuscarEndereco))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -235,7 +247,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCadastrarCliente;
     private javax.swing.JButton jBCancelarCliente;
-    private javax.swing.JButton jBuscar;
+    private javax.swing.JButton jBuscarEndereco;
     private javax.swing.JLabel jLCodigoCliente1;
     private javax.swing.JLabel jLCodigoCliente2;
     private javax.swing.JLabel jLCodigoM;
@@ -245,7 +257,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTFCPF;
+    private javax.swing.JTextField jTFCEP;
     private javax.swing.JTextField jTFCPNJ;
     private javax.swing.JTextField jTFCodigoCliente;
     private javax.swing.JTextField jTFEmail;

@@ -38,11 +38,11 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
     }
 
     public JDateChooser getjDCDataDaTinta() {
-        return jDCDataDaTinta;
+        return jDCDataDaAvaliacao;
     }
 
     public JTextArea getjTADescricao() {
-        return jTADescricao;
+        return jTAAvaliacao;
     }
 
     public JTextField getjTFCodigoAvaliacao() {
@@ -72,9 +72,9 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
         jBProcurarTinta = new javax.swing.JButton();
         jLDescricao = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTADescricao = new javax.swing.JTextArea();
+        jTAAvaliacao = new javax.swing.JTextArea();
         jLData = new javax.swing.JLabel();
-        jDCDataDaTinta = new com.toedter.calendar.JDateChooser();
+        jDCDataDaAvaliacao = new com.toedter.calendar.JDateChooser();
         jBSalvarNovaAvaliacao = new javax.swing.JButton();
         jBCancelarNovaAvaliacao = new javax.swing.JButton();
 
@@ -106,18 +106,18 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
         jBProcurarTinta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLDescricao.setLabelFor(jTADescricao);
+        jLDescricao.setLabelFor(jTAAvaliacao);
         jLDescricao.setText("Avaliação:");
 
-        jTADescricao.setColumns(20);
-        jTADescricao.setRows(5);
-        jScrollPane1.setViewportView(jTADescricao);
+        jTAAvaliacao.setColumns(20);
+        jTAAvaliacao.setRows(5);
+        jScrollPane1.setViewportView(jTAAvaliacao);
 
         jLData.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLData.setLabelFor(jTFCodigoAvaliacao);
         jLData.setText("Data:");
 
-        jDCDataDaTinta.setEnabled(false);
+        jDCDataDaAvaliacao.setEnabled(false);
 
         jBSalvarNovaAvaliacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBSalvarNovaAvaliacao.setText("Salvar");
@@ -152,7 +152,7 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
                                     .addComponent(jBProcurarTinta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jDCDataDaTinta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jDCDataDaAvaliacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jTFCodigoAvaliacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jSeparator1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -180,7 +180,7 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
                                 .addComponent(jLCodigoPedido))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jDCDataDaTinta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jDCDataDaAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLData))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,7 +220,7 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBCancelarNovaAvaliacao;
     private javax.swing.JButton jBProcurarTinta;
     private javax.swing.JButton jBSalvarNovaAvaliacao;
-    private com.toedter.calendar.JDateChooser jDCDataDaTinta;
+    private com.toedter.calendar.JDateChooser jDCDataDaAvaliacao;
     private javax.swing.JLabel jLCodigoCliente;
     private javax.swing.JLabel jLCodigoPedido;
     private javax.swing.JLabel jLData;
@@ -229,7 +229,7 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextArea jTADescricao;
+    private javax.swing.JTextArea jTAAvaliacao;
     private javax.swing.JTextField jTFCodigoAvaliacao;
     private javax.swing.JTextField jTFCodigoTinta;
     // End of variables declaration//GEN-END:variables

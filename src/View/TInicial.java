@@ -491,7 +491,6 @@ public class TInicial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMICadastrarClienteActionPerformed
 
-  
     /**
      * @param args the command line arguments
      */
