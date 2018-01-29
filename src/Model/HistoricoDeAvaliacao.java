@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class HistoricoDeAvaliaçao {
+public class HistoricoDeAvaliacao {
     private int codigo;
    private int codigoTinta;
     private int codigoFuncionario;
