@@ -6,7 +6,10 @@
 package View;
 
 import View.TelasCadastrar.TCadastrarCliente;
+import View.TelasCadastrar.TCadastrarFornecedor;
+import View.TelasCadastrar.TCadastrarSetor;
 import View.TelasCadastrar.TCadastrarTinta;
+import View.TelasCadastrar.TCadastrarTransportadora;
 import View.TelasNovo.TNovoAvaliacaoTinta;
 import View.TelasNovo.TNovoProducao;
 import View.TelasNovo.TNovoExpedicao;
@@ -76,6 +79,7 @@ public class TInicial extends javax.swing.JFrame {
         jMICadastrarFuncionario = new javax.swing.JMenuItem();
         jMICadastrarTransportadora = new javax.swing.JMenuItem();
         jMICadastrarFornecedores = new javax.swing.JMenuItem();
+        jMICadastrarFornecedores1 = new javax.swing.JMenuItem();
         jMListar = new javax.swing.JMenu();
         jSMListarTintas = new javax.swing.JMenu();
         jSMITintaCatalogo = new javax.swing.JMenuItem();
@@ -183,11 +187,9 @@ public class TInicial extends javax.swing.JFrame {
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDPPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addGroup(jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDPPrincipalLayout.setVerticalGroup(
@@ -278,11 +280,30 @@ public class TInicial extends javax.swing.JFrame {
 
         jMICadastrarTransportadora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarTransportadora.setText("Transportadora");
+        jMICadastrarTransportadora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICadastrarTransportadoraActionPerformed(evt);
+            }
+        });
         jMCadastrar.add(jMICadastrarTransportadora);
 
         jMICadastrarFornecedores.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarFornecedores.setText("Fornecedores");
+        jMICadastrarFornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICadastrarFornecedoresActionPerformed(evt);
+            }
+        });
         jMCadastrar.add(jMICadastrarFornecedores);
+
+        jMICadastrarFornecedores1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jMICadastrarFornecedores1.setText("Setor");
+        jMICadastrarFornecedores1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICadastrarFornecedores1ActionPerformed(evt);
+            }
+        });
+        jMCadastrar.add(jMICadastrarFornecedores1);
 
         jMBTelaInicial.add(jMCadastrar);
 
@@ -505,6 +526,25 @@ public class TInicial extends javax.swing.JFrame {
             jPMenuAcessoRapido.setVisible(false);
         
     }//GEN-LAST:event_jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged
+
+    private void jMICadastrarFornecedores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarFornecedores1ActionPerformed
+        TCadastrarSetor telaCadastrarSetor = new TCadastrarSetor();
+        jDPPrincipal.add(telaCadastrarSetor);
+        telaCadastrarSetor.setVisible(true);      // TODO add your handling code here:
+    }//GEN-LAST:event_jMICadastrarFornecedores1ActionPerformed
+
+    private void jMICadastrarTransportadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarTransportadoraActionPerformed
+        TCadastrarTransportadora telaCadastrarTransportadora = new TCadastrarTransportadora();
+        jDPPrincipal.add(telaCadastrarTransportadora);
+        telaCadastrarTransportadora.setVisible(true);
+                                             // TODO add your handling code here:
+    }//GEN-LAST:event_jMICadastrarTransportadoraActionPerformed
+
+    private void jMICadastrarFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarFornecedoresActionPerformed
+        TCadastrarFornecedor telaCadastrarFornecedor = new TCadastrarFornecedor();
+        jDPPrincipal.add(telaCadastrarFornecedor);
+        telaCadastrarFornecedor.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMICadastrarFornecedoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -762,6 +802,7 @@ public class TInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIBuscarEndereco;
     private javax.swing.JMenuItem jMICadastrarCliente;
     private javax.swing.JMenuItem jMICadastrarFornecedores;
+    private javax.swing.JMenuItem jMICadastrarFornecedores1;
     private javax.swing.JMenuItem jMICadastrarFuncionario;
     private javax.swing.JMenuItem jMICadastrarTinta;
     private javax.swing.JMenuItem jMICadastrarTransportadora;
