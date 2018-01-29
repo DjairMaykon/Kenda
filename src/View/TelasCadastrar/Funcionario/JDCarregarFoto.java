@@ -25,7 +25,7 @@ public class JDCarregarFoto extends javax.swing.JDialog {
         @Override
         public boolean accept(File file) {
             // Allow only directories, or files with ".txt" extension
-            return file.getAbsolutePath().endsWith(".jpeg") || file.getAbsolutePath().endsWith(".jpg");
+            return file.isDirectory() || file.getAbsolutePath().endsWith(".jpeg") || file.getAbsolutePath().endsWith(".jpg");
         }
         @Override
         public String getDescription() {
@@ -75,6 +75,7 @@ public class JDCarregarFoto extends javax.swing.JDialog {
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     /**
