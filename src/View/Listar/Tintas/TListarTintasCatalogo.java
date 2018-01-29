@@ -8,6 +8,7 @@ package View.Listar.Tintas;
 
 import View.TelasCadastrar.*;
 import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -23,6 +24,20 @@ public class TListarTintasCatalogo extends javax.swing.JInternalFrame {
         initComponents();
         
     }
+
+    public JButton getjBBusca() {
+        return jBBusca;
+    }
+
+    public JTextField getjTFListarTintaCatalogo() {
+        return jTFListarTintaCatalogo;
+    }
+
+    public JTable getjTListarTintasCatalogo() {
+        return jTListarTintasCatalogo;
+    }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.

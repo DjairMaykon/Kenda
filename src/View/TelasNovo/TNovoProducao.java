@@ -47,8 +47,8 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
         jCBSituacao = new javax.swing.JComboBox<>();
         jLData = new javax.swing.JLabel();
         jDCDataDaProducao = new com.toedter.calendar.JDateChooser();
-        jBSalvar = new javax.swing.JButton();
-        jBCancelar = new javax.swing.JButton();
+        jBSalvarProducao = new javax.swing.JButton();
+        jBCancelarProducao = new javax.swing.JButton();
         jLCodigodaTinta = new javax.swing.JLabel();
         jTFCustoProducao = new javax.swing.JTextField();
         jLCustoProducao = new javax.swing.JLabel();
@@ -97,11 +97,11 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
 
         jDCDataDaProducao.setEnabled(false);
 
-        jBSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
-        jBSalvar.setText("Salvar");
+        jBSalvarProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
+        jBSalvarProducao.setText("Salvar");
 
-        jBCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
-        jBCancelar.setText("Cancelar");
+        jBCancelarProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
+        jBCancelarProducao.setText("Cancelar");
 
         jLCodigodaTinta.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigodaTinta.setLabelFor(jTFCodigoPedido);
@@ -180,13 +180,13 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
                             .addComponent(jSeparator1))
                         .addGap(10, 10, 10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                    .addComponent(jBSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jBCancelarProducao, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(jBSalvarProducao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -196,9 +196,9 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBSalvar)
+                        .addComponent(jBSalvarProducao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBCancelar)
+                        .addComponent(jBCancelarProducao)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -258,7 +258,15 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public JButton getjBCancelar() {
-        return jBCancelar;
+        return jBCancelarProducao;
+    }
+
+    public JButton getjBCancelarProducao() {
+        return jBCancelarProducao;
+    }
+
+    public JButton getjBSalvarProducao() {
+        return jBSalvarProducao;
     }
 
     public JButton getjBProcurarPedido() {
@@ -266,7 +274,7 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
     }
 
     public JButton getjBSalvar() {
-        return jBSalvar;
+        return jBSalvarProducao;
     }
 
     public JComboBox<String> getjCBSituacao() {
@@ -304,13 +312,15 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
     public JTable getjTTintasProduzidas() {
         return jTTintasProduzidas;
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarTinta;
-    private javax.swing.JButton jBCancelar;
+    private javax.swing.JButton jBCancelarProducao;
     private javax.swing.JButton jBProcurarPedido;
     private javax.swing.JButton jBRemoverTinta;
-    private javax.swing.JButton jBSalvar;
+    private javax.swing.JButton jBSalvarProducao;
     private javax.swing.JComboBox<String> jCBSituacao;
     private com.toedter.calendar.JDateChooser jDCDataDaProducao;
     private javax.swing.JLabel jLCodigoPedido;
