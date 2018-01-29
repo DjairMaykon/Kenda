@@ -6,27 +6,20 @@
 package Model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
 /**
  *
- * @author Kaione
+ * @author JFelipe
  */
-public class Setor {
+public class MateriaPrima{
     private Connection con = null;
-    private String nome;
     private int codigo;
     private String descricao;
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    private String nome;
+    private double custo;
 
     public int getCodigo() {
         return codigo;
@@ -43,28 +36,45 @@ public class Setor {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-   
-    public void adicionar(){
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getCusto() {
+        return custo;
+    }
+
+    public void setCusto(double custo) {
+        this.custo = custo;
+    }
+    
+        public void adicionar(){
         
         PreparedStatement pstmt = null;
-        String sql="INSERT INTO SETOR(COD, DESCRICAO, NOME) VALUES(?,?,?)";
-        try {
+        String sql="INSERT INTO MATERIA_PRIMA(COD, DESCRICAO, NOME, CUSTO) VALUES(?,?,?,?)";
+        try {   
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
-            pstmt.setInt(1,codigo);
             pstmt.setString(2,descricao);
             pstmt.setString(3,nome);
+            pstmt.setDouble(4,custo);
+            pstmt.setInt(1,codigo);
             pstmt.executeQuery();
             
         } catch (SQLException ex) {
             System.out.println("Erro ao adicionar");
         }
-        
+       
     }
     
     public void deletar(){
         PreparedStatement pstmt = null;
-        String sql="DELETE FROM SETOR WHERE COD=? ";
+        String sql="DELETE FROM MATERIA_PRIMA WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
@@ -76,24 +86,23 @@ public class Setor {
         }
         
     }
-    
+   
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM SETOR SET DESCRICAO=?, NOME=? WHERE COD=? ";
+        String sql=" UPDATE FROM MATERIA_PRIMA SET DESCRICAO=?, NOME=?, CUSTO=? WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,descricao);
             pstmt.setString(2,nome);
-            pstmt.setInt(3, codigo);
+            pstmt.setInt(4, codigo);
+            pstmt.setDouble(3,custo);
             pstmt.executeQuery();
             
         } catch (SQLException ex) {
             System.out.println("Erro ao alterar");
         }
-     
-    
-    
-}
+        
+    }
 }

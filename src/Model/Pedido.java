@@ -5,28 +5,32 @@
  */
 package Model;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  *
  * @author Kaione
  */
 public class Pedido {
-    private Date dataPed; 
+    private Connection con = null;
+    private Date data; 
     private String situacao;
     private int codFunc;
-    private int codPed;
+    private int codigo;
     private int codCli;
     private int codOS;
     private String descricao;
     private double custo;
 
-    public Date getDataPed() {
-        return dataPed;
+    public Date getData() {
+        return data;
     }
 
-    public void setDataPed(Date dataPed) {
-        this.dataPed = dataPed;
+    public void setDataPed(Date data) {
+        this.data = data;
     }
 
     public String getSituacao() {
@@ -45,12 +49,12 @@ public class Pedido {
         this.codFunc = codFunc;
     }
 
-    public int getCodPed() {
-        return codPed;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setCodPed(int codPed) {
-        this.codPed = codPed;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public int getCodCli() {
@@ -84,7 +88,67 @@ public class Pedido {
     public void setCusto(double custo) {
         this.custo = custo;
     }
-
+    public void adicionar(){
+        
+        PreparedStatement pstmt = null;
+        String sql="INSERT INTO PEDIDO(COD, CUSTO, SITUACAO, DATA, COD_CLI, COD_OS, COD_FUNCIONARIO, DESCRICAO) VALUES(?,?,?,?,?,?,?,?)";
+        try {   
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1,codigo);
+            pstmt.setDouble(2,custo);
+            pstmt.setString(3,situacao);
+            pstmt.setDate(4,data);
+            pstmt.setInt(5,codCli);
+            pstmt.setInt(6,codOS);
+            pstmt.setInt(7,codFunc);
+            pstmt.setString(8, descricao);
+            pstmt.executeQuery();
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao adicionar");
+        }
+        
+    }
+    
+    public void deletar(){
+        PreparedStatement pstmt = null;
+        String sql="DELETE FROM PEDIDO WHERE COD=? ";
+        try {
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1,codigo);
+            pstmt.executeQuery();
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao excluir");
+        }
+        
+    }
+    
+    
+    public void alterar(){
+        PreparedStatement pstmt = null;
+        String sql=" UPDATE FROM PEDIDO SET CUSTO=?, SITUACAO=?, DATA=?, COD_CLI=?, COD_OS=?, COD_FUNCIONARIO=?, DESCRICAO=? WHERE COD=? ";
+        try {
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(8,codigo);
+            pstmt.setDouble(1,custo);
+            pstmt.setString(2,situacao);
+            pstmt.setDate(3,data);
+            pstmt.setInt(4,codCli);
+            pstmt.setInt(5,codOS);
+            pstmt.setInt(6,codFunc);
+            pstmt.setString(7, descricao);
+        
+            pstmt.executeQuery();
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao alterar");
+        }
+        
+    }
    
    
 }
