@@ -99,29 +99,30 @@ public class Necessita {
         
     }
     
-     public void update(){
+     public void alterar(){
     
         PreparedStatement pstmt = null;
         
-        String sql1 = "UPDATE FROM NECESSITA SET cod_tinta=?, cod_materia_prima=?, qtd_materia_prima WHERE cod = ?";
      
         
         try {
+                    
             
+            String sql1 = "UPDATE NECESSITA SET qtd_materia_prima=? WHERE cod_tinta = ?";
+
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
            //strings /\
-            pstmt.setInt(4, codigo); //strings /\
-            pstmt.setString(1,funcionalidade);
-            pstmt.setString(3, cor);
-            pstmt.setDouble(2, custo);
+            pstmt.setInt(1,qtd_materia_prima);
+            pstmt.setInt(2,codigoTinta);//strings /\
+           
             
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("ERRO ao alterar\n" + ex);
             
         }   
         

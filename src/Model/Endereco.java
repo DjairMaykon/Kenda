@@ -121,7 +121,7 @@ public class Endereco {
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM ENDERECO SET UF=?, CIDADE=?, RUA=?, NUMERO=?, BAIRRO=?,CEP=? WHERE COD=? ";
+        String sql=" UPDATE ENDERECO SET UF=?, CIDADE=?, RUA=?, NUMERO=?, BAIRRO=?,CEP=? WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
