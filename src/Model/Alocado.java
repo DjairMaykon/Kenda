@@ -17,6 +17,7 @@ public class Alocado {
     private int codigoSetor;
     private String funcao;
     private int codigoFuncionario;
+    private Connection con;
 
     public int getCodigoSetor() {
         return codigoSetor;
