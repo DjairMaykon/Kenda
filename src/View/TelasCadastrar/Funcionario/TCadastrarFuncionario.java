@@ -28,7 +28,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCEP() {
-        return jTFCEP;
+        return jTFEndereco;
     }
 
     public JTextField getjTFNome() {
@@ -36,11 +36,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JButton getjBCadastrarCliente() {
-        return jBCadastrarCliente;
+        return jBCadastrarFuncionario;
     }
 
     public JButton getjBCancelarCliente() {
-        return jBCancelarCliente;
+        return jBCancelarFuncionario;
     }
 
     public JButton getjBuscar() {
@@ -48,11 +48,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCPNJ() {
-        return jTFCPNJ;
+        return jTFCPF;
     }
 
     public JTextField getjTFCodigoCliente() {
-        return jTFCodigoCliente;
+        return jTFCodigoFuncionario;
     }
 
     public JTextField getjTFEmail() {
@@ -60,7 +60,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFEndereco() {
-        return jTFCEP;
+        return jTFEndereco;
     }
 
     public JTextField getjTFTelefone() {
@@ -78,27 +78,27 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLCodigoPedido = new javax.swing.JLabel();
-        jTFCodigoCliente = new javax.swing.JTextField();
+        jTFCodigoFuncionario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLCodigoOS = new javax.swing.JLabel();
         jTFNome = new javax.swing.JTextField();
         jTFEmail = new javax.swing.JTextField();
         jLDescricao = new javax.swing.JLabel();
-        jBCadastrarCliente = new javax.swing.JButton();
-        jBCancelarCliente = new javax.swing.JButton();
+        jBCadastrarFuncionario = new javax.swing.JButton();
+        jBCancelarFuncionario = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
-        jTFCPNJ = new javax.swing.JTextField();
+        jTFCPF = new javax.swing.JTextField();
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
-        jTFCEP = new javax.swing.JTextField();
+        jTFEndereco = new javax.swing.JTextField();
         jLCodigoCliente2 = new javax.swing.JLabel();
         jBuscarEndereco = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLCodigoCliente3 = new javax.swing.JLabel();
-        jTFTelefone1 = new javax.swing.JTextField();
+        jTFSalario = new javax.swing.JTextField();
         jLCadastrarFuncionarioUsuario = new javax.swing.JLabel();
         jLCodigoOS2 = new javax.swing.JLabel();
         jTFSenha = new javax.swing.JTextField();
@@ -111,11 +111,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLCodigoPedido.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoPedido.setLabelFor(jTFCodigoCliente);
+        jLCodigoPedido.setLabelFor(jTFCodigoFuncionario);
         jLCodigoPedido.setText("Código do Funcionario:");
 
-        jTFCodigoCliente.setEditable(false);
-        jTFCodigoCliente.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCodigoFuncionario.setEditable(false);
+        jTFCodigoFuncionario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -130,17 +130,17 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Email:");
 
-        jBCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
-        jBCadastrarCliente.setText("Cadastrar");
+        jBCadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
+        jBCadastrarFuncionario.setText("Cadastrar");
 
-        jBCancelarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
-        jBCancelarCliente.setText("Cancelar");
+        jBCancelarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
+        jBCancelarFuncionario.setText("Cancelar");
 
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setLabelFor(jTFEmail);
         jLCodigoM.setText("CPF:");
 
-        jTFCPNJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCPF.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente1.setLabelFor(jTFEmail);
@@ -148,7 +148,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
 
         jTFTelefone.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        jTFCEP.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFEndereco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente2.setLabelFor(jTFEmail);
@@ -192,7 +192,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLCodigoCliente3.setLabelFor(jTFEmail);
         jLCodigoCliente3.setText("Salario:");
 
-        jTFTelefone1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFSalario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCadastrarFuncionarioUsuario.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCadastrarFuncionarioUsuario.setLabelFor(jTFNome);
@@ -226,22 +226,22 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                                     .addComponent(jTFTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                                     .addComponent(jTFNome, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTFEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTFCPNJ, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jTFCPF, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTFEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                                 .addComponent(jBuscarEndereco))
-                            .addComponent(jTFTelefone1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTFCodigoCliente))))
+                            .addComponent(jTFSalario, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTFCodigoFuncionario))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jBCancelarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBCadastrarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                        .addComponent(jBCancelarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBCadastrarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                         .addComponent(jLCadastrarFuncionarioUsuario)
                         .addComponent(jLCodigoOS2)
                         .addComponent(jTFSenha))
@@ -257,7 +257,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTFCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTFCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -272,7 +272,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                                             .addComponent(jLDescricao))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jTFCPNJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLCodigoM))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -281,19 +281,19 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTFEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLCodigoCliente2)
                                     .addComponent(jBuscarEndereco))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTFSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLCodigoCliente3)))
                             .addComponent(jLCodigoPedido))
                         .addGap(0, 4, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBCadastrarCliente)
+                        .addComponent(jBCadastrarFuncionario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBCancelarCliente)
+                        .addComponent(jBCancelarFuncionario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLCadastrarFuncionarioUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -339,8 +339,8 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBCadastrarCliente;
-    private javax.swing.JButton jBCancelarCliente;
+    private javax.swing.JButton jBCadastrarFuncionario;
+    private javax.swing.JButton jBCancelarFuncionario;
     private javax.swing.JButton jBuscarEndereco;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLCadastrarFuncionarioUsuario;
@@ -357,14 +357,14 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTFCEP;
-    private javax.swing.JTextField jTFCPNJ;
-    private javax.swing.JTextField jTFCodigoCliente;
+    private javax.swing.JTextField jTFCPF;
+    private javax.swing.JTextField jTFCodigoFuncionario;
     private javax.swing.JTextField jTFEmail;
+    private javax.swing.JTextField jTFEndereco;
     private javax.swing.JTextField jTFNome;
+    private javax.swing.JTextField jTFSalario;
     private javax.swing.JTextField jTFSenha;
     private javax.swing.JTextField jTFTelefone;
-    private javax.swing.JTextField jTFTelefone1;
     private javax.swing.JTextField jTFUsuario;
     // End of variables declaration//GEN-END:variables
 }

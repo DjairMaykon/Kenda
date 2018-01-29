@@ -77,18 +77,18 @@
                                       <Component id="jTFTelefone" alignment="0" pref="207" max="32767" attributes="0"/>
                                       <Component id="jTFNome" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jTFEmail" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTFCPNJ" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTFCPF" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jPanel2" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jTFCEP" min="-2" pref="257" max="-2" attributes="0"/>
+                                  <Component id="jTFEndereco" min="-2" pref="257" max="-2" attributes="0"/>
                                   <EmptySpace pref="10" max="32767" attributes="0"/>
                                   <Component id="jBuscarEndereco" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTFTelefone1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jTFCodigoCliente" max="32767" attributes="0"/>
+                              <Component id="jTFSalario" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jTFCodigoFuncionario" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -97,8 +97,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jBCancelarCliente" max="32767" attributes="0"/>
-                          <Component id="jBCadastrarCliente" pref="120" max="32767" attributes="0"/>
+                          <Component id="jBCancelarFuncionario" max="32767" attributes="0"/>
+                          <Component id="jBCadastrarFuncionario" pref="120" max="32767" attributes="0"/>
                           <Component id="jLCadastrarFuncionarioUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLCodigoOS2" min="-2" max="-2" attributes="0"/>
                           <Component id="jTFSenha" alignment="0" max="32767" attributes="0"/>
@@ -118,7 +118,7 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTFCodigoCliente" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTFCodigoFuncionario" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jSeparator1" min="-2" pref="2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -135,7 +135,7 @@
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jTFCPNJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTFCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLCodigoM" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -148,13 +148,13 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTFCEP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTFEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLCodigoCliente2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jBuscarEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTFTelefone1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTFSalario" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLCodigoCliente3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -163,9 +163,9 @@
                           <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jBCadastrarCliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBCadastrarFuncionario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jBCancelarCliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBCancelarFuncionario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLCadastrarFuncionarioUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -189,12 +189,12 @@
               <Font name="Arial Black" size="12" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="jTFCodigoCliente"/>
+              <ComponentRef name="jTFCodigoFuncionario"/>
             </Property>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo do Funcionario:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFCodigoCliente">
+        <Component class="javax.swing.JTextField" name="jTFCodigoFuncionario">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -242,7 +242,7 @@
             <Property name="text" type="java.lang.String" value="Email:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBCadastrarCliente">
+        <Component class="javax.swing.JButton" name="jBCadastrarFuncionario">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagens/37.png"/>
@@ -250,7 +250,7 @@
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBCancelarCliente">
+        <Component class="javax.swing.JButton" name="jBCancelarFuncionario">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagens/Delete_01.png"/>
@@ -269,7 +269,7 @@
             <Property name="text" type="java.lang.String" value="CPF:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFCPNJ">
+        <Component class="javax.swing.JTextField" name="jTFCPF">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
@@ -294,7 +294,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFCEP">
+        <Component class="javax.swing.JTextField" name="jTFEndereco">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
@@ -376,7 +376,7 @@
             <Property name="text" type="java.lang.String" value="Salario:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFTelefone1">
+        <Component class="javax.swing.JTextField" name="jTFSalario">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
