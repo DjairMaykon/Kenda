@@ -75,9 +75,9 @@
                               <Component id="jTFCodigoCliente" alignment="1" max="32767" attributes="0"/>
                               <Component id="jTFNome" alignment="0" max="32767" attributes="0"/>
                               <Component id="jTFEmail" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTFCPNJ" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTFCNPJ" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jTFCEP" pref="136" max="32767" attributes="0"/>
+                                  <Component id="jTFEndereco" pref="136" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jBuscarEndereco" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -129,7 +129,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTFCPNJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTFCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLCodigoM" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -139,7 +139,7 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTFCEP" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTFEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLCodigoCliente2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jBuscarEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -237,7 +237,7 @@
             <Property name="text" type="java.lang.String" value="CNPJ:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFCPNJ">
+        <Component class="javax.swing.JTextField" name="jTFCNPJ">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
@@ -262,7 +262,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFCEP">
+        <Component class="javax.swing.JTextField" name="jTFEndereco">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>

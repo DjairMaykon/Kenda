@@ -36,11 +36,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JButton getjBCadastrarCliente() {
-        return jBCadastrarFuncionario;
+        return jBCadastrarCliente;
     }
 
     public JButton getjBCancelarCliente() {
-        return jBCancelarFuncionario;
+        return jBCancelarCliente;
     }
 
     public JButton getjBuscar() {
@@ -48,11 +48,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCPNJ() {
-        return jTFCPF;
+        return jTFCPNJ;
     }
 
     public JTextField getjTFCodigoCliente() {
-        return jTFCodigoFuncionario;
+        return jTFCodigoCliente;
     }
 
     public JTextField getjTFEmail() {
@@ -77,28 +77,28 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLCodigoFuncionario = new javax.swing.JLabel();
-        jTFCodigoFuncionario = new javax.swing.JTextField();
+        jLCodigoPedido = new javax.swing.JLabel();
+        jTFCodigoCliente = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLCodigoOS = new javax.swing.JLabel();
         jTFNome = new javax.swing.JTextField();
         jTFEmail = new javax.swing.JTextField();
         jLDescricao = new javax.swing.JLabel();
-        jBCadastrarFuncionario = new javax.swing.JButton();
-        jBCancelarFuncionario = new javax.swing.JButton();
+        jBCadastrarCliente = new javax.swing.JButton();
+        jBCancelarCliente = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
-        jTFCPF = new javax.swing.JTextField();
+        jTFCPNJ = new javax.swing.JTextField();
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
         jTFCEP = new javax.swing.JTextField();
         jLCodigoCliente2 = new javax.swing.JLabel();
         jBuscarEndereco = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLFoto = new javax.swing.JLabel();
-        jCBFoto = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLCodigoCliente3 = new javax.swing.JLabel();
-        jTFSalario = new javax.swing.JTextField();
+        jTFTelefone1 = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -106,12 +106,12 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLCodigoFuncionario.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoFuncionario.setLabelFor(jTFCodigoFuncionario);
-        jLCodigoFuncionario.setText("Código do Cliente:");
+        jLCodigoPedido.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLCodigoPedido.setLabelFor(jTFCodigoCliente);
+        jLCodigoPedido.setText("Código do Cliente:");
 
-        jTFCodigoFuncionario.setEditable(false);
-        jTFCodigoFuncionario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCodigoCliente.setEditable(false);
+        jTFCodigoCliente.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -126,17 +126,17 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Email:");
 
-        jBCadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
-        jBCadastrarFuncionario.setText("Cadastrar");
+        jBCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
+        jBCadastrarCliente.setText("Cadastrar");
 
-        jBCancelarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
-        jBCancelarFuncionario.setText("Cancelar");
+        jBCancelarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
+        jBCancelarCliente.setText("Cancelar");
 
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setLabelFor(jTFEmail);
         jLCodigoM.setText("CPF:");
 
-        jTFCPF.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCPNJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente1.setLabelFor(jTFEmail);
@@ -152,10 +152,15 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
 
         jBuscarEndereco.setText("Buscar");
 
-        jCBFoto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carregar Foto", "Tirar Foto" }));
-        jCBFoto.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carregar Foto", "Tirar Foto" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBFotoActionPerformed(evt);
+                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -166,16 +171,16 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCBFoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLFoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(jCBFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
@@ -183,7 +188,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLCodigoCliente3.setLabelFor(jTFEmail);
         jLCodigoCliente3.setText("Salario:");
 
-        jTFSalario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFTelefone1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -198,7 +203,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                             .addComponent(jLCodigoM)
                             .addComponent(jLDescricao)
                             .addComponent(jLCodigoOS)
-                            .addComponent(jLCodigoFuncionario)
+                            .addComponent(jLCodigoPedido)
                             .addComponent(jLCodigoCliente1)
                             .addComponent(jLCodigoCliente2)
                             .addComponent(jLCodigoCliente3))
@@ -211,22 +216,22 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                                             .addComponent(jTFTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                                             .addComponent(jTFNome, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTFEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTFCPF, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addComponent(jTFCPNJ, javax.swing.GroupLayout.Alignment.LEADING))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                                         .addComponent(jBuscarEndereco))
-                                    .addComponent(jTFSalario, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTFCodigoFuncionario))))
+                            .addComponent(jTFCodigoCliente))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBCancelarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBCancelarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBCadastrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -240,11 +245,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jBCadastrarFuncionario)
+                                        .addComponent(jBCadastrarCliente)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jBCancelarFuncionario))
+                                        .addComponent(jBCancelarCliente))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTFCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTFCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -259,7 +264,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                                                     .addComponent(jLDescricao))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(jTFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jTFCPNJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLCodigoM))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -273,9 +278,9 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                                             .addComponent(jBuscarEndereco))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTFSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLCodigoCliente3)))
-                            .addComponent(jLCodigoFuncionario))
+                            .addComponent(jLCodigoPedido))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -300,33 +305,41 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCBFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBFotoActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBFotoActionPerformed
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        // TODO add your handling code here:
+        
+        JDCarregarFoto c = new JDCarregarFoto(null, closable);
+        c.setVisible(true);
+        
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBCadastrarFuncionario;
-    private javax.swing.JButton jBCancelarFuncionario;
+    private javax.swing.JButton jBCadastrarCliente;
+    private javax.swing.JButton jBCancelarCliente;
     private javax.swing.JButton jBuscarEndereco;
-    private javax.swing.JComboBox<String> jCBFoto;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLCodigoCliente1;
     private javax.swing.JLabel jLCodigoCliente2;
     private javax.swing.JLabel jLCodigoCliente3;
-    private javax.swing.JLabel jLCodigoFuncionario;
     private javax.swing.JLabel jLCodigoM;
     private javax.swing.JLabel jLCodigoOS;
+    private javax.swing.JLabel jLCodigoPedido;
     private javax.swing.JLabel jLDescricao;
-    private javax.swing.JLabel jLFoto;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTFCEP;
-    private javax.swing.JTextField jTFCPF;
-    private javax.swing.JTextField jTFCodigoFuncionario;
+    private javax.swing.JTextField jTFCPNJ;
+    private javax.swing.JTextField jTFCodigoCliente;
     private javax.swing.JTextField jTFEmail;
     private javax.swing.JTextField jTFNome;
-    private javax.swing.JTextField jTFSalario;
     private javax.swing.JTextField jTFTelefone;
+    private javax.swing.JTextField jTFTelefone1;
     // End of variables declaration//GEN-END:variables
 }

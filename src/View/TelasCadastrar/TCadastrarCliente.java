@@ -28,7 +28,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCEP() {
-        return jTFCEP;
+        return jTFEndereco;
     }
 
     public JTextField getjTFNome() {
@@ -48,7 +48,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCPNJ() {
-        return jTFCPNJ;
+        return jTFCNPJ;
     }
 
     public JTextField getjTFCodigoCliente() {
@@ -60,7 +60,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFEndereco() {
-        return jTFCEP;
+        return jTFEndereco;
     }
 
     public JTextField getjTFTelefone() {
@@ -88,10 +88,10 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
         jBCadastrarCliente = new javax.swing.JButton();
         jBCancelarCliente = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
-        jTFCPNJ = new javax.swing.JTextField();
+        jTFCNPJ = new javax.swing.JTextField();
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
-        jTFCEP = new javax.swing.JTextField();
+        jTFEndereco = new javax.swing.JTextField();
         jLCodigoCliente2 = new javax.swing.JLabel();
         jBuscarEndereco = new javax.swing.JButton();
 
@@ -131,7 +131,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
         jLCodigoM.setLabelFor(jTFEmail);
         jLCodigoM.setText("CNPJ:");
 
-        jTFCPNJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCNPJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente1.setLabelFor(jTFEmail);
@@ -139,7 +139,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
 
         jTFTelefone.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        jTFCEP.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFEndereco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente2.setLabelFor(jTFEmail);
@@ -169,9 +169,9 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
                             .addComponent(jTFCodigoCliente, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTFNome)
                             .addComponent(jTFEmail)
-                            .addComponent(jTFCPNJ)
+                            .addComponent(jTFCNPJ)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTFCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                .addComponent(jTFEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jBuscarEndereco)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -210,7 +210,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
                                     .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFCPNJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoM))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -218,7 +218,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
                             .addComponent(jLCodigoCliente1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoCliente2)
                             .addComponent(jBuscarEndereco))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -257,10 +257,10 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTFCEP;
-    private javax.swing.JTextField jTFCPNJ;
+    private javax.swing.JTextField jTFCNPJ;
     private javax.swing.JTextField jTFCodigoCliente;
     private javax.swing.JTextField jTFEmail;
+    private javax.swing.JTextField jTFEndereco;
     private javax.swing.JTextField jTFNome;
     private javax.swing.JTextField jTFTelefone;
     // End of variables declaration//GEN-END:variables
