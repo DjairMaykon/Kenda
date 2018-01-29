@@ -47,7 +47,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
         jLSituacao = new javax.swing.JLabel();
         jCBSituacao = new javax.swing.JComboBox<>();
         jLData = new javax.swing.JLabel();
-        jDCDataDaProducao = new com.toedter.calendar.JDateChooser();
         jBSalvar = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
         jLCodigodaTinta = new javax.swing.JLabel();
@@ -104,8 +103,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
 
         jLData.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLData.setText("Data:");
-
-        jDCDataDaProducao.setEnabled(false);
 
         jBSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBSalvar.setText("Salvar");
@@ -172,7 +169,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTFCustoProducao, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jDCDataDaProducao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jCBSituacao, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -182,17 +178,17 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                                     .addComponent(jTFCodigoProducao, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jBAdicionarTinta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jBRemoverTinta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jSeparator1))
                         .addGap(10, 10, 10))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(jBCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -212,9 +208,7 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                             .addComponent(jTFCodigoProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoProducao5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDCDataDaProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLData))
+                        .addComponent(jLData)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTFCustoProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -360,7 +354,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBRemoverTinta;
     private javax.swing.JButton jBSalvar;
     private javax.swing.JComboBox<String> jCBSituacao;
-    private com.toedter.calendar.JDateChooser jDCDataDaProducao;
     private javax.swing.JLabel jLCodigoPedido;
     private javax.swing.JLabel jLCodigoProducao5;
     private javax.swing.JLabel jLCodigodaTinta;
