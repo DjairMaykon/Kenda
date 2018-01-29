@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package View.Login;
 
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
@@ -46,9 +46,6 @@ public class Login extends javax.swing.JFrame {
         this.jTFUsuario = jTFUsuario;
     }
     
-    
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,11 +78,6 @@ public class Login extends javax.swing.JFrame {
         jLCodigoPedido.setText("Usuário:");
 
         jTFUsuario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jTFUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFUsuarioActionPerformed(evt);
-            }
-        });
 
         jLCodigoOS.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLCodigoOS.setText("Senha:");
@@ -93,19 +85,8 @@ public class Login extends javax.swing.JFrame {
         jBLogin.setBackground(new java.awt.Color(255, 255, 255));
         jBLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jBLogin.setText(" Login ");
-        jBLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBLoginActionPerformed(evt);
-            }
-        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo Kenda-iloveimg-resized.png"))); // NOI18N
-
-        jPFSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPFSenhaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -175,18 +156,6 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBLoginActionPerformed
-
-    private void jTFUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFUsuarioActionPerformed
-
-    private void jPFSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPFSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPFSenhaActionPerformed
 
     /**
      * @param args the command line arguments

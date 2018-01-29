@@ -5,11 +5,8 @@
  */
 package View.Listar.Estoque;
 
-
-import View.Listar.Pedidos.*;
-import View.Listar.Tintas.*;
-import View.TelasCadastrar.*;
 import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -24,6 +21,18 @@ public class TListarEstoqueFornecedores extends javax.swing.JInternalFrame {
     public TListarEstoqueFornecedores() {
         initComponents();
         
+    }
+
+    public JButton getjBBusca() {
+        return jBBusca;
+    }
+
+    public JTextField getjTFListarEstoqueFornecedor() {
+        return jTFListarEstoqueFornecedor;
+    }
+
+    public JTable getjTListarEstoqueFornecedor() {
+        return jTListarEstoqueFornecedor;
     }
     
     /**
