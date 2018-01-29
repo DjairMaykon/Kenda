@@ -6,7 +6,6 @@
 package Model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -15,7 +14,7 @@ import java.sql.SQLException;
  * @author Kaione
  */
 public class Transportadoras {
-    private Connection con = null;
+    
     private String nome;
     private int codEnd;
     private String cnpj;
@@ -23,6 +22,7 @@ public class Transportadoras {
     private String unidadeDoFrete;
     private String telefone;
     private double frete;
+    private Connection con = null;
 
     public String getNome() {
         return nome;
@@ -79,11 +79,14 @@ public class Transportadoras {
     public void setFrete(double frete) {
         this.frete = frete;
     }
-        public void adicionar(){
-        
-        PreparedStatement pstmt = null;
+    
+    public void adicionar(){
+    
         String sql="INSERT INTO TRANSPORTADORAS(COD, TELEFONE, COD_END, FRETE, NOME, CNPJ, UNIDADE_DO_FRETE) VALUES(?,?,?,?,?,?,?)";
-        try {   
+        PreparedStatement pstmt = null;
+        
+        try {
+            
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(2,telefone);
@@ -93,33 +96,38 @@ public class Transportadoras {
             pstmt.setString(6,cnpj);
             pstmt.setString(7,unidadeDoFrete);
             pstmt.setInt(3,codEnd);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Transportadora\n" + ex);
         }
         
     }
     
     public void deletar(){
-        PreparedStatement pstmt = null;
+        
         String sql="DELETE FROM TRANSPORTADORAS WHERE COD=? ";
+        PreparedStatement pstmt = null;
+        
         try {
+            
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao deletar Transportadora\n" + ex);
         }
         
     }
     
     
     public void alterar(){
+        
+        String sql=" UPDATE TRANSPORTADORAS SET UNIDADE_DO_FRETE=?, TELEFONE=?, COD_END=?, FRETE=?, NOME=?, CNPJ=? WHERE COD=? ";
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM TRANSPORTADORAS SET UNIDADE_DO_FRETE=?, TELEFONE=?, COD_END=?, FRETE=?, NOME=?, CNPJ=? WHERE COD=? ";
+        
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
@@ -130,10 +138,10 @@ public class Transportadoras {
             pstmt.setString(5,nome);
             pstmt.setString(6,cnpj);
             pstmt.setInt(7, codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Transportadora\n" + ex);
         }
         
     }

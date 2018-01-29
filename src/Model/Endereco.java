@@ -95,7 +95,7 @@ public class Endereco {
             pstmt.setString(6,bairro);
             pstmt.setString(7,cep);
             pstmt.setInt(4,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
             System.out.println("Erro ao adicionar");
@@ -110,7 +110,7 @@ public class Endereco {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
             System.out.println("Erro ao excluir");
@@ -121,7 +121,7 @@ public class Endereco {
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM ENDERECO SET UF=?, CIDADE=?, RUA=?, NUMERO=?, BAIRRO=?,CEP=? WHERE COD=? ";
+        String sql=" UPDATE ENDERECO SET UF=?, CIDADE=?, RUA=?, NUMERO=?, BAIRRO=?,CEP=? WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
@@ -132,7 +132,7 @@ public class Endereco {
             pstmt.setString(5,bairro);
             pstmt.setString(6,cep);
             pstmt.setInt(7, codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
             System.out.println("Erro ao alterar");

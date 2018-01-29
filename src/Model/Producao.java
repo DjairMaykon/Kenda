@@ -70,7 +70,8 @@ public class Producao {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-     public void adicionar(){
+     
+    public void adicionar(){
         
         PreparedStatement pstmt = null;
         String sql="INSERT INTO PRODUCAO(COD, DATA, CUSTO, COD_PEDIDO, COD_FUNCIONARIO, SITUACAO) VALUES(?,?,?,?,?,?)";
@@ -83,10 +84,10 @@ public class Producao {
             pstmt.setInt(4,codigoPedido);
             pstmt.setInt(5,codigoFuncionario);
             pstmt.setString(7,situacao);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Producao/n" + ex);
         }
         
     }
@@ -98,10 +99,10 @@ public class Producao {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao deletar Producao/n" + ex);
         }
         
     }
@@ -109,7 +110,7 @@ public class Producao {
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM PRODUCAO DATA=?, CUSTO=?, COD_PEDIDO=?, COD_FUNCIONARIO=?, SITUACAO=? WHERE COD=? ";
+        String sql=" UPDATE PRODUCAO DATA=?, CUSTO=?, COD_PEDIDO=?, COD_FUNCIONARIO=?, SITUACAO=? WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
@@ -119,10 +120,10 @@ public class Producao {
             pstmt.setString(5,situacao);
             pstmt.setInt(6,codigo);
             pstmt.setInt(7, codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Producao/n" + ex);
         }
         
     }   

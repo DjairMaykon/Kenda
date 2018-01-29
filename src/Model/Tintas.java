@@ -6,7 +6,6 @@
 package Model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -59,13 +58,12 @@ public class Tintas {
     
         PreparedStatement pstmt = null;
         
-        String sql1 = "INSERT INTO TINTAS (cod, funcionalide, custo, cor) VALUES(?,?,?,?)"; // banco
-        String sql2 = "INSERT INTO NECESSITA (cod_tinta, cod_materia_prima, qtd_materia_prima) VALUES(?,?,?)";
+        String sql = "INSERT INTO TINTAS (cod, funcionalide, custo, cor) VALUES(?,?,?,?)"; // banco
         
         try {
             
             con = new ConnectionFactory().getConnection();
-            pstmt = con.prepareStatement(sql1);
+            pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo); //strings /\
             pstmt.setString(2,funcionalidade);
@@ -78,7 +76,7 @@ public class Tintas {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao adicionar Tintas\n" + ex);
             
         }   
         
@@ -108,17 +106,17 @@ public class Tintas {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO DELETAR\n" + ex);
+            throw new RuntimeException("Erro ao deletar Tintas\n" + ex);
             
         }   
         
     }
     
-     public void update(){
+     public void alterar(){
     
         PreparedStatement pstmt = null;
         
-        String sql1 = "UPDATE FROM TINTAS SET funcionalide=?, custo=?, cor=? WHERE cod = ?";
+        String sql1 = "UPDATE TINTAS SET funcionalide=?, custo=?, cor=? WHERE cod = ?";
      
         
         try {
@@ -136,7 +134,7 @@ public class Tintas {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao alterar Tintas\n" + ex);
             
         }   
         

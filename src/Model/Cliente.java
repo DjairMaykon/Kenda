@@ -131,7 +131,7 @@ public class Cliente {
     
         PreparedStatement pstmt = null;
         
-        String sql = "UPDATE FROM cliente SET telefone=?, email=?, cod_end=?, nome=?, cnpj=? WHERE cod = ?"; // banco 
+        String sql = "UPDATE cliente SET telefone=?, email=?, cod_end=?, nome=?, cnpj=? WHERE cod = ?"; // banco 
         
         try {
             

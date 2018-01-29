@@ -14,10 +14,11 @@ import java.sql.SQLException;
  * @author JFelipe
  */
 public class Usuario {  
-    private Connection con = null;
+    
     private String login;
     private String senha;
     private int nivelDeAcesso;
+    private Connection con = null;
 
     public String getLogin() {
         return login;
@@ -43,54 +44,61 @@ public class Usuario {
         this.nivelDeAcesso = nivelDeAcesso;
     }
     
-    
     public void adicionar(){
         
+        String sql="INSERT INTO usuario(login, senha, nivel_de_acesso) VALUES(?,?,?)";
         PreparedStatement pstmt = null;
-        String sql="INSERT INTO USUARIO(LOGIN, SENHA, NIVEL_DE_ACESSO) VALUES(?,?,?)";
+        
         try {
+            
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,login);
             pstmt.setString(2,senha);
             pstmt.setInt(3,nivelDeAcesso);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Usuário:\n"+ex);
         }
         
     }
     
     public void deletar(){
+        
+        String sql="DELETE FROM usuario WHERE login=? ";
         PreparedStatement pstmt = null;
-        String sql="DELETE FROM USUARIO WHERE LOGIN=? ";
+        
         try {
+            
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,login);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         }catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao deletar Usuário\n" + ex);
         }
         
     }
     
     
     public void alterar(){
+        
+        String sql=" UPDATE USUARIO SET  SENHA=?, NIVEL_DE_ACESSO=? WHERE LOGIN=? ";
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM USUARIO SET  SENHA=?, NIVEL_DE_ACESSO=? WHERE LOGIN=? ";
+        
         try {
+        
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,senha);
             pstmt.setInt(2,nivelDeAcesso);
             pstmt.setString(3, login);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Usuario\n" + ex);
         }
      
     

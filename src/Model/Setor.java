@@ -6,7 +6,6 @@
 package Model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -54,10 +53,10 @@ public class Setor {
             pstmt.setInt(1,codigo);
             pstmt.setString(2,descricao);
             pstmt.setString(3,nome);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Setor\n" + ex);
         }
         
     }
@@ -69,10 +68,10 @@ public class Setor {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao deletar Setor\n" + ex);
         }
         
     }
@@ -80,17 +79,17 @@ public class Setor {
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM SETOR SET DESCRICAO=?, NOME=? WHERE COD=? ";
+        String sql=" UPDATE SETOR SET DESCRICAO=?, NOME=? WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,descricao);
             pstmt.setString(2,nome);
             pstmt.setInt(3, codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Setor\n" + ex);
         }
      
     

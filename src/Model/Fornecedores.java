@@ -82,7 +82,6 @@ public class Fornecedores {
             pstmt.setString(6, cnpj);
             pstmt.setString(7, telefone);
             
-            
             pstmt.executeUpdate();
             
             
@@ -108,8 +107,7 @@ public class Fornecedores {
             pstmt.setInt(1, codigo);
             
             pstmt.executeUpdate();
-            
-            
+
         } catch (SQLException ex) {
             
             throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
@@ -122,7 +120,7 @@ public class Fornecedores {
     
         PreparedStatement pstmt = null;
         
-        String sql = "UPDATE FROM fornecedores SET cod_end=?, email=?, site=?, nome=?, cnpj=?, telefone=? WHERE cod = ?"; // banco  
+        String sql = "UPDATE fornecedores SET cod_end=?, email=?, site=?, nome=?, cnpj=?, telefone=? WHERE cod = ?"; // banco  
         
         try {
             

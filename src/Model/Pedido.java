@@ -88,6 +88,7 @@ public class Pedido {
     public void setCusto(double custo) {
         this.custo = custo;
     }
+    
     public void adicionar(){
         
         PreparedStatement pstmt = null;
@@ -103,10 +104,10 @@ public class Pedido {
             pstmt.setInt(6,codOS);
             pstmt.setInt(7,codFunc);
             pstmt.setString(8, descricao);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Pedido\n"+ex);
         }
         
     }
@@ -118,10 +119,10 @@ public class Pedido {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao deletar Pedido\n"+ex);
         }
         
     }
@@ -129,7 +130,7 @@ public class Pedido {
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM PEDIDO SET CUSTO=?, SITUACAO=?, DATA=?, COD_CLI=?, COD_OS=?, COD_FUNCIONARIO=?, DESCRICAO=? WHERE COD=? ";
+        String sql=" UPDATE PEDIDO SET CUSTO=?, SITUACAO=?, DATA=?, COD_CLI=?, COD_OS=?, COD_FUNCIONARIO=?, DESCRICAO=? WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
@@ -142,10 +143,10 @@ public class Pedido {
             pstmt.setInt(6,codFunc);
             pstmt.setString(7, descricao);
         
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Pedido\n"+ex);
         }
         
     }

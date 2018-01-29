@@ -53,7 +53,7 @@ public class MateriaPrima{
         this.custo = custo;
     }
     
-        public void adicionar(){
+    public void adicionar(){
         
         PreparedStatement pstmt = null;
         String sql="INSERT INTO MATERIA_PRIMA(COD, DESCRICAO, NOME, CUSTO) VALUES(?,?,?,?)";
@@ -64,10 +64,10 @@ public class MateriaPrima{
             pstmt.setString(3,nome);
             pstmt.setDouble(4,custo);
             pstmt.setInt(1,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Materia Prima\n"+ex);
         }
        
     }
@@ -79,10 +79,10 @@ public class MateriaPrima{
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao deletar Materia Prima\n"+ex);
         }
         
     }
@@ -90,7 +90,7 @@ public class MateriaPrima{
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM MATERIA_PRIMA SET DESCRICAO=?, NOME=?, CUSTO=? WHERE COD=? ";
+        String sql=" UPDATE MATERIA_PRIMA SET DESCRICAO=?, NOME=?, CUSTO=? WHERE COD=? ";
         try {
             con = new ConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
@@ -98,10 +98,10 @@ public class MateriaPrima{
             pstmt.setString(2,nome);
             pstmt.setInt(4, codigo);
             pstmt.setDouble(3,custo);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Materia Prima\n"+ex);
         }
         
     }

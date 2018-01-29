@@ -119,6 +119,8 @@ public class Funcionario {
             pstmt.setString(8, telefone);
             pstmt.setBlob(9, foto);
             
+            pstmt.execute();
+            
         } catch (SQLException ex) {
             throw new RuntimeException("Erro ao inserir\n"+ex);
         }
@@ -136,6 +138,8 @@ public class Funcionario {
             pstmt = con.prepareStatement(sql);
             
             pstmt.setInt(1, codigo);
+            
+            pstmt.execute();
             
         } catch (SQLException ex) {
             throw new RuntimeException("Erro ao deletar\n"+ex);
@@ -162,6 +166,8 @@ public class Funcionario {
             pstmt.setString(7, telefone);
             pstmt.setBlob(8, foto);
             pstmt.setInt(9, codigo);
+            
+            pstmt.execute();
             
         } catch (SQLException ex) {
             throw new RuntimeException("Erro ao inserir\n"+ex);
