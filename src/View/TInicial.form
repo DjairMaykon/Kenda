@@ -26,9 +26,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pedido"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMINovoPedidoActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMINovoProducao">
               <Properties>
@@ -37,9 +34,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Produ&#xe7;&#xe3;o"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMINovoProducaoActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMINovoExpedicao">
               <Properties>
@@ -48,9 +42,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Expedi&#xe7;&#xe3;o"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMINovoExpedicaoActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMINovoMateriaPrima">
               <Properties>
@@ -59,9 +50,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Materia Prima"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMINovoMateriaPrimaActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMINovoAvaliacaoDeTinta">
               <Properties>
@@ -70,9 +58,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Avalia&#xe7;&#xe3;o de Tinta"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMINovoAvaliacaoDeTintaActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -88,9 +73,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tinta"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMICadastrarTintaActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMICadastrarCliente">
               <Properties>
@@ -99,9 +81,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMICadastrarClienteActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMICadastrarFuncionario">
               <Properties>
@@ -110,9 +89,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMICadastrarFuncionarioActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMICadastrarTransportadora">
               <Properties>
@@ -121,9 +97,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Transportadora"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMICadastrarTransportadoraActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMICadastrarFornecedores">
               <Properties>
@@ -132,9 +105,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fornecedores"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMICadastrarFornecedoresActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMICadastrarFornecedores1">
               <Properties>
@@ -143,9 +113,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Setor"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMICadastrarFornecedores1ActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -377,9 +344,6 @@
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Barra de Acesso R&#xe1;pido"/>
               </Properties>
-              <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -566,12 +530,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>

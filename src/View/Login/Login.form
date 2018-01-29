@@ -141,9 +141,6 @@
                   <Font name="Arial" size="11" style="0"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFUsuarioActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLCodigoOS">
               <Properties>
@@ -163,9 +160,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value=" Login "/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBLoginActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
@@ -175,9 +169,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="jPFSenha">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPFSenhaActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
