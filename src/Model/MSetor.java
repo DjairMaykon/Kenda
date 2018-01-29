@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Kaione
  */
-public class Setor {
+public class MSetor {
     private Connection con = null;
     private String nome;
     private int codigo;
@@ -48,7 +48,7 @@ public class Setor {
         PreparedStatement pstmt = null;
         String sql="INSERT INTO SETOR(COD, DESCRICAO, NOME) VALUES(?,?,?)";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.setString(2,descricao);
@@ -65,7 +65,7 @@ public class Setor {
         PreparedStatement pstmt = null;
         String sql="DELETE FROM SETOR WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.executeUpdate();
@@ -81,7 +81,7 @@ public class Setor {
         PreparedStatement pstmt = null;
         String sql=" UPDATE SETOR SET DESCRICAO=?, NOME=? WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,descricao);
             pstmt.setString(2,nome);

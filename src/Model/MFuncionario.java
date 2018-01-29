@@ -14,7 +14,7 @@ import java.sql.SQLException;
  *
  * @author Djair Maykon
  */
-public class Funcionario {
+public class MFuncionario {
     
     private int codigo;
     private int codigoEnd;

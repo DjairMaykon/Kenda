@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class HistoricoDeAvaliacao {
+public class MHistoricoDeAvaliacao {
     private int codigo;
    private int codigoTinta;
     private int codigoFuncionario;
@@ -65,7 +65,7 @@ public class HistoricoDeAvaliacao {
         PreparedStatement pstmt = null;
         String sql="INSERT INTO historico_de_avaliacao(cod, cod_tinta, cod_funcionario, avaliacao, data) VALUES(?,?,?,?,?)";
         try {   
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.setInt(2,codigoTinta);
@@ -84,7 +84,7 @@ public class HistoricoDeAvaliacao {
         PreparedStatement pstmt = null;
         String sql="DELETE FROM historico_de_avaliacao WHERE cod=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.executeUpdate();
@@ -100,7 +100,7 @@ public class HistoricoDeAvaliacao {
         PreparedStatement pstmt = null;
         String sql=" UPDATE historico_de_avaliacao cod_tinta=?, cod_funcionario=?, avaliacao=?, data=? WHERE cod=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigoTinta);
             pstmt.setInt(2,codigoFuncionario);

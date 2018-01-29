@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 
 
-public class Alocado {
+public class MAlocado {
     private int codigoSetor;
     private String funcao;
     private int codigoFuncionario;
@@ -49,7 +49,7 @@ public class Alocado {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
             pstmt.setInt(1, codigoSetor); //strings /\
@@ -77,7 +77,7 @@ public class Alocado {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
             pstmt.setInt(1, codigoFuncionario);
@@ -106,7 +106,7 @@ public class Alocado {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
            //strings /\

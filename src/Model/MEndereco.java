@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Kaione
  */
-public class Endereco {
+public class MEndereco {
     private String cep; 
     private String uf;
     private String cidade;
@@ -86,7 +86,7 @@ public class Endereco {
         PreparedStatement pstmt = null;
         String sql="INSERT INTO ENDERECO(UF, CIDADE, RUA, COD, NUMERO, BAIRRO, CEP) VALUES(?,?,?,?,?,?,?)";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,uf);
             pstmt.setString(2,cidade);
@@ -107,7 +107,7 @@ public class Endereco {
         PreparedStatement pstmt = null;
         String sql="DELETE FROM ENDERECO WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.executeUpdate();
@@ -123,7 +123,7 @@ public class Endereco {
         PreparedStatement pstmt = null;
         String sql=" UPDATE ENDERECO SET UF=?, CIDADE=?, RUA=?, NUMERO=?, BAIRRO=?,CEP=? WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,uf);
             pstmt.setString(2,cidade);

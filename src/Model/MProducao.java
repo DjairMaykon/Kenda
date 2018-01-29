@@ -14,7 +14,8 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class Producao {
+public class MProducao {
+    
     private Connection con =null;
     private Date data;
     private String situacao;
@@ -76,7 +77,7 @@ public class Producao {
         PreparedStatement pstmt = null;
         String sql="INSERT INTO PRODUCAO(COD, DATA, CUSTO, COD_PEDIDO, COD_FUNCIONARIO, SITUACAO) VALUES(?,?,?,?,?,?)";
         try {   
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.setDate(2,data);
@@ -96,7 +97,7 @@ public class Producao {
         PreparedStatement pstmt = null;
         String sql="DELETE FROM PRODUCAO WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.executeUpdate();
@@ -112,7 +113,7 @@ public class Producao {
         PreparedStatement pstmt = null;
         String sql=" UPDATE PRODUCAO DATA=?, CUSTO=?, COD_PEDIDO=?, COD_FUNCIONARIO=?, SITUACAO=? WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setDate(1,data);
             pstmt.setDouble(2,custo);

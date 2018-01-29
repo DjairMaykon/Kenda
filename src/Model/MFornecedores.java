@@ -13,7 +13,8 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class Fornecedores {
+public class MFornecedores {
+    
     private int codigo;
     private String email;
     private String site;
@@ -71,7 +72,7 @@ public class Fornecedores {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo); //strings /\
@@ -87,7 +88,7 @@ public class Fornecedores {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("ERRO AO ADICIONAR/n" + ex);
             
         }   
         
@@ -101,7 +102,7 @@ public class Fornecedores {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo);
@@ -110,7 +111,7 @@ public class Fornecedores {
 
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("ERRO AO Deletar/n" + ex);
             
         }   
         
@@ -124,7 +125,7 @@ public class Fornecedores {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
            //strings /\
@@ -141,7 +142,7 @@ public class Fornecedores {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("ERRO AO Alterar/n" + ex);
             
         }   
         

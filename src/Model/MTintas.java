@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Kaione
  */
-public class Tintas {
+public class MTintas {
 
     private String funcionalidade;
     private int codigo;
@@ -62,7 +62,7 @@ public class Tintas {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo); //strings /\
@@ -92,7 +92,7 @@ public class Tintas {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
             pstmt.setInt(1, codigo);
@@ -121,7 +121,7 @@ public class Tintas {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
            //strings /\

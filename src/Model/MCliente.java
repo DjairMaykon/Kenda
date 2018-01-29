@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class Cliente {
+public class MCliente {
     private int codigo;
     private String telefone  ;
     private String email;
@@ -22,7 +22,7 @@ public class Cliente {
     private String cnpj;
     private Connection con;
 
-    public Cliente() {
+    public MCliente() {
         this.con = null;
     }
 
@@ -82,7 +82,7 @@ public class Cliente {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo); //strings /\
@@ -111,7 +111,7 @@ public class Cliente {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo);
@@ -135,7 +135,7 @@ public class Cliente {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setString(1, telefone);

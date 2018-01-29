@@ -5,17 +5,6 @@
  */
 package View;
 
-import View.TelasCadastrar.Funcionario.TCadastrarFuncionario;
-import View.TelasCadastrar.TCadastrarCliente;
-import View.TelasCadastrar.TCadastrarFornecedor;
-import View.TelasCadastrar.TCadastrarSetor;
-import View.TelasCadastrar.TCadastrarTinta;
-import View.TelasCadastrar.TCadastrarTransportadora;
-import View.TelasNovo.TNovoAvaliacaoTinta;
-import View.TelasNovo.TNovoProducao;
-import View.TelasNovo.TNovoExpedicao;
-import View.TelasNovo.TNovoMateriaPrima;
-import View.TelasNovo.TNovoPedido;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
@@ -187,10 +176,12 @@ public class TInicial extends javax.swing.JFrame {
         jDPPrincipalLayout.setHorizontalGroup(
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
+                .addContainerGap(195, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap(195, Short.MAX_VALUE))
+            .addGroup(jDPPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDPPrincipalLayout.setVerticalGroup(

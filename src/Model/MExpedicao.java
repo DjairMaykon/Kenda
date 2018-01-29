@@ -14,7 +14,8 @@ import java.sql.SQLException;
  *
  * @author Kaione
  */
-public class Expedicao {
+public class MExpedicao {
+    
     private Date dataEntra;
     private Date dataSai; 
     private String situacao;
@@ -99,7 +100,7 @@ public class Expedicao {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo); //strings /\
@@ -132,7 +133,7 @@ public class Expedicao {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
             pstmt.setInt(1, codigo);
@@ -156,7 +157,7 @@ public class Expedicao {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
         
            //strings /\

@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class Usuario {  
+public class MUsuario {  
     
     private String login;
     private String senha;
@@ -51,7 +51,7 @@ public class Usuario {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,login);
             pstmt.setString(2,senha);
@@ -71,7 +71,7 @@ public class Usuario {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,login);
             pstmt.executeUpdate();
@@ -90,7 +90,7 @@ public class Usuario {
         
         try {
         
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,senha);
             pstmt.setInt(2,nivelDeAcesso);

@@ -14,7 +14,8 @@ import java.sql.SQLException;
  *
  * @author Kaione
  */
-public class Pedido {
+public class MPedido {
+    
     private Connection con = null;
     private Date data; 
     private String situacao;
@@ -94,7 +95,7 @@ public class Pedido {
         PreparedStatement pstmt = null;
         String sql="INSERT INTO PEDIDO(COD, CUSTO, SITUACAO, DATA, COD_CLI, COD_OS, COD_FUNCIONARIO, DESCRICAO) VALUES(?,?,?,?,?,?,?,?)";
         try {   
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.setDouble(2,custo);
@@ -116,7 +117,7 @@ public class Pedido {
         PreparedStatement pstmt = null;
         String sql="DELETE FROM PEDIDO WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.executeUpdate();
@@ -132,7 +133,7 @@ public class Pedido {
         PreparedStatement pstmt = null;
         String sql=" UPDATE PEDIDO SET CUSTO=?, SITUACAO=?, DATA=?, COD_CLI=?, COD_OS=?, COD_FUNCIONARIO=?, DESCRICAO=? WHERE COD=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(8,codigo);
             pstmt.setDouble(1,custo);

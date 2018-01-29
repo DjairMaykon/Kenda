@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Kaione
  */
-public class Transportadoras {
+public class MTransportadoras {
     
     private String nome;
     private int codEnd;
@@ -87,7 +87,7 @@ public class Transportadoras {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(2,telefone);
             pstmt.setDouble(4,frete);
@@ -111,7 +111,7 @@ public class Transportadoras {
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigo);
             pstmt.executeUpdate();
@@ -129,7 +129,7 @@ public class Transportadoras {
         PreparedStatement pstmt = null;
         
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,unidadeDoFrete);
             pstmt.setString(2,telefone);

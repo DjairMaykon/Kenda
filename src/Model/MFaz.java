@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class Faz {
+public class MFaz {
     private int codigoProducao;
     private int codigoTinta;
     private int qtd;
@@ -48,7 +48,7 @@ public class Faz {
         PreparedStatement pstmt = null;
         String sql="INSERT INTO FAZ(COD_PRODUCAO, COD_TINTA, QTD) VALUES(?,?,?)";
         try {   
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigoProducao);
             pstmt.setInt(2,codigoTinta);
@@ -65,7 +65,7 @@ public class Faz {
         PreparedStatement pstmt = null;
         String sql="DELETE FROM FAZ WHERE COD_PRODUCAO=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigoProducao);
             pstmt.executeUpdate();
@@ -81,7 +81,7 @@ public class Faz {
         PreparedStatement pstmt = null;
         String sql=" UPDATE FROM FAZ COD_TINTA=?, QTD=? WHERE COD_PRODUCAO=? ";
         try {
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigoTinta);
             pstmt.setInt(2,qtd);

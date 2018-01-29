@@ -13,26 +13,19 @@ import java.sql.SQLException;
  *
  * @author JFelipe
  */
-public class Necessita {
-    private int codigoTinta;
-    private int qtd_materia_prima;
+public class MFornece {
+    private int codigoFornecedores;
     private int codigoMateriaPrima;
+    private double custo;
     private Connection con;
+    
 
-    public int getCodigoTinta() {
-        return codigoTinta;
+    public int getCodigoFornecedores() {
+        return codigoFornecedores;
     }
 
-    public void setCodigoTinta(int codigoTinta) {
-        this.codigoTinta = codigoTinta;
-    }
-
-    public int getQtd_materia_prima() {
-        return qtd_materia_prima;
-    }
-
-    public void setQtd_materia_prima(int qtd_materia_prima) {
-        this.qtd_materia_prima = qtd_materia_prima;
+    public void setCodigoFornecedores(int codigoFornecedores) {
+        this.codigoFornecedores = codigoFornecedores;
     }
 
     public int getCodigoMateriaPrima() {
@@ -43,20 +36,28 @@ public class Necessita {
         this.codigoMateriaPrima = codigoMateriaPrima;
     }
 
-    public void adicionar(){
+    public double getCusto() {
+        return custo;
+    }
+
+    public void setCusto(double custo) {
+        this.custo = custo;
+    }
+
+     public void adicionar(){
     
         PreparedStatement pstmt = null;
         
-        String sql1 = "INSERT INTO NECESSITA (cod_tinta, cod_materia_prima, qtd_materia_prima) VALUES(?,?,?)";
+        String sql1 = "INSERT INTO FORNECE (cod_fornecedores, cod_materia_prima, custo) VALUES(?,?,?)";
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
-            pstmt.setInt(1, codigoTinta); //strings /\
+            pstmt.setInt(1, codigoFornecedores); //strings /\
             pstmt.setInt(2,codigoMateriaPrima);
-            pstmt.setInt(3,qtd_materia_prima);
+            pstmt.setDouble(3,custo);
             pstmt.executeUpdate();
             
            
@@ -73,16 +74,16 @@ public class Necessita {
     
         PreparedStatement pstmt = null;
         
-        String sql1 = "DELETE FROM necessita WHERE cod_tinta = ?";
+        String sql1 = "DELETE FROM FORNECE WHERE cod_materia_prima = ?";
      
         // banco 
         
         try {
             
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
-            pstmt.setInt(1, codigoTinta);
+            pstmt.setInt(1, codigoMateriaPrima);
             
             pstmt.executeUpdate();
        
@@ -108,14 +109,14 @@ public class Necessita {
         try {
                     
             
-            String sql1 = "UPDATE NECESSITA SET qtd_materia_prima=? WHERE cod_tinta = ?";
+            String sql1 = "UPDATE FORNECE SET custo=? WHERE cod_materia_prima = ?";
 
-            con = new ConnectionFactory().getConnection();
+            con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
            //strings /\
-            pstmt.setInt(1,qtd_materia_prima);
-            pstmt.setInt(2,codigoTinta);//strings /\
+            pstmt.setDouble(1,custo);
+            pstmt.setInt(2,codigoMateriaPrima);//strings /\
            
             
             pstmt.executeUpdate();

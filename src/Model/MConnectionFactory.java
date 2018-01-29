@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Djair Maykon
  */
-public class ConnectionFactory {
+public class MConnectionFactory {
 
     final private String URL = "jdbc:firebirdsql:localhost/3050:C:\\Users\\Djair Maykon\\Desktop\\Kenda\\Banco de Dados\\BANCO KENDA.FDB";
     final private String USUARIO = "sysdba";
