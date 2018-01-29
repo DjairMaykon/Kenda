@@ -31,7 +31,7 @@ public class TListarPedidosProducao extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFEntrarNaPesquisa() {
-        return jTFEntrarNaPesquisa;
+        return jTFEntradaPesquisa;
     }
 
     public JTable getjTListarPedidoProducacao() {
@@ -51,7 +51,7 @@ public class TListarPedidosProducao extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTListarPedidoProducacao = new javax.swing.JTable();
-        jTFEntrarNaPesquisa = new javax.swing.JTextField();
+        jTFEntradaPesquisa = new javax.swing.JTextField();
         jBBusca = new javax.swing.JButton();
 
         setClosable(true);
@@ -81,7 +81,7 @@ public class TListarPedidosProducao extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTFEntrarNaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFEntradaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -91,7 +91,7 @@ public class TListarPedidosProducao extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFEntrarNaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFEntradaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBBusca))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,7 +122,7 @@ public class TListarPedidosProducao extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBBusca;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTFEntrarNaPesquisa;
+    private javax.swing.JTextField jTFEntradaPesquisa;
     private javax.swing.JTable jTListarPedidoProducacao;
     // End of variables declaration//GEN-END:variables
 }
