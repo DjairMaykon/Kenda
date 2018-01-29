@@ -5,16 +5,23 @@
  */
 package Model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author JFelipe
  */
 public class Fornecedores {
+    private int codigo;
     private String email;
     private String site;
     private String nome;
     private String cnpj;
     private String telefone;
+    private int codigoEndereco;
+    private Connection con;
 
     public String getEmail() {
         return email;
@@ -56,5 +63,90 @@ public class Fornecedores {
         this.telefone = telefone;
     }
     
+    public void adicionar(){
+    
+        PreparedStatement pstmt = null;
+        
+        String sql = "INSERT INTO cliente(cod, cod_end, email, site, nome, cnpj, telefone) VALUES(?,?,?,?,?,?,?)"; // banco
+        
+        try {
+            
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+        
+            pstmt.setInt(1, codigo); //strings /\
+            pstmt.setInt(2, codigoEndereco);
+            pstmt.setString(3, email);
+            pstmt.setString(4, site);
+            pstmt.setString(5, nome);
+            pstmt.setString(6, cnpj);
+            pstmt.setString(7, telefone);
+            
+            
+            pstmt.executeUpdate();
+            
+            
+        } catch (SQLException ex) {
+            
+            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            
+        }   
+        
+    }
+    
+    public void deletar(){
+    
+        PreparedStatement pstmt = null;
+        
+        String sql = "DELETE FROM fornecedores WHERE cod = ?"; // banco 
+        
+        try {
+            
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+        
+            pstmt.setInt(1, codigo);
+            
+            pstmt.executeUpdate();
+            
+            
+        } catch (SQLException ex) {
+            
+            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            
+        }   
+        
+    }
+    
+     public void update(){
+    
+        PreparedStatement pstmt = null;
+        
+        String sql = "UPDATE FROM fornecedores SET cod_end=?, email=?, site=?, nome=?, cnpj=?, telefone=? WHERE cod = ?"; // banco  
+        
+        try {
+            
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+        
+           //strings /\
+            pstmt.setInt(1, codigoEndereco);
+            pstmt.setString(2, email);
+            pstmt.setString(3, site);
+            pstmt.setString(4, nome);
+            pstmt.setString(5, cnpj);
+            pstmt.setString(6, telefone);
+            pstmt.setInt(7, codigo);
+            
+            pstmt.executeUpdate();
+            
+            
+        } catch (SQLException ex) {
+            
+            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            
+        }   
+        
+    }
     
 }
