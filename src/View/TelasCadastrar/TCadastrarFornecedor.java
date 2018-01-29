@@ -46,11 +46,11 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCPNJ() {
-        return jTFCPNJ;
+        return jTFCNPJ;
     }
 
     public void setjTFCPNJ(JTextField jTFCPNJ) {
-        this.jTFCPNJ = jTFCPNJ;
+        this.jTFCNPJ = jTFCPNJ;
     }
 
     public JTextField getjTFCodigoEndereco() {
@@ -122,7 +122,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         jBCadastrarFornecedor = new javax.swing.JButton();
         jBCancelarFornecedor = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
-        jTFCPNJ = new javax.swing.JTextField();
+        jTFCNPJ = new javax.swing.JTextField();
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
         jTFCodigoEndereco = new javax.swing.JTextField();
@@ -142,11 +142,6 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
 
         jTFCodigoFornecedor.setEditable(false);
         jTFCodigoFornecedor.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jTFCodigoFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFCodigoFornecedorActionPerformed(evt);
-            }
-        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -169,7 +164,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setText("CNPJ:");
 
-        jTFCPNJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCNPJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente1.setText("Telefone:");
@@ -179,7 +174,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         jTFCodigoEndereco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoCliente2.setText("Codigo de Endereço:");
+        jLCodigoCliente2.setText("Endereço:");
 
         jBuscarEndereco.setText("Buscar");
 
@@ -196,9 +191,6 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLCodigoCliente3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLCodigoM)
                             .addComponent(jLDescricao)
@@ -212,14 +204,16 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
                             .addComponent(jTFCodigoFornecedor, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTFNome)
                             .addComponent(jTFEmail)
-                            .addComponent(jTFCPNJ)
+                            .addComponent(jTFCNPJ)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jTFCodigoEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jBuscarEndereco))
                             .addComponent(jTFSite)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLCodigoCliente3)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -257,7 +251,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
                                     .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFCPNJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoM))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -269,7 +263,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
                             .addComponent(jLCodigoCliente2)
                             .addComponent(jBuscarEndereco))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTFSite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoCliente3))))
                 .addContainerGap(21, Short.MAX_VALUE))
@@ -295,10 +289,6 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTFCodigoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCodigoFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFCodigoFornecedorActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCadastrarFornecedor;
@@ -314,7 +304,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTFCPNJ;
+    private javax.swing.JTextField jTFCNPJ;
     private javax.swing.JTextField jTFCodigoEndereco;
     private javax.swing.JTextField jTFCodigoFornecedor;
     private javax.swing.JTextField jTFEmail;

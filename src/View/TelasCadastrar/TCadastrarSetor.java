@@ -47,11 +47,11 @@ public class TCadastrarSetor extends javax.swing.JInternalFrame {
     }
 
     public JTextArea getjTDescricao() {
-        return jTDescricao;
+        return jTADescricao;
     }
 
     public void setjTDescricao(JTextArea jTDescricao) {
-        this.jTDescricao = jTDescricao;
+        this.jTADescricao = jTDescricao;
     }
 
 
@@ -84,7 +84,7 @@ public class TCadastrarSetor extends javax.swing.JInternalFrame {
         jBCadastrarSetor = new javax.swing.JButton();
         jBCancelarSetor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTDescricao = new javax.swing.JTextArea();
+        jTADescricao = new javax.swing.JTextArea();
 
         setClosable(true);
         setIconifiable(true);
@@ -97,11 +97,6 @@ public class TCadastrarSetor extends javax.swing.JInternalFrame {
 
         jTFCodigoSetor.setEditable(false);
         jTFCodigoSetor.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jTFCodigoSetor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFCodigoSetorActionPerformed(evt);
-            }
-        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -119,9 +114,9 @@ public class TCadastrarSetor extends javax.swing.JInternalFrame {
         jBCancelarSetor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
         jBCancelarSetor.setText("Cancelar");
 
-        jTDescricao.setColumns(20);
-        jTDescricao.setRows(5);
-        jScrollPane1.setViewportView(jTDescricao);
+        jTADescricao.setColumns(20);
+        jTADescricao.setRows(5);
+        jScrollPane1.setViewportView(jTADescricao);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -201,10 +196,6 @@ public class TCadastrarSetor extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTFCodigoSetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCodigoSetorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFCodigoSetorActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCadastrarSetor;
@@ -216,7 +207,7 @@ public class TCadastrarSetor extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextArea jTDescricao;
+    private javax.swing.JTextArea jTADescricao;
     private javax.swing.JTextField jTFCodigoSetor;
     private javax.swing.JTextField jTFNome;
     // End of variables declaration//GEN-END:variables
