@@ -17,6 +17,7 @@ public class Necessita {
     private int codigoTinta;
     private int qtd_materia_prima;
     private int codigoMateriaPrima;
+    private Connection con;
 
     public int getCodigoTinta() {
         return codigoTinta;
@@ -42,5 +43,88 @@ public class Necessita {
         this.codigoMateriaPrima = codigoMateriaPrima;
     }
 
+    public void adicionar(){
     
+        PreparedStatement pstmt = null;
+        
+        String sql1 = "INSERT INTO NECESSITA (cod_tinta, cod_materia_prima, qtd_materia_prima) VALUES(?,?,?)";
+        
+        try {
+            
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql1);
+        
+            pstmt.setInt(1, codigoTinta); //strings /\
+            pstmt.setInt(2,codigoMateriaPrima);
+            pstmt.setInt(3,qtd_materia_prima);
+            pstmt.executeUpdate();
+            
+           
+            
+        } catch (SQLException ex) {
+            
+            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            
+        }   
+        
+    }
+    
+    public void deletar(){
+    
+        PreparedStatement pstmt = null;
+        
+        String sql1 = "DELETE FROM necessita WHERE cod_tinta = ?";
+     
+        // banco 
+        
+        try {
+            
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql1);
+        
+            pstmt.setInt(1, codigoTinta);
+            
+            pstmt.executeUpdate();
+       
+            
+            
+            
+            
+            
+        } catch (SQLException ex) {
+            
+            throw new RuntimeException("ERRO AO DELETAR\n" + ex);
+            
+        }   
+        
+    }
+    
+     public void alterar(){
+    
+        PreparedStatement pstmt = null;
+        
+     
+        
+        try {
+                    
+            
+            String sql1 = "UPDATE NECESSITA SET qtd_materia_prima=? WHERE cod_tinta = ?";
+
+            con = new ConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql1);
+        
+           //strings /\
+            pstmt.setInt(1,qtd_materia_prima);
+            pstmt.setInt(2,codigoTinta);//strings /\
+           
+            
+            pstmt.executeUpdate();
+            
+        } catch (SQLException ex) {
+            
+            throw new RuntimeException("ERRO ao alterar\n" + ex);
+            
+        }   
+        
+    }
 }
