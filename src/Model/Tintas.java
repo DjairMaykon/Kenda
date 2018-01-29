@@ -55,7 +55,7 @@ public class Tintas {
     }
     
     
-     public void adicionar(int materiaPrimaQtd[][], int qtd){
+     public void adicionar(){
     
         PreparedStatement pstmt = null;
         
@@ -74,16 +74,7 @@ public class Tintas {
             
             pstmt.executeUpdate();
             
-            
-            for(int i = 0; i < qtd; i++){
-                
-                pstmt = con.prepareStatement(sql2);
-                pstmt.setInt(1, codigo);
-                pstmt.setInt(2, materiaPrimaQtd[i][0]);
-                pstmt.setInt(3, materiaPrimaQtd[i][1]);
-                pstmt.executeUpdate();
-                
-            }
+           
             
         } catch (SQLException ex) {
             
@@ -98,7 +89,7 @@ public class Tintas {
         PreparedStatement pstmt = null;
         
         String sql1 = "DELETE FROM tintas WHERE cod = ?";
-        String sql2 = "DELETE FROM necessita WHERE cod_tinta = ?";
+     
         // banco 
         
         try {
@@ -109,9 +100,7 @@ public class Tintas {
             pstmt.setInt(1, codigo);
             
             pstmt.executeUpdate();
-            pstmt = con.prepareStatement(sql2);
-            pstmt.setInt(1, codigo);
-            pstmt.executeUpdate();
+       
             
             
             
@@ -125,12 +114,12 @@ public class Tintas {
         
     }
     
-     public void update(int materiaPrimaQtd[][], int qtd){
+     public void update(){
     
         PreparedStatement pstmt = null;
         
         String sql1 = "UPDATE FROM TINTAS SET funcionalide=?, custo=?, cor=? WHERE cod = ?";
-        String sql2 = "UPDATE FROM necessita SET quantidade=? where cod_tinta = ?";// banco  
+     
         
         try {
             
@@ -144,19 +133,6 @@ public class Tintas {
             pstmt.setDouble(2, custo);
             
             pstmt.executeUpdate();
-            
-            
-             for(int i = 0; i < qtd; i++){
-                
-                pstmt = con.prepareStatement(sql2);
-                pstmt.setInt(1, materiaPrimaQtd[i][2]);
-                pstmt.setInt(2,codigo);
-                pstmt.executeUpdate();
-                
-            }
-            
-            
-            
             
         } catch (SQLException ex) {
             
