@@ -14,9 +14,24 @@ import View.Login.TLogin;
  */
 public class ControleLogin {
     
-    private TLogin telaLogin = new TLogin();
-    private MUsuario moodeloUsuario = new MUsuario();
+    private TLogin telaLogin;
+    private MUsuario modeloUsuario;
+    private ControleToolTip toolTip;
+
+    public ControleLogin() {
+        
+        this.telaLogin = new TLogin();
+        this.modeloUsuario = new MUsuario();
+        toolTip = new ControleToolTip();
+        
+    }
     
-    
+    public MUsuario inicia(){
+        
+        telaLogin.setVisible(true);
+        
+        return modeloUsuario;
+        
+    }
     
 }
