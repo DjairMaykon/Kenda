@@ -32,7 +32,7 @@ public class TListarExpedicaoFinalizados extends javax.swing.JInternalFrame {
     }
 
     public JTable getjTListarExpedicaoEmAndamento() {
-        return jTListarExpedicaoEmAndamento;
+        return jTListarExpedicaoFinalizados;
     }
     
     /**
@@ -46,7 +46,7 @@ public class TListarExpedicaoFinalizados extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTListarExpedicaoEmAndamento = new javax.swing.JTable();
+        jTListarExpedicaoFinalizados = new javax.swing.JTable();
         jTFEntradaPesquisa = new javax.swing.JTextField();
         jBBuscar = new javax.swing.JButton();
 
@@ -56,15 +56,15 @@ public class TListarExpedicaoFinalizados extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTListarExpedicaoEmAndamento.setModel(new javax.swing.table.DefaultTableModel(
+        jTListarExpedicaoFinalizados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Codigo Expedicao", "Codigo Pedido", "Codigo Transportadora", "Descricao", "Data de Saida", "Data de Entrega", "Situacao", "Custo"
+                "Codigo Expediçãoo", "Codigo Pedido", "Codigo Transportadora", "Descrição", "Data de Saida", "Data de Entrega", "Situação", "Custo"
             }
         ));
-        jScrollPane1.setViewportView(jTListarExpedicaoEmAndamento);
+        jScrollPane1.setViewportView(jTListarExpedicaoFinalizados);
 
         jBBuscar.setText("Buscar");
 
@@ -119,6 +119,6 @@ public class TListarExpedicaoFinalizados extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTFEntradaPesquisa;
-    private javax.swing.JTable jTListarExpedicaoEmAndamento;
+    private javax.swing.JTable jTListarExpedicaoFinalizados;
     // End of variables declaration//GEN-END:variables
 }

@@ -57,7 +57,7 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo Expedicao", "Codigo Pedido", "Codigo Transportadora", "Descricao", "Data de Saida", "Data de Entrega", "Situacao", "Custo"
+                "Codigo Expedição", "Codigo Pedido", "Codigo Transportadora", "Descrição", "Data de Saida", "Data de Entrega", "Situação", "Custo"
             }
         ));
         jScrollPane1.setViewportView(jTListarExpedicaoEmAndamento);
