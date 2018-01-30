@@ -5,7 +5,6 @@
  */
 package Control;
 import Model.MEndereco;
-import Model.MFornecedores;
 import Model.MFuncionario;
 import View.TelasCadastrar.Funcionario.TCadastrarFuncionario;
 import java.awt.event.ActionEvent;
@@ -59,7 +58,7 @@ public class ControleCadastrarFuncionario {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                MEndereco end = MEndereco.buscarEndereco(telaCadastrarFuncionario.getjTFCodigoCliente().getText());
+                MEndereco end = MEndereco.buscarEndereco(telaCadastrarFuncionario.getjTFEndereco().getText());
                 
                 JOptionPane.showMessageDialog(null, "CEP: "+end.getCep()+"\n"+
                                               "UF: "+end.getUf() + "\n"+
@@ -91,7 +90,6 @@ public class ControleCadastrarFuncionario {
         modeloFuncionario.setEmail(telaCadastrarFuncionario.getjTFEmail().getText());
         modeloFuncionario.setNome(telaCadastrarFuncionario.getjTFNome().getText());
         modeloFuncionario.setTelefone(telaCadastrarFuncionario.getjTFTelefone().getText());
-        modeloFuncionario.setCodigoEnd(telaCadastrarFuncionario.getjTFEndereco().getText());
         modeloFuncionario.adicionar();
         
         telaCadastrarFuncionario.dispose();

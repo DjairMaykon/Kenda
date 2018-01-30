@@ -23,6 +23,10 @@ public class MMateriaPrima{
     private String nome;
     private double custo;
 
+    public MMateriaPrima() {
+        
+    }
+
     public int getCodigo() {
         return codigo;
     }
@@ -35,10 +39,9 @@ public class MMateriaPrima{
         return descricao;
     }
 
-    public MMateriaPrima(int codigo, String descricao, String nome, double custo) {
+    public MMateriaPrima(int codigo, String descricao, double custo) {
         this.codigo = codigo;
         this.descricao = descricao;
-        this.nome = nome;
         this.custo = custo;
     }
 
@@ -65,13 +68,12 @@ public class MMateriaPrima{
     public void adicionar(){
         
         PreparedStatement pstmt = null;
-        String sql="INSERT INTO MATERIA_PRIMA(COD, DESCRICAO, NOME, CUSTO) VALUES(?,?,?,?)";
+        String sql="INSERT INTO MATERIA_PRIMA(COD, DESCRICAO, CUSTO) VALUES(?,?,?)";
         try {   
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(2,descricao);
-            pstmt.setString(3,nome);
-            pstmt.setDouble(4,custo);
+            pstmt.setDouble(3,custo);
             pstmt.setInt(1,codigo);
             pstmt.executeUpdate();
             
@@ -99,14 +101,13 @@ public class MMateriaPrima{
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE MATERIA_PRIMA SET DESCRICAO=?, NOME=?, CUSTO=? WHERE COD=? ";
+        String sql=" UPDATE MATERIA_PRIMA SET DESCRICAO=?, CUSTO=? WHERE COD=? ";
         try {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,descricao);
-            pstmt.setString(2,nome);
             pstmt.setInt(4, codigo);
-            pstmt.setDouble(3,custo);
+            pstmt.setDouble(2,custo);
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -132,10 +133,9 @@ public class MMateriaPrima{
                 
                 int codigo1 = rs.getInt("cod");
                 String descricao1 = rs.getString("descricao");
-                String nome1 = rs.getString("nome");
                 Double custo1 = rs.getDouble("custo");
                 
-                MMateriaPrima u1 = new MMateriaPrima(codigo1, descricao1, nome1, custo1);
+                MMateriaPrima u1 = new MMateriaPrima(codigo1, descricao1, custo1);
                 materias.add(u1);
             }
             

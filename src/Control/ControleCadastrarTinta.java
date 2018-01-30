@@ -134,7 +134,16 @@ public class ControleCadastrarTinta {
         modeloTinta.setCor(telaCadastrarTinta.getjTFCor().getText());
         modeloTinta.adicionar();
   
+        DefaultTableModel m = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
         
+        for(int i = 0; i < m.getRowCount(); i++){
+            
+            modeloNecessita.setCodigoMateriaPrima((int) m.getValueAt(i, 0));
+            modeloNecessita.setCodigoTinta(modeloTinta.getCodTinta());
+            modeloNecessita.setQtd_materia_prima((int) m.getValueAt(i, 2));
+            modeloNecessita.adicionar();
+            
+        }
         
         telaCadastrarTinta.dispose();
         

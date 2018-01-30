@@ -30,7 +30,7 @@ public class MFuncionario {
     private Connection con = null;
 
     public MFuncionario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
     public int getCodigo() {

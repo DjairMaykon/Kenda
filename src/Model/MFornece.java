@@ -20,6 +20,10 @@ public class MFornece {
     private int codigoMateriaPrima;
     private double custo;
     private Connection con;
+
+    public MFornece() {
+    
+    }
     
 
     public int getCodigoFornecedores() {
