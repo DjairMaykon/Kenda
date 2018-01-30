@@ -60,12 +60,23 @@ class ControleTInicial {
             }
         });
            
-            telaInicial.getjMICadastrarFornecedores().addActionListener(new ActionListener() {
+           
+            
+             telaInicial.getjMICadastrarFuncionario().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMICadastrarFuncionario(e);
+            }
+        });
+             
+               telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarSetor(e);
             }
         });
+            
+           
            
          
 
@@ -118,6 +129,14 @@ class ControleTInicial {
         ControleCadastrarTransportadora cCadastrarTransportadora = new ControleCadastrarTransportadora();
         telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getCadastrarTransportadora());
         cCadastrarTransportadora.getCadastrarTransportadora().setVisible(true);
+        
+    }
+          
+            public void acaoMICadastrarFuncionario(ActionEvent evt){
+        
+        ControleCadastrarFuncionario cCadastrarFuncionario = new ControleCadastrarFuncionario();
+        telaInicial.getjDPPrincipal().add(cCadastrarFuncionario.getCadastrarFuncionario());
+        cCadastrarFuncionario.getCadastrarFuncionario().setVisible(true);
         
     }
     
