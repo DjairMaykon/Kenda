@@ -31,6 +31,44 @@ class ControleTInicial {
                 acaoMINovoPedido(e);
             }
         });
+        
+        telaInicial.getjMICadastrarCliente().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMICadastrarCliente(e);
+            }
+        });
+        
+       
+         
+          telaInicial.getjMICadastrarTinta().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMICadastrarTinta(e);
+            }
+        });
+           telaInicial.getjMICadastrarTransportadora().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMICadastrarTransportadora(e);
+            }
+        });
+           telaInicial.getjMICadastrarFornecedores().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMICadastrarFornecedor(e);
+            }
+        });
+           
+            telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMICadastrarFornecedor(e);
+            }
+        });
+           
+         
+
 
     }
     
@@ -41,5 +79,47 @@ class ControleTInicial {
         cNovoPedido.getTelaNovoPedido().setVisible(true);
         
     }
+    
+    public void acaoMICadastrarCliente(ActionEvent evt){
+        
+        ControleCadastrarCliente cCadastrarCliente = new ControleCadastrarCliente();
+        telaInicial.getjDPPrincipal().add(cCadastrarCliente.getCadastrarCliente());
+        cCadastrarCliente.getCadastrarCliente().setVisible(true);
+        
+    }
+    
+    
+     public void acaoMICadastrarSetor(ActionEvent evt){
+        
+        ControleCadastrarSetor cCadastrarSetor = new ControleCadastrarSetor();
+        telaInicial.getjDPPrincipal().add(cCadastrarSetor.getCadastrarSetor());
+        cCadastrarSetor.getCadastrarSetor().setVisible(true);
+        
+    }
+     
+     public void acaoMICadastrarTinta(ActionEvent evt){
+        
+        ControleCadastrarTinta cCadastrarTinta = new ControleCadastrarTinta();
+        telaInicial.getjDPPrincipal().add(cCadastrarTinta.getCadastrarTinta());
+        cCadastrarTinta.getCadastrarTinta().setVisible(true);
+        
+    }
+     
+         public void acaoMICadastrarFornecedor(ActionEvent evt){
+        
+        ControleCadastrarFornecedor cCadastrarFornecedor = new ControleCadastrarFornecedor();
+        telaInicial.getjDPPrincipal().add(cCadastrarFornecedor.getCadastrarFornecedor());
+        cCadastrarFornecedor.getCadastrarFornecedor().setVisible(true);
+        
+    }
+    
+          public void acaoMICadastrarTransportadora(ActionEvent evt){
+        
+        ControleCadastrarTransportadora cCadastrarTransportadora = new ControleCadastrarTransportadora();
+        telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getCadastrarTransportadora());
+        cCadastrarTransportadora.getCadastrarTransportadora().setVisible(true);
+        
+    }
+    
     
 }
