@@ -53,6 +53,7 @@ public class TListarExpedicaoTransportadora extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setTitle("Lista de Expedição em Transporte");
 
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

@@ -48,6 +48,8 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setResizable(true);
+        setTitle("Lista de Expedição em Andamento");
 
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

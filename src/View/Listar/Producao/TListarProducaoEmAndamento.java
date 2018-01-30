@@ -56,6 +56,7 @@ public class TListarProducaoEmAndamento extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setTitle("Listar de Produção em Andamento");
 
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
