@@ -39,8 +39,6 @@ class ControleTInicial {
             }
         });
         
-       
-         
           telaInicial.getjMICadastrarTinta().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
