@@ -5,20 +5,30 @@
  */
 package Control;
 
+import View.TInicial;
+
 /**
  *
  * @author Djair Maykon
  */
 public class ControlePrincipal {
 
+    private static ControleLogin cLogin;
+    private static ControleTInicial cTInicial;
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        cLogin = new ControleLogin();
+        
+    }
+
+    public static void iniciar() {
         // TODO code application logic here
     
-        ControleLogin cLogin = new ControleLogin();
-        
+        cTInicial = new ControleTInicial(cLogin.getModeloUsuario());
         
     }
     

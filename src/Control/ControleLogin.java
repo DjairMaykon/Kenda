@@ -61,11 +61,20 @@ public class ControleLogin {
         if(modeloUsuario != null && senha.equals(modeloUsuario.getSenha())){
             
             validado = true;
-            JOptionPane.showMessageDialog(null, "ok");
+            JOptionPane.showMessageDialog(null, "Usuario Válido");
             telaLogin.dispose();
+            ControlePrincipal.iniciar();
             
         }
         
+    }
+
+    public MUsuario getModeloUsuario() {
+        return modeloUsuario;
+    }
+    
+    public boolean isValidado() {
+        return validado;
     }
     
 }

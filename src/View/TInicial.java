@@ -163,6 +163,8 @@ public class TInicial extends javax.swing.JFrame {
                 .addGap(9, 9, 9))
         );
 
+        jDPPrincipal.setBackground(new java.awt.Color(57, 93, 117));
+
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("© M.K. Corporation");
 
@@ -431,10 +433,6 @@ public class TInicial extends javax.swing.JFrame {
 
     public JCheckBoxMenuItem getjCBMIVizualisarBarraDeAcessoRapido() {
         return jCBMIVizualisarBarraDeAcessoRapido;
-    }
-
-    public JDesktopPane getjDesktopPane1() {
-        return jDPPrincipal;
     }
 
     public JMenuBar getjMBTelaInicial() {
