@@ -70,6 +70,15 @@ public class ControleCadastrarFornecedor {
             }
         });
         
+        telaCadastrarFornecedor.getjBCancelarFornecedor().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              
+                cancelarCadastro();
+              
+            }
+        });
+        
       
     }
     

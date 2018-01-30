@@ -22,6 +22,10 @@ public class MNecessita {
     private int codigoMateriaPrima;
     private Connection con;
 
+    public MNecessita() {
+        
+    }
+
     public int getCodigoTinta() {
         return codigoTinta;
     }

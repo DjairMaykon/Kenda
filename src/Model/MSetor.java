@@ -21,6 +21,10 @@ public class MSetor {
     private int codigo;
     private String descricao;
 
+    public MSetor() {
+        
+    }
+
     public String getNome() {
         return nome;
     }

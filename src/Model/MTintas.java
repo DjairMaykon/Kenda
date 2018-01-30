@@ -23,6 +23,10 @@ public class MTintas {
     private double custo;
     private Connection con;
 
+    public MTintas() {
+       
+    }
+
     public String getFuncionalidade() {
         return funcionalidade;
     }
@@ -182,7 +186,13 @@ public class MTintas {
         return tintas;
         
     }
-    
 
-   
+    public void setCodigo(int i) {
+        this.codigo = i;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+    
 }
