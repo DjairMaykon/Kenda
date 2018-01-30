@@ -65,10 +65,11 @@ public class ControleLogin {
             telaLogin.dispose();
             ControlePrincipal.iniciar();
             
-        }
+        }else{    
         
-        else    
             JOptionPane.showMessageDialog(null, "ACESSO IMPOSSIBILITADO, LOGIN ERRADO");
+        
+        }
         
     }
 

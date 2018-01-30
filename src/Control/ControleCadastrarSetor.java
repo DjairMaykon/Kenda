@@ -10,6 +10,9 @@ import View.TelasCadastrar.TCadastrarSetor;
  * @author Matheus
  */
 public class ControleCadastrarSetor {
+    
     private TCadastrarSetor cadastrarSetor= new TCadastrarSetor(); 
+    
+    
     
 }
