@@ -8,7 +8,9 @@ package Model;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -89,6 +91,18 @@ public class MFuncionario {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public MFuncionario(int codigo, int codigoEnd, String email, double salario, String login, String nome, String cpf, String telefone, InputStream foto) {
+        this.codigo = codigo;
+        this.codigoEnd = codigoEnd;
+        this.email = email;
+        this.salario = salario;
+        this.login = login;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.foto = foto;
     }
 
     public InputStream getFoto() {
@@ -172,6 +186,44 @@ public class MFuncionario {
         } catch (SQLException ex) {
             throw new RuntimeException("Erro ao inserir\n"+ex);
         }
+        
+    }
+    
+     public ArrayList<MFuncionario> listar(){
+        
+        ArrayList<MFuncionario> funcionario = new ArrayList<>();
+        String sql="SELECT * FROM FUNCIONARIO";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                int codigo1 = rs.getInt("cod");
+                int codigoEnd1 = rs.getInt("cod_end");
+                String email1 = rs.getString("email");
+                Double salario1 = rs.getDouble("salario");
+                String login1 = rs.getString("login");
+                String nome1 = rs.getString("nome");
+                String cpf1 = rs.getString("cpf");
+                String telefone1 = rs.getString("telefone");
+                InputStream foto1 = rs.getBlob("foto").getBinaryStream();
+                
+                
+                MFuncionario u1 = new MFuncionario(codigo1, codigoEnd1, email1, salario1, login1, nome1, cpf1, telefone1, foto1);
+                funcionario.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar Funcionario\n" + ex);
+        }
+        
+        return funcionario;
         
     }
     

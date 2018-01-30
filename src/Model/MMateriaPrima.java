@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 /**
@@ -31,6 +33,13 @@ public class MMateriaPrima{
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public MMateriaPrima(int codigo, String descricao, String nome, double custo) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.nome = nome;
+        this.custo = custo;
     }
 
     public void setDescricao(String descricao) {
@@ -103,6 +112,38 @@ public class MMateriaPrima{
         } catch (SQLException ex) {
             System.out.println("Erro ao alterar Materia Prima\n"+ex);
         }
+        
+    }
+    
+    public ArrayList<MMateriaPrima> listar(){
+        
+        ArrayList<MMateriaPrima> materias = new ArrayList<>();
+        String sql="SELECT * FROM MATERIA_PRIMA";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                int codigo1 = rs.getInt("cod");
+                String descricao1 = rs.getString("descricao");
+                String nome1 = rs.getString("nome");
+                Double custo1 = rs.getDouble("custo");
+                
+                MMateriaPrima u1 = new MMateriaPrima(codigo1, descricao1, nome1, custo1);
+                materias.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar MateriaPrima\n" + ex);
+        }
+        
+        return materias;
         
     }
 }

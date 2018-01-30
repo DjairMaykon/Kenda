@@ -8,7 +8,9 @@ package Model;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -40,6 +42,17 @@ public class MExpedicao {
 
     public void setDataSai(Date dataSai) {
         this.dataSai = dataSai;
+    }
+
+    public MExpedicao(Date dataEntra, Date dataSai, String situacao, int codigo, int codPed, int codTransp, String descricao, double custo) {
+        this.dataEntra = dataEntra;
+        this.dataSai = dataSai;
+        this.situacao = situacao;
+        this.codigo = codigo;
+        this.codPed = codPed;
+        this.codTransp = codTransp;
+        this.descricao = descricao;
+        this.custo = custo;
     }
 
     public String getSituacao() {
@@ -178,6 +191,42 @@ public class MExpedicao {
             throw new RuntimeException("ERRO AO Alterar\n" + ex);
             
         }   
+        
+    }
+     
+     public ArrayList<MExpedicao> listar(){
+        
+        ArrayList<MExpedicao> expedicoes = new ArrayList<>();
+        String sql="SELECT * FROM EXPEDICAO";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                Date dataEntra1 = rs.getDate("data_de_entrega");
+                Date dataSai1 = rs.getDate("data_de_saida");
+                String situacao1 = rs.getString("situacao");
+                int codigo1 = rs.getInt("cod");
+                int codPed1 = rs.getInt("cod_pedido");
+                int codTransp1 = rs.getInt("cod_transportadoras");
+                String descricao1 = rs.getString("descricao");         
+                double custo1 = rs.getDouble("custo");
+                
+                MExpedicao u1 = new MExpedicao(dataEntra1, dataSai1, situacao1, codigo1, codPed1, codTransp1, descricao1, custo1);
+                expedicoes.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao alterar Usuario\n" + ex);
+        }
+        
+        return expedicoes;
         
     }
 

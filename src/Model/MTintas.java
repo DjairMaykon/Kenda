@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -43,6 +45,13 @@ public class MTintas {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    public MTintas(String funcionalidade, int codigo, String cor, double custo) {
+        this.funcionalidade = funcionalidade;
+        this.codigo = codigo;
+        this.cor = cor;
+        this.custo = custo;
     }
 
     public double getCusto() {
@@ -137,6 +146,40 @@ public class MTintas {
             throw new RuntimeException("Erro ao alterar Tintas\n" + ex);
             
         }   
+        
+    }
+     
+        public ArrayList<MTintas> listar(){
+        
+        ArrayList<MTintas> tintas = new ArrayList<>();
+        String sql="SELECT * FROM TINTAS";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                String funcionalidade1 = rs.getString("funcionalidade");        
+                int codigo1 = rs.getInt("cod");
+                String cor1 = rs.getString("cor");
+                Double custo1 = rs.getDouble("custo");
+                
+                
+                
+                MTintas u1 = new MTintas(funcionalidade1, codigo1, cor1, custo1);
+                tintas.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar Tintas\n" + ex);
+        }
+        
+        return tintas;
         
     }
     

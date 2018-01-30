@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -29,6 +31,12 @@ public class MSetor {
 
     public int getCodigo() {
         return codigo;
+    }
+
+    public MSetor(String nome, int codigo, String descricao) {
+        this.nome = nome;
+        this.codigo = codigo;
+        this.descricao = descricao;
     }
 
     public void setCodigo(int codigo) {
@@ -92,7 +100,38 @@ public class MSetor {
             System.out.println("Erro ao alterar Setor\n" + ex);
         }
      
+    }
     
-    
-}
+    public ArrayList<MSetor> listar(){
+        
+        ArrayList<MSetor> setam = new ArrayList<>();
+        String sql="SELECT * FROM SETOR";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                String nome1 = rs.getString("nome");        
+                int codigo1 = rs.getInt("cod");
+                String descricao1 = rs.getString("descricao");
+                
+                
+                
+                MSetor u1 = new MSetor(nome1, codigo1, descricao1);
+                setam.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar Setor\n" + ex);
+        }
+        
+        return setam;
+        
+    }
 }

@@ -194,7 +194,7 @@ public class MCliente {
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Usuario\n" + ex);
+            System.out.println("Erro ao alterar Cliente\n" + ex);
         }
         
         return clientes;

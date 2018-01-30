@@ -180,7 +180,7 @@ public class MEndereco {
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Usuario\n" + ex);
+            System.out.println("Erro ao alterar Endereco\n" + ex);
         }
         
         return enderecos;

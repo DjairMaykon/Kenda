@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -30,6 +32,12 @@ public class MFornece {
 
     public int getCodigoMateriaPrima() {
         return codigoMateriaPrima;
+    }
+
+    public MFornece(int codigoFornecedores, int codigoMateriaPrima, double custo) {
+        this.codigoFornecedores = codigoFornecedores;
+        this.codigoMateriaPrima = codigoMateriaPrima;
+        this.custo = custo;
     }
 
     public void setCodigoMateriaPrima(int codigoMateriaPrima) {
@@ -126,6 +134,37 @@ public class MFornece {
             throw new RuntimeException("ERRO ao alterar\n" + ex);
             
         }   
+        
+    }
+     
+     public ArrayList<MFornece> listar(){
+        
+        ArrayList<MFornece> fornecem = new ArrayList<>();
+        String sql="SELECT * FROM FORNECE";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                int codigoFornecedores1 = rs.getInt("cod_fornecedores");
+                int codigoMateriaPrima1 = rs.getInt("cod_materia_prima");
+                Double custo1 = rs.getDouble("custo");
+                
+                MFornece u1 = new MFornece(codigoFornecedores1, codigoMateriaPrima1, custo1);
+                fornecem.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar Fornece\n" + ex);
+        }
+        
+        return fornecem;
         
     }
 }

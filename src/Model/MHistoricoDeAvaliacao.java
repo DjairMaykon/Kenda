@@ -7,7 +7,9 @@ package Model;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -51,6 +53,14 @@ public class MHistoricoDeAvaliacao {
 
     public void setAvalicao(String avalicao) {
         this.avalicao = avalicao;
+    }
+
+    public MHistoricoDeAvaliacao(int codigo, int codigoTinta, int codigoFuncionario, String avalicao, Date data) {
+        this.codigo = codigo;
+        this.codigoTinta = codigoTinta;
+        this.codigoFuncionario = codigoFuncionario;
+        this.avalicao = avalicao;
+        this.data = data;
     }
 
     public Date getData() {
@@ -112,6 +122,39 @@ public class MHistoricoDeAvaliacao {
         } catch (SQLException ex) {
             System.out.println("Erro ao alterar");
         }
+        
+    }
+    
+    public ArrayList<MHistoricoDeAvaliacao> listar(){
+        
+        ArrayList<MHistoricoDeAvaliacao> historicos = new ArrayList<>();
+        String sql="SELECT * FROM HISTORICO_DE_AVALIACAO";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                int codigo1 = rs.getInt("cod");
+                int codigoTinta1 = rs.getInt("cod_tinta");
+                int codigoFuncionario1 = rs.getInt("cod_funcionario");
+                String avalicao1 = rs.getString("avaliacao");
+                Date data1 = rs.getDate("data");
+                
+                MHistoricoDeAvaliacao u1 = new MHistoricoDeAvaliacao(codigo1, codigoTinta1, codigoFuncionario1, avalicao1, data1);
+                historicos.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar HistoricoDeAvaliacao\n" + ex);
+        }
+        
+        return historicos;
         
     }
 }

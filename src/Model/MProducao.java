@@ -8,7 +8,9 @@ package Model;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -42,6 +44,15 @@ public class MProducao {
 
     public int getCodigoPedido() {
         return codigoPedido;
+    }
+
+    public MProducao(Date data, String situacao, int codigoPedido, int codigoFuncionario, int custo, int codigo, String descricao1, Double custo1) {
+        this.data = data;
+        this.situacao = situacao;
+        this.codigoPedido = codigoPedido;
+        this.codigoFuncionario = codigoFuncionario;
+        this.custo = custo;
+        this.codigo = codigo;
     }
 
     public void setCodigoPedido(int codigoPedido) {
@@ -128,4 +139,41 @@ public class MProducao {
         }
         
     }   
+    
+    public ArrayList<MProducao> listar(){
+        
+        ArrayList<MProducao> produzem = new ArrayList<>();
+        String sql="SELECT * FROM PRODUCAO";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                Date data1 = rs.getDate("data");
+                String situacao1 = rs.getString("situacao");
+                int codFunc1 = rs.getInt("cod_funcionario");
+                int codigo1 = rs.getInt("cod");
+                int codCli1 = rs.getInt("cod_CLI");
+                int codOS1 = rs.getInt("cod_OS");
+                String descricao1 = rs.getString("descricao");
+                Double custo1 = rs.getDouble("custo");
+                
+                
+                MProducao u1 = new MProducao(data1, situacao1, codFunc1, codigo1, codCli1, codOS1, descricao1, custo1);
+                produzem.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar Producao\n" + ex);
+        }
+        
+        return produzem;
+        
+    }
 }
