@@ -11,16 +11,16 @@ import View.TelasCadastrar.TCadastrarSetor;
  */
 public class ControleCadastrarSetor {
     
-    private TCadastrarSetor cadastrarSetor; 
+    private TCadastrarSetor telaCadastrarSetor; 
     
      public ControleCadastrarSetor() {
     
-       cadastrarSetor = new TCadastrarSetor();
+       telaCadastrarSetor = new TCadastrarSetor();
     
     }
 
-    public TCadastrarSetor getCadastrarSetor() {
-        return cadastrarSetor;
+    public TCadastrarSetor getTelaCadastrarSetor() {
+        return telaCadastrarSetor;
     }
 
    

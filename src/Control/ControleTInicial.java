@@ -159,8 +159,8 @@ class ControleTInicial {
     public void acaoMICadastrarCliente(ActionEvent evt){
         
         ControleCadastrarCliente cCadastrarCliente = new ControleCadastrarCliente();
-        telaInicial.getjDPPrincipal().add(cCadastrarCliente.getCadastrarCliente());
-        cCadastrarCliente.getCadastrarCliente().setVisible(true);
+        telaInicial.getjDPPrincipal().add(cCadastrarCliente.getTelaCadastrarCliente());
+        cCadastrarCliente.getTelaCadastrarCliente().setVisible(true);
         
     }
     
@@ -168,40 +168,40 @@ class ControleTInicial {
     public void acaoMICadastrarSetor(ActionEvent evt){
         
         ControleCadastrarSetor cCadastrarSetor = new ControleCadastrarSetor();
-        telaInicial.getjDPPrincipal().add(cCadastrarSetor.getCadastrarSetor());
-        cCadastrarSetor.getCadastrarSetor().setVisible(true);
+        telaInicial.getjDPPrincipal().add(cCadastrarSetor.getTelaCadastrarSetor());
+        cCadastrarSetor.getTelaCadastrarSetor().setVisible(true);
         
     }
      
     public void acaoMICadastrarTinta(ActionEvent evt){
         
         ControleCadastrarTinta cCadastrarTinta = new ControleCadastrarTinta();
-        telaInicial.getjDPPrincipal().add(cCadastrarTinta.getCadastrarTinta());
-        cCadastrarTinta.getCadastrarTinta().setVisible(true);
+        telaInicial.getjDPPrincipal().add(cCadastrarTinta.getTelaCadastrarTinta());
+        cCadastrarTinta.getTelaCadastrarTinta().setVisible(true);
         
     }
       
     public void acaoMICadastrarFornecedor(ActionEvent evt){
         
         ControleCadastrarFornecedor cCadastrarFornecedor = new ControleCadastrarFornecedor();
-        telaInicial.getjDPPrincipal().add(cCadastrarFornecedor.getCadastrarFornecedor());
-        cCadastrarFornecedor.getCadastrarFornecedor().setVisible(true);
+        telaInicial.getjDPPrincipal().add(cCadastrarFornecedor.getTelaCadastrarFornecedor());
+        cCadastrarFornecedor.getTelaCadastrarFornecedor().setVisible(true);
         
     }
     
     public void acaoMICadastrarTransportadora(ActionEvent evt){
         
         ControleCadastrarTransportadora cCadastrarTransportadora = new ControleCadastrarTransportadora();
-        telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getCadastrarTransportadora());
-        cCadastrarTransportadora.getCadastrarTransportadora().setVisible(true);
+        telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getTelaCadastrarTransportadora());
+        cCadastrarTransportadora.getTelaCadastrarTransportadora().setVisible(true);
         
     }
           
     public void acaoMICadastrarFuncionario(ActionEvent evt){
         
         ControleCadastrarFuncionario cCadastrarFuncionario = new ControleCadastrarFuncionario();
-        telaInicial.getjDPPrincipal().add(cCadastrarFuncionario.getCadastrarFuncionario());
-        cCadastrarFuncionario.getCadastrarFuncionario().setVisible(true);
+        telaInicial.getjDPPrincipal().add(cCadastrarFuncionario.getTelaCadastrarFuncionario());
+        cCadastrarFuncionario.getTelaCadastrarFuncionario().setVisible(true);
         
     }
     

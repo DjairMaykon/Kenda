@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,6 +25,33 @@ public class MFornecedores {
     private String telefone;
     private int codigoEndereco;
     private Connection con;
+
+    public MFornecedores(int codigo, String email, String site, String nome, String cnpj, String telefone, int codigoEndereco) {
+        
+        this.codigo = codigo;
+        this.email = email;
+        this.site = site;
+        this.nome = nome;
+        this.cnpj = cnpj;
+        this.telefone = telefone;
+        this.codigoEndereco = codigoEndereco;
+    }
+
+    public MFornecedores() {
+    
+    }
+    
+    public int getCodigo() {
+        return codigo;
+    }
+    
+    public int getCodigoEndereco() {
+        return codigoEndereco;
+    }
+
+    public void setCodigoEndereco(int codigoEndereco) {
+        this.codigoEndereco = codigoEndereco;
+    }
 
     public String getEmail() {
         return email;
@@ -62,6 +91,10 @@ public class MFornecedores {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
     
     public void adicionar(){
@@ -145,6 +178,43 @@ public class MFornecedores {
             throw new RuntimeException("ERRO AO Alterar/n" + ex);
             
         }   
+        
+    }
+     
+    public ArrayList<MFornecedores> listar(){
+        
+        ArrayList<MFornecedores> fornecedores = null;
+        String sql="SELECT * FROM FORNECEDORES";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            fornecedores = new ArrayList<>();
+            
+            while(rs.next()){
+                
+                int codigo1 = rs.getInt("cod");
+                String email1 = rs.getString("email");
+                String site1 = rs.getString("site");
+                String nome1 = rs.getString("nome");
+                String cnpj1 = rs.getString("cnpj");
+                String telefone1 = rs.getString("telefone");
+                int codigoEndereco1 = rs.getInt("cod_end");
+                
+                MFornecedores f1 = new MFornecedores(codigo1, email1, site1, nome1, cnpj1, telefone1, codigoEndereco1);
+                fornecedores.add(f1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar Usuario\n" + ex);
+        }
+        
+        return fornecedores;
         
     }
     

@@ -138,7 +138,7 @@ public class MUsuario {
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Usuario\n" + ex);
+            System.out.println("Erro ao listar Usuario\n" + ex);
         }
         
         return usuarios;

@@ -5,23 +5,22 @@
  */
 package Control;
 import View.TelasCadastrar.Funcionario.TCadastrarFuncionario;
-import View.TelasCadastrar.TCadastrarTransportadora;
 /**
  *
  * @author Matheus
  */
 public class ControleCadastrarFuncionario {
     
-   private TCadastrarFuncionario CadastrarFuncionario; 
+   private TCadastrarFuncionario telaCadastrarFuncionario; 
     
     public ControleCadastrarFuncionario () {
     
-      CadastrarFuncionario = new TCadastrarFuncionario();
+      telaCadastrarFuncionario = new TCadastrarFuncionario();
     
     }
 
-    public TCadastrarFuncionario getCadastrarFuncionario() {
-        return CadastrarFuncionario;
+    public TCadastrarFuncionario getTelaCadastrarFuncionario() {
+        return telaCadastrarFuncionario;
     }
 
  
