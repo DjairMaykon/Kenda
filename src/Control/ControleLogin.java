@@ -7,6 +7,10 @@ package Control;
 
 import Model.MUsuario;
 import View.Login.TLogin;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,22 +19,52 @@ import View.Login.TLogin;
 public class ControleLogin {
     
     private TLogin telaLogin;
-    private MUsuario modeloUsuario;
+    private MUsuario modeloUsuario = null;
     private ControleToolTip toolTip;
+    private String login;
+    private String senha;
+    private boolean validado = false;
 
     public ControleLogin() {
         
         this.telaLogin = new TLogin();
-        this.modeloUsuario = new MUsuario();
         toolTip = new ControleToolTip();
+        telaLogin.setVisible(true);
+        
+        telaLogin.getjBLogin().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoBLogin(e);
+            }
+        });
         
     }
     
-    public MUsuario inicia(){
+    public void acaoBLogin(ActionEvent evt){
         
-        telaLogin.setVisible(true);
+        login = telaLogin.getjTFUsuario().getText();
+        senha = String.valueOf(telaLogin.getjPFSenha().getPassword());
         
-        return modeloUsuario;
+        ArrayList<MUsuario> usuarios = new MUsuario().listar();
+        
+        for(MUsuario u : usuarios){
+            
+            if(login.equals(u.getLogin())){
+                
+                modeloUsuario = u;
+                break;
+                
+            }
+            
+        }
+        
+        if(modeloUsuario != null && senha.equals(modeloUsuario.getSenha())){
+            
+            validado = true;
+            JOptionPane.showMessageDialog(null, "ok");
+            telaLogin.dispose();
+            
+        }
         
     }
     

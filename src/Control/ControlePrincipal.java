@@ -19,7 +19,6 @@ public class ControlePrincipal {
     
         ControleLogin cLogin = new ControleLogin();
         
-        cLogin.inicia();
         
     }
     
