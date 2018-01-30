@@ -67,6 +67,9 @@ public class ControleLogin {
             
         }
         
+        else    
+            JOptionPane.showMessageDialog(null, "ACESSO IMPOSSIBILITADO, LOGIN ERRADO");
+        
     }
 
     public MUsuario getModeloUsuario() {

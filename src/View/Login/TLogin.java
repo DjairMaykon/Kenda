@@ -85,6 +85,11 @@ public class TLogin extends javax.swing.JFrame {
         jBLogin.setBackground(new java.awt.Color(255, 255, 255));
         jBLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jBLogin.setText(" Login ");
+        jBLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLoginActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo Kenda-iloveimg-resized.png"))); // NOI18N
 
@@ -156,6 +161,10 @@ public class TLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBLoginActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBLogin;
