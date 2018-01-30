@@ -394,7 +394,7 @@ public class TInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     public JMenuItem getjSMIPedidosEmProducao() {
         return jSMIPedidosEmProducao;
     }

@@ -19,36 +19,36 @@ import java.sql.SQLException;
  */
 public class MConnectionFactory {
 
-    private String URL = "jdbc:firebirdsql:localhost/3050:C:\\Users\\Djair Maykon\\Desktop\\Kenda\\Banco de Dados\\BANCO KENDA.FDB";
+    private String URL = "jdbc:firebirdsql:localhost/3050:C:\\BANCO KENDA.FDB";
     final private String USUARIO = "sysdba";
     final private String SENHA = "masterkey";
     
     public Connection getConnection(){
-        
+        /*
         FileReader arq = null;
-        
+        */
         try {
             
-            arq = new FileReader("Caminho do Banco.txt");
+            /*arq = new FileReader("Caminho do Banco.txt");
             BufferedReader lerArq = new BufferedReader(arq);
  
             URL = lerArq.readLine();
-            
+            */
             Class.forName("org.firebirdsql.jdbc.FBDriver");
             
             return DriverManager.getConnection(URL, USUARIO, SENHA);
         
-        } catch (SQLException | ClassNotFoundException | FileNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException/* | FileNotFoundException*/ ex) {
             throw new RuntimeException("Erro:\n" + ex);
-        } catch (IOException ex) {
-            throw new RuntimeException("Erro:\n" + ex);
-        } finally {
+       /* } catch (IOException ex) {
+            throw new RuntimeException("Erro:\n" + ex);*/
+        } /*finally {
             try {
                 arq.close();
             } catch (IOException ex) {
                 throw new RuntimeException("Erro:\n" + ex);
             }
-        }
+        }*/
         
     }
     
