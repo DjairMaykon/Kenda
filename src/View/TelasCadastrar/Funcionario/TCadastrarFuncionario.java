@@ -90,6 +90,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jBCancelarFuncionario = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
         jTFCPF = new javax.swing.JTextField();
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("###.###.###-##");    jTFCPF = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
         jTFEndereco = new javax.swing.JTextField();
