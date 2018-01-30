@@ -5,11 +5,15 @@
  */
 package Model;
 
+import br.com.parg.viacep.ViaCEP;
+import br.com.parg.viacep.ViaCEPException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,17 +26,15 @@ public class MEndereco {
     private String bairro;
     private int codigo;
     private String rua;
-    private int numero;
     private Connection con = null;
 
-    public MEndereco(String cep, String uf, String cidade, String bairro, int codigo, String rua, int numero) {
+    public MEndereco(String cep, String uf, String cidade, String bairro, int codigo, String rua) {
         this.cep = cep;
         this.uf = uf;
         this.cidade = cidade;
         this.bairro = bairro;
         this.codigo = codigo;
         this.rua = rua;
-        this.numero = numero;
     }
     
 
@@ -84,33 +86,23 @@ public class MEndereco {
     public void setRua(String rua) {
         this.rua = rua;
     }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-    
     public void adicionar(){
         
         PreparedStatement pstmt = null;
-        String sql="INSERT INTO ENDERECO(UF, CIDADE, RUA, COD, NUMERO, BAIRRO, CEP) VALUES(?,?,?,?,?,?,?)";
+        String sql="INSERT INTO ENDERECO(UF, CIDADE, RUA, COD, BAIRRO, CEP) VALUES(?,?,?,?,?,?)";
         try {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,uf);
             pstmt.setString(2,cidade);
             pstmt.setString(3,rua);
-            pstmt.setInt(5,numero);
-            pstmt.setString(6,bairro);
-            pstmt.setString(7,cep);
+            pstmt.setString(5,bairro);
+            pstmt.setString(6,cep);
             pstmt.setInt(4,codigo);
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar:\n"+ex);
         }
         
     }
@@ -133,17 +125,16 @@ public class MEndereco {
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE ENDERECO SET UF=?, CIDADE=?, RUA=?, NUMERO=?, BAIRRO=?,CEP=? WHERE COD=? ";
+        String sql=" UPDATE ENDERECO SET UF=?, CIDADE=?, RUA=?, BAIRRO=?,CEP=? WHERE COD=? ";
         try {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,uf);
             pstmt.setString(2,cidade);
             pstmt.setString(3,rua);
-            pstmt.setInt(4,numero);
-            pstmt.setString(5,bairro);
-            pstmt.setString(6,cep);
-            pstmt.setInt(7, codigo);
+            pstmt.setString(4,bairro);
+            pstmt.setString(5,cep);
+            pstmt.setInt(6, codigo);
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -154,7 +145,7 @@ public class MEndereco {
     
     public ArrayList<MEndereco> listar(){
         
-        ArrayList<MEndereco> enderecos = new ArrayList<>();
+        ArrayList<MEndereco> enderecos = null;
         String sql="SELECT * FROM ENDERECO";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -165,6 +156,8 @@ public class MEndereco {
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
             
+            enderecos = new ArrayList<>();
+            
             while(rs.next()){
                 
                 String cep1 = rs.getString("cep");
@@ -173,19 +166,69 @@ public class MEndereco {
                 String bairro1 = rs.getString("bairro");
                 int codigo1 = rs.getInt("cod");
                 String rua1 = rs.getString("rua");
-                int numero1 = rs.getInt("numero");
                 
-                MEndereco u1 = new MEndereco(cep1, uf1, cidade1, bairro1, codigo1, rua1, numero1);
+                MEndereco u1 = new MEndereco(cep1, uf1, cidade1, bairro1, codigo1, rua1);
                 enderecos.add(u1);
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Endereco\n" + ex);
+            System.out.println("Erro ao alterar Usuario\n" + ex);
         }
         
         return enderecos;
         
     }
+
+    public MEndereco() {
+    
+    }
    
+    public static MEndereco buscarEndereco(String _cep){
+        
+        MEndereco end = null;
+        
+        try {
+            
+            end = new MEndereco();
+            
+            ArrayList<MEndereco> listar = end.listar();
+        
+            if(listar.isEmpty()){
+            
+                end.setCodigo(0);
+            
+            }else{
+                
+                for(MEndereco e : listar){
+                    
+                    if(e.cep.equals(_cep)){
+                        
+                        return e;
+                        
+                    }
+                    
+                }
+                
+                int c = listar.get(0).getCodigo() + 1;
+                end.setCodigo(c);
+                
+            }
+            
+            ViaCEP vCep = new ViaCEP(_cep);
+            end.setBairro(vCep.getBairro());
+            end.setCep(_cep);
+            end.setCidade(vCep.getLocalidade());
+            end.setRua(vCep.getLogradouro());
+            end.setUf(vCep.getUf());
+            
+            end.adicionar();
+            
+        } catch (ViaCEPException ex) {
+            Logger.getLogger(MEndereco.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return end;
+        
+    }
     
 }

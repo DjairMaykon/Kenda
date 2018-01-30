@@ -101,7 +101,7 @@ public class MFornecedores {
     
         PreparedStatement pstmt = null;
         
-        String sql = "INSERT INTO cliente(cod, cod_end, email, site, nome, cnpj, telefone) VALUES(?,?,?,?,?,?,?)"; // banco
+        String sql = "INSERT INTO fornecedores(cod, cod_end, email, site, nome, cnpj, telefone) VALUES(?,?,?,?,?,?,?)"; // banco
         
         try {
             
@@ -208,6 +208,7 @@ public class MFornecedores {
                 
                 MFornecedores f1 = new MFornecedores(codigo1, email1, site1, nome1, cnpj1, telefone1, codigoEndereco1);
                 fornecedores.add(f1);
+                
             }
             
         } catch (SQLException ex) {
