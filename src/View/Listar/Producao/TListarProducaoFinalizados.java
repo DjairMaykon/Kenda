@@ -36,7 +36,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTListarProducaoEmAndamento = new javax.swing.JTable();
+        jTListarProducaoFinalizados = new javax.swing.JTable();
         jTFEntradaPesquisa = new javax.swing.JTextField();
         jBBuscar = new javax.swing.JButton();
 
@@ -46,7 +46,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTListarProducaoEmAndamento.setModel(new javax.swing.table.DefaultTableModel(
+        jTListarProducaoFinalizados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -54,7 +54,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
                 "Codigo Producao", "Codigo Pedido", "Codigo Funcionario", "Situacao", "Custo", "Data"
             }
         ));
-        jScrollPane1.setViewportView(jTListarProducaoEmAndamento);
+        jScrollPane1.setViewportView(jTListarProducaoFinalizados);
 
         jBBuscar.setText("Buscar");
 
@@ -110,6 +110,6 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTFEntradaPesquisa;
-    private javax.swing.JTable jTListarProducaoEmAndamento;
+    private javax.swing.JTable jTListarProducaoFinalizados;
     // End of variables declaration//GEN-END:variables
 }

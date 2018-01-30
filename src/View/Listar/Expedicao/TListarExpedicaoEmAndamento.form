@@ -97,13 +97,13 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="8" rowCount="0">
-                    <Column editable="true" title="Codigo Expedicao" type="java.lang.Object"/>
+                    <Column editable="true" title="Codigo Expedi&#xe7;&#xe3;o" type="java.lang.Object"/>
                     <Column editable="true" title="Codigo Pedido" type="java.lang.Object"/>
                     <Column editable="true" title="Codigo Transportadora" type="java.lang.Object"/>
-                    <Column editable="true" title="Descricao" type="java.lang.Object"/>
+                    <Column editable="true" title="Descri&#xe7;&#xe3;o" type="java.lang.Object"/>
                     <Column editable="true" title="Data de Saida" type="java.lang.Object"/>
                     <Column editable="true" title="Data de Entrega" type="java.lang.Object"/>
-                    <Column editable="true" title="Situacao" type="java.lang.Object"/>
+                    <Column editable="true" title="Situa&#xe7;&#xe3;o" type="java.lang.Object"/>
                     <Column editable="true" title="Custo" type="java.lang.Object"/>
                   </Table>
                 </Property>

@@ -175,7 +175,7 @@ public class TCadastrarTransportadora extends javax.swing.JInternalFrame {
         jTFCodigoEndereco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoCliente2.setText("Codigo de Endereço:");
+        jLCodigoCliente2.setText("Endereço:");
 
         jBuscarEndereco.setText("Buscar");
 

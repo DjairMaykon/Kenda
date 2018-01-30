@@ -28,7 +28,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCEP() {
-        return jTFCEP;
+        return jTFEndereco;
     }
 
     public JTextField getjTFNome() {
@@ -36,11 +36,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JButton getjBCadastrarCliente() {
-        return jBCadastrarCliente;
+        return jBCadastrarFuncionario;
     }
 
     public JButton getjBCancelarCliente() {
-        return jBCancelarCliente;
+        return jBCancelarFuncionario;
     }
 
     public JButton getjBuscar() {
@@ -48,11 +48,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFCPNJ() {
-        return jTFCPNJ;
+        return jTFCPF;
     }
 
     public JTextField getjTFCodigoCliente() {
-        return jTFCodigoCliente;
+        return jTFCodigoFuncionario;
     }
 
     public JTextField getjTFEmail() {
@@ -60,7 +60,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTFEndereco() {
-        return jTFCEP;
+        return jTFEndereco;
     }
 
     public JTextField getjTFTelefone() {
@@ -76,29 +76,34 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLCodigoPedido = new javax.swing.JLabel();
-        jTFCodigoCliente = new javax.swing.JTextField();
+        jTFCodigoFuncionario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLCodigoOS = new javax.swing.JLabel();
         jTFNome = new javax.swing.JTextField();
         jTFEmail = new javax.swing.JTextField();
         jLDescricao = new javax.swing.JLabel();
-        jBCadastrarCliente = new javax.swing.JButton();
-        jBCancelarCliente = new javax.swing.JButton();
+        jBCadastrarFuncionario = new javax.swing.JButton();
+        jBCancelarFuncionario = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
-        jTFCPNJ = new javax.swing.JTextField();
+        jTFCPF = new javax.swing.JTextField();
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
-        jTFCEP = new javax.swing.JTextField();
+        jTFEndereco = new javax.swing.JTextField();
         jLCodigoCliente2 = new javax.swing.JLabel();
         jBuscarEndereco = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLCodigoCliente3 = new javax.swing.JLabel();
-        jTFTelefone1 = new javax.swing.JTextField();
+        jTFSalario = new javax.swing.JTextField();
+        jLCadastrarFuncionarioUsuario = new javax.swing.JLabel();
+        jLCodigoOS2 = new javax.swing.JLabel();
+        jTFSenha = new javax.swing.JTextField();
+        jTFUsuario = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -107,11 +112,11 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLCodigoPedido.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoPedido.setLabelFor(jTFCodigoCliente);
-        jLCodigoPedido.setText("Código do Cliente:");
+        jLCodigoPedido.setLabelFor(jTFCodigoFuncionario);
+        jLCodigoPedido.setText("Código do Funcionario:");
 
-        jTFCodigoCliente.setEditable(false);
-        jTFCodigoCliente.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCodigoFuncionario.setEditable(false);
+        jTFCodigoFuncionario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -126,17 +131,17 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Email:");
 
-        jBCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
-        jBCadastrarCliente.setText("Cadastrar");
+        jBCadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
+        jBCadastrarFuncionario.setText("Cadastrar");
 
-        jBCancelarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
-        jBCancelarCliente.setText("Cancelar");
+        jBCancelarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
+        jBCancelarFuncionario.setText("Cancelar");
 
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setLabelFor(jTFEmail);
         jLCodigoM.setText("CPF:");
 
-        jTFCPNJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCPF.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente1.setLabelFor(jTFEmail);
@@ -144,7 +149,7 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
 
         jTFTelefone.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        jTFCEP.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFEndereco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente2.setLabelFor(jTFEmail);
@@ -153,16 +158,6 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jBuscarEndereco.setText("Buscar");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carregar Foto", "Tirar Foto" }));
-        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox1ItemStateChanged(evt);
-            }
-        });
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -188,7 +183,15 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         jLCodigoCliente3.setLabelFor(jTFEmail);
         jLCodigoCliente3.setText("Salario:");
 
-        jTFTelefone1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFSalario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
+        jLCadastrarFuncionarioUsuario.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLCadastrarFuncionarioUsuario.setLabelFor(jTFNome);
+        jLCadastrarFuncionarioUsuario.setText("Usuario:");
+
+        jLCodigoOS2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLCodigoOS2.setLabelFor(jTFNome);
+        jLCodigoOS2.setText("Senha:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -210,28 +213,30 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jTFTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                                            .addComponent(jTFNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTFEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTFCPNJ, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                                        .addComponent(jBuscarEndereco))
-                                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTFCodigoCliente))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTFTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                                    .addComponent(jTFNome, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTFEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTFCPF, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jTFEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                                .addComponent(jBuscarEndereco))
+                            .addComponent(jTFSalario, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTFCodigoFuncionario))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBCancelarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBCadastrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jBCancelarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBCadastrarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                        .addComponent(jLCadastrarFuncionarioUsuario)
+                        .addComponent(jLCodigoOS2)
+                        .addComponent(jTFSenha))
+                    .addComponent(jTFUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -243,45 +248,52 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTFCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jBCadastrarCliente)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jBCancelarCliente))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTFCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLCodigoOS))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLDescricao))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(jTFCPNJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLCodigoM))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(jTFTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLCodigoCliente1)))
-                                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLCodigoOS))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLCodigoCliente2)
-                                            .addComponent(jBuscarEndereco))))
+                                            .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLDescricao))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jTFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLCodigoM))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jTFTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLCodigoCliente1)))
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTFEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLCodigoCliente2)
+                                    .addComponent(jBuscarEndereco))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTFSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLCodigoCliente3)))
                             .addComponent(jLCodigoPedido))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 4, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jBCadastrarFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBCancelarFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLCadastrarFuncionarioUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTFUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLCodigoOS2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)))
                 .addContainerGap())
         );
 
@@ -305,41 +317,34 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
-        // TODO add your handling code here:
-        
-        JDCarregarFoto c = new JDCarregarFoto(null, closable);
-        c.setVisible(true);
-        
-    }//GEN-LAST:event_jComboBox1ItemStateChanged
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBCadastrarCliente;
-    private javax.swing.JButton jBCancelarCliente;
+    private javax.swing.JButton jBCadastrarFuncionario;
+    private javax.swing.JButton jBCancelarFuncionario;
     private javax.swing.JButton jBuscarEndereco;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLCadastrarFuncionarioUsuario;
     private javax.swing.JLabel jLCodigoCliente1;
     private javax.swing.JLabel jLCodigoCliente2;
     private javax.swing.JLabel jLCodigoCliente3;
     private javax.swing.JLabel jLCodigoM;
     private javax.swing.JLabel jLCodigoOS;
+    private javax.swing.JLabel jLCodigoOS2;
     private javax.swing.JLabel jLCodigoPedido;
     private javax.swing.JLabel jLDescricao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTFCEP;
-    private javax.swing.JTextField jTFCPNJ;
-    private javax.swing.JTextField jTFCodigoCliente;
+    private javax.swing.JTextField jTFCPF;
+    private javax.swing.JTextField jTFCodigoFuncionario;
     private javax.swing.JTextField jTFEmail;
+    private javax.swing.JTextField jTFEndereco;
     private javax.swing.JTextField jTFNome;
+    private javax.swing.JTextField jTFSalario;
+    private javax.swing.JTextField jTFSenha;
     private javax.swing.JTextField jTFTelefone;
-    private javax.swing.JTextField jTFTelefone1;
+    private javax.swing.JTextField jTFUsuario;
     // End of variables declaration//GEN-END:variables
 }
