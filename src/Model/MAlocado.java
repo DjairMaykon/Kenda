@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 
@@ -35,6 +37,12 @@ public class MAlocado {
 
     public int getCodigoFuncionario() {
         return codigoFuncionario;
+    }
+
+    public MAlocado(int codigoSetor, String funcao, int codigoFuncionario) {
+        this.codigoSetor = codigoSetor;
+        this.funcao = funcao;
+        this.codigoFuncionario = codigoFuncionario;
     }
 
     public void setCodigoFuncionario(int codigoFuncionario) {
@@ -121,6 +129,37 @@ public class MAlocado {
             throw new RuntimeException("ERRO ao alterar\n" + ex);
             
         }   
+        
+    }
+     
+     public ArrayList<MAlocado> listar(){
+        
+        ArrayList<MAlocado> alocados = new ArrayList<>();
+        String sql="SELECT * FROM ALOCADO";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                int codigoSetor1 = rs.getInt("cod_setor");
+                String funcao1 = rs.getString("funcao");
+                int codigoFuncionario1 = rs.getInt("cod_setor");
+                
+                MAlocado a1 = new MAlocado(codigoSetor1, funcao1, codigoFuncionario1);
+                alocados.add(a1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao alterar Usuario\n" + ex);
+        }
+        
+        return alocados;
         
     }
 
