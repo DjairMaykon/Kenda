@@ -9,6 +9,8 @@ import Model.MUsuario;
 import View.TInicial;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 /**
  *
@@ -100,6 +102,16 @@ class ControleTInicial {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarSetor(e);
+            }
+        });
+        
+        telaInicial.getjCBMIVizualisarBarraDeAcessoRapido().addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(telaInicial.getjCBMIVizualisarBarraDeAcessoRapido().isSelected())
+                    telaInicial.getjPMenuAcessoRapido().setVisible(true);
+                else
+                    telaInicial.getjPMenuAcessoRapido().setVisible(false);
             }
         });
          
