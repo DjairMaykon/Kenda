@@ -11,8 +11,18 @@ import View.TelasCadastrar.TCadastrarFornecedor;
  */
 public class ControleCadastrarFornecedor {
     
-    private TCadastrarFornecedor cadastrarFornecedor= new TCadastrarFornecedor(); 
+    private TCadastrarFornecedor cadastrarFornecedor; 
     
+    public ControleCadastrarFornecedor() {
     
+      cadastrarFornecedor =new TCadastrarFornecedor();
+    
+    }
+
+    public TCadastrarFornecedor getCadastrarFornecedor() {
+        return cadastrarFornecedor;
+    }
+
+   
     
 }

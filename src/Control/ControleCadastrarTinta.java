@@ -4,15 +4,25 @@
  * and open the template in the editor.
  */
 package Control;
-import View.TelasCadastrar.TCadastrarTinta;
+import View.TelasCadastrar.TCadastrarCliente;
 /**
  *
  * @author Matheus
  */
 public class ControleCadastrarTinta {
     
-    private TCadastrarTinta cadastrarTinta= new TCadastrarTinta(); 
+    private TCadastrarCliente cadastrarCliente; 
     
+    public ControleCadastrarTinta() {
     
+       cadastrarCliente = new TCadastrarCliente();
+    
+    }
+
+    public TCadastrarCliente getCadastrarCliente() {
+        return cadastrarCliente;
+    }
+
+  
     
 }
