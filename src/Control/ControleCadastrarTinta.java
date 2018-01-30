@@ -12,16 +12,16 @@ import View.TelasCadastrar.TCadastrarTinta;
  */
 public class ControleCadastrarTinta {
     
-    private TCadastrarTinta cadastrarTinta; 
+    private TCadastrarTinta telaCadastrarTinta; 
     
     public ControleCadastrarTinta() {
     
-       cadastrarTinta = new TCadastrarTinta();
+       telaCadastrarTinta = new TCadastrarTinta();
     
     }
 
-    public TCadastrarTinta getCadastrarTinta() {
-        return cadastrarTinta;
+    public TCadastrarTinta getTelaCadastrarTinta() {
+        return telaCadastrarTinta;
     }
     
     

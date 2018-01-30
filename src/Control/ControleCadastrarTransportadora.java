@@ -11,16 +11,16 @@ import View.TelasCadastrar.TCadastrarTransportadora;
  */
 public class ControleCadastrarTransportadora {
     
-   private TCadastrarTransportadora cadastrarTransportadora; 
+   private TCadastrarTransportadora telaCadastrarTransportadora; 
     
     public ControleCadastrarTransportadora () {
     
-       cadastrarTransportadora = new TCadastrarTransportadora();
+       telaCadastrarTransportadora = new TCadastrarTransportadora();
     
     }
 
-    public TCadastrarTransportadora getCadastrarTransportadora() {
-        return cadastrarTransportadora;
+    public TCadastrarTransportadora getTelaCadastrarTransportadora() {
+        return telaCadastrarTransportadora;
     }
 
  
