@@ -126,7 +126,9 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("##.###.###/####-##");    jTFCNPJ = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)-#####-#####");    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jTFCodigoEndereco = new javax.swing.JTextField();
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("#####-####");    jTFCodigoEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente2 = new javax.swing.JLabel();
         jBuscarEndereco = new javax.swing.JButton();
         jTFSite = new javax.swing.JTextField();
