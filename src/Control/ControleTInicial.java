@@ -7,6 +7,8 @@ package Control;
 
 import Model.MUsuario;
 import View.TInicial;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -22,7 +24,22 @@ class ControleTInicial {
         modeloUsuario = u1;
         telaInicial = new TInicial();
         telaInicial.setVisible(true);
+        
+        telaInicial.getjMINovoPedido().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMINovoPedido(e);
+            }
+        });
 
+    }
+    
+    public void acaoMINovoPedido(ActionEvent evt){
+        
+        ControleNovoPedido cNovoPedido = new ControleNovoPedido();
+        telaInicial.getjDPPrincipal().add(cNovoPedido.getTelaNovoPedido());
+        cNovoPedido.getTelaNovoPedido().setVisible(true);
+        
     }
     
 }
