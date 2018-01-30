@@ -5,24 +5,9 @@
  */
 package View;
 
-import View.TelasCadastrar.TCadastrarCliente;
-import View.TelasCadastrar.TCadastrarFornecedor;
-import View.TelasCadastrar.TCadastrarSetor;
-import View.TelasCadastrar.TCadastrarTinta;
-import View.TelasCadastrar.TCadastrarTransportadora;
-import View.TelasNovo.TNovoAvaliacaoTinta;
-import View.TelasNovo.TNovoProducao;
-import View.TelasNovo.TNovoExpedicao;
-import View.TelasNovo.TNovoMateriaPrima;
-import View.TelasNovo.TNovoPedido;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.net.URL;
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JDesktopPane;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
@@ -37,13 +22,6 @@ public class TInicial extends javax.swing.JFrame {
      */
     public TInicial() {
         initComponents();
-        inicializarIcone();
-    }
-
-    private void inicializarIcone() {
-        URL caminhoImagem = this.getClass().getClassLoader().getResource(".\\imagens\\Sistema logo.png");
-        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
-        this.setIconImage(iconeTitulo);
     }
 
     /**
@@ -172,6 +150,8 @@ public class TInicial extends javax.swing.JFrame {
                     .addComponent(jBSairDoUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
                 .addGap(9, 9, 9))
         );
+
+        jDPPrincipal.setBackground(new java.awt.Color(57, 93, 117));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("© M.K. Corporation");
@@ -403,43 +383,6 @@ public class TInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new TInicial().setVisible(true);
-        });
-    }
-
-    public JMenuItem getjSMIPedidosEmProducao() {
-        return jSMIPedidosEmProducao;
-    }
-
     public JButton getjBAjuda() {
         return jBAjuda;
     }
@@ -472,28 +415,8 @@ public class TInicial extends javax.swing.JFrame {
         return jCBMIVizualisarBarraDeAcessoRapido;
     }
 
-    public JMenuItem getjMICadastrarSetor() {
-        return jMICadastrarSetor;
-    }
-
-    public JDesktopPane getjDesktopPane1() {
+    public JDesktopPane getjDPPrincipal() {
         return jDPPrincipal;
-    }
-
-    public JMenuBar getjMBTelaInicial() {
-        return jMBTelaInicial;
-    }
-
-    public JMenu getjMCadastrar() {
-        return jMCadastrar;
-    }
-
-    public JMenu getjMConfiguracoes() {
-        return jMConfiguracoes;
-    }
-
-    public JMenu getjMFerramentas() {
-        return jMFerramentas;
     }
 
     public JMenuItem getjMIBuscarEndereco() {
@@ -510,6 +433,10 @@ public class TInicial extends javax.swing.JFrame {
 
     public JMenuItem getjMICadastrarFuncionario() {
         return jMICadastrarFuncionario;
+    }
+
+    public JMenuItem getjMICadastrarSetor() {
+        return jMICadastrarSetor;
     }
 
     public JMenuItem getjMICadastrarTinta() {
@@ -556,18 +483,6 @@ public class TInicial extends javax.swing.JFrame {
         return jMIRelatorioVendas;
     }
 
-    public JMenu getjMListar() {
-        return jMListar;
-    }
-
-    public JMenu getjMNovo() {
-        return jMNovo;
-    }
-
-    public JMenu getjMRelatorio() {
-        return jMRelatorio;
-    }
-
     public JPanel getjPMenuAcessoRapido() {
         return jPMenuAcessoRapido;
     }
@@ -592,6 +507,18 @@ public class TInicial extends javax.swing.JFrame {
         return jSMIExpedicaoTransportadoras;
     }
 
+    public JMenuItem getjSMIPedidosEmExpedição() {
+        return jSMIPedidosEmExpedição;
+    }
+
+    public JMenuItem getjSMIPedidosEmLaboratorio() {
+        return jSMIPedidosEmLaboratorio;
+    }
+
+    public JMenuItem getjSMIPedidosEmProducao() {
+        return jSMIPedidosEmProducao;
+    }
+
     public JMenuItem getjSMIPedidosFinalizados() {
         return jSMIPedidosFinalizados;
     }
@@ -611,38 +538,7 @@ public class TInicial extends javax.swing.JFrame {
     public JMenuItem getjSMITintasAvaliacao() {
         return jSMITintasAvaliacao;
     }
-
-    public JMenu getjSMListarEstoque() {
-        return jSMListarEstoque;
-    }
-
-    public JMenu getjSMListarExpedição() {
-        return jSMListarExpedição;
-    }
-
-    public JMenu getjSMListarPedidos() {
-        return jSMListarPedidos;
-    }
-
-    public JMenu getjSMListarProducao() {
-        return jSMListarProducao;
-    }
-
-    public JMenu getjSMListarTintas() {
-        return jSMListarTintas;
-    }
-
-    public JDesktopPane getjDPPrincipal() {
-        return jDPPrincipal;
-    }
-
-    public JMenuItem getjSMIPedidosEmExpedição() {
-        return jSMIPedidosEmExpedição;
-    }
-
-    public JMenuItem getjSMIPedidosEmLaboratorio() {
-        return jSMIPedidosEmLaboratorio;
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAjuda;

@@ -67,7 +67,7 @@ public class ControleLogin {
             
         }else{    
         
-            JOptionPane.showMessageDialog(null, "ACESSO IMPOSSIBILITADO, LOGIN ERRADO");
+            JOptionPane.showMessageDialog(null, "Acesso negado, Usuario Inválido");
         
         }
         

@@ -39,19 +39,21 @@ class ControleTInicial {
             }
         });
         
-          telaInicial.getjMICadastrarTinta().addActionListener(new ActionListener() {
+        telaInicial.getjMICadastrarTinta().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarTinta(e);
             }
         });
-           telaInicial.getjMICadastrarTransportadora().addActionListener(new ActionListener() {
+        
+        telaInicial.getjMICadastrarTransportadora().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarTransportadora(e);
             }
         });
-           telaInicial.getjMICadastrarFornecedores().addActionListener(new ActionListener() {
+        
+        telaInicial.getjMICadastrarFornecedores().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarFornecedor(e);
@@ -59,25 +61,20 @@ class ControleTInicial {
         });
            
             
-             telaInicial.getjMICadastrarFuncionario().addActionListener(new ActionListener() {
+        telaInicial.getjMICadastrarFuncionario().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarFuncionario(e);
             }
         });
              
-          telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
+        telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarSetor(e);
             }
         });
-            
-           
-           
          
-
-
     }
     
     public void acaoMINovoPedido(ActionEvent evt){
@@ -97,7 +94,7 @@ class ControleTInicial {
     }
     
     
-     public void acaoMICadastrarSetor(ActionEvent evt){
+    public void acaoMICadastrarSetor(ActionEvent evt){
         
         ControleCadastrarSetor cCadastrarSetor = new ControleCadastrarSetor();
         telaInicial.getjDPPrincipal().add(cCadastrarSetor.getCadastrarSetor());
@@ -105,15 +102,15 @@ class ControleTInicial {
         
     }
      
-     public void acaoMICadastrarTinta(ActionEvent evt){
+    public void acaoMICadastrarTinta(ActionEvent evt){
         
         ControleCadastrarTinta cCadastrarTinta = new ControleCadastrarTinta();
         telaInicial.getjDPPrincipal().add(cCadastrarTinta.getCadastrarTinta());
         cCadastrarTinta.getCadastrarTinta().setVisible(true);
         
     }
-     
-         public void acaoMICadastrarFornecedor(ActionEvent evt){
+      
+    public void acaoMICadastrarFornecedor(ActionEvent evt){
         
         ControleCadastrarFornecedor cCadastrarFornecedor = new ControleCadastrarFornecedor();
         telaInicial.getjDPPrincipal().add(cCadastrarFornecedor.getCadastrarFornecedor());
@@ -121,7 +118,7 @@ class ControleTInicial {
         
     }
     
-          public void acaoMICadastrarTransportadora(ActionEvent evt){
+    public void acaoMICadastrarTransportadora(ActionEvent evt){
         
         ControleCadastrarTransportadora cCadastrarTransportadora = new ControleCadastrarTransportadora();
         telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getCadastrarTransportadora());
@@ -129,7 +126,7 @@ class ControleTInicial {
         
     }
           
-            public void acaoMICadastrarFuncionario(ActionEvent evt){
+    public void acaoMICadastrarFuncionario(ActionEvent evt){
         
         ControleCadastrarFuncionario cCadastrarFuncionario = new ControleCadastrarFuncionario();
         telaInicial.getjDPPrincipal().add(cCadastrarFuncionario.getCadastrarFuncionario());
