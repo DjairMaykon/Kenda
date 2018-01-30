@@ -114,8 +114,18 @@ class ControleTInicial {
                     telaInicial.getjPMenuAcessoRapido().setVisible(false);
             }
         });
+        
+        telaInicial.getjMIListarClientes().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMIListarCliente(e);
+            }
+        });
+        
          
     }
+    
+    
     
     public void acaoMINovoPedido(ActionEvent evt){
         
@@ -204,6 +214,43 @@ class ControleTInicial {
         cCadastrarFuncionario.getTelaCadastrarFuncionario().setVisible(true);
         
     }
+    
+    
+           
+    public void acaoMIListarFuncionario(ActionEvent evt){
+        
+        ControleListarFuncionario cListarFuncionario = new ControleListarFuncionario();
+        telaInicial.getjDPPrincipal().add(cListarFuncionario.gettelaListarFuncionario());
+        cListarFuncionario.gettelaListarFuncionario().setVisible(true);
+        
+    }
+    
+    public void acaoMIListarCliente(ActionEvent evt){
+        
+        ControleListarCliente cListarCliente = new ControleListarCliente();
+        telaInicial.getjDPPrincipal().add(cListarCliente.getListarCliente());
+        cListarCliente.getListarCliente().setVisible(true);
+        
+    }
+    
+    
+     public void acaoMIListarEstoqueFornecedores(ActionEvent evt){
+        
+        ControleListarEstoqueFornecedores cListarEstoqueFornecedores = new ControleListarEstoqueFornecedores();
+        telaInicial.getjDPPrincipal().add(cListarEstoqueFornecedores.gettelaListarEstoqueFornecedores());
+        cListarEstoqueFornecedores.gettelaListarEstoqueFornecedores().setVisible(true);
+        
+    }
+     
+     
+     public void acaoMIListarEstoqueMateriaPrima(ActionEvent evt){
+        
+        ControleListarEstoqueMateriaPrima cListarEstoqueMateriaPrima = new ControleListarEstoqueMateriaPrima();
+        telaInicial.getjDPPrincipal().add(cListarEstoqueMateriaPrima.gettelaListarEstoqueMateriaPrima());
+        cListarEstoqueMateriaPrima.gettelaListarEstoqueMateriaPrima().setVisible(true);
+        
+    }
+    
     
     
 }
