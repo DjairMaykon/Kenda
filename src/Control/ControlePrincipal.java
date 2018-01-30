@@ -7,6 +7,7 @@ package Control;
 
 import View.TInicial;
 
+
 /**
  *
  * @author Djair Maykon
@@ -20,7 +21,7 @@ public class ControlePrincipal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+       
         cLogin = new ControleLogin();
         
     }

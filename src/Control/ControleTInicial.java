@@ -60,7 +60,7 @@ class ControleTInicial {
             }
         });
            
-            telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
+            telaInicial.getjMICadastrarFornecedores().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarFornecedor(e);
