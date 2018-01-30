@@ -30,6 +30,7 @@ public class ControlePrincipal {
     
         cTInicial = new ControleTInicial(cLogin.getModeloUsuario());
         
+        
     }
     
 }
