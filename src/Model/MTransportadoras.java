@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,6 +25,22 @@ public class MTransportadoras {
     private String telefone;
     private double frete;
     private Connection con = null;
+
+    public MTransportadoras(int codEnd, String nome, String cnpj, String unidadeDoFrete, String telefone, String telefone1, int codigo) {
+        this.nome = nome;
+        this.codEnd = codEnd;
+        this.cnpj = cnpj;
+        this.codigo = codigo;
+        this.unidadeDoFrete = unidadeDoFrete;
+        this.telefone = telefone;
+        this.frete = frete;
+    }
+
+    public MTransportadoras() {
+        
+    }
+    
+    
 
     public String getNome() {
         return nome;
@@ -143,8 +161,46 @@ public class MTransportadoras {
         } catch (SQLException ex) {
             System.out.println("Erro ao alterar Transportadora\n" + ex);
         }
+    }
+         
+    public ArrayList<MTransportadoras> listar(){
+        
+        ArrayList<MTransportadoras> transportadoras = null;
+        String sql="SELECT * FROM TRANSPORTADORAS";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            transportadoras = new ArrayList<>();
+            
+            while(rs.next()){
+                
+                int codigo1 = rs.getInt("cod");
+                String frete1 = rs.getString("frete");
+                String unidadedefrete1 = rs.getString("unidade_do_frete");
+                String nome1 = rs.getString("nome");
+                String cnpj1 = rs.getString("cnpj");
+                String telefone1 = rs.getString("telefone");
+                int codigoEndereco1 = rs.getInt("cod_end");
+                
+                MTransportadoras f1 = new MTransportadoras(codigo1, frete1, unidadedefrete1, nome1, cnpj1, telefone1, codigoEndereco1);
+                transportadoras.add(f1);
+                
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar Usuario\n" + ex);
+        }
+        
+        return transportadoras;
         
     }
+    
 
 
     

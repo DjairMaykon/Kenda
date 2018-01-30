@@ -169,7 +169,7 @@ public class MCliente {
      
      public ArrayList<MCliente> listar(){
         
-        ArrayList<MCliente> clientes = new ArrayList<>();
+        ArrayList<MCliente> clientes = null;
         String sql="SELECT * FROM CLIENTE";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -179,7 +179,7 @@ public class MCliente {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
-            
+            clientes = new ArrayList<>();
             while(rs.next()){
                 
                 int codigo1 = rs.getInt("cod");
@@ -187,7 +187,9 @@ public class MCliente {
                 String email1 = rs.getString("email");
                 int codigoEndereco1 = rs.getInt("cod_end");
                 String nome1 = rs.getString("nome");
-                String cnpj1 = rs.getString("cnpj1");
+                String cnpj1 = rs.getString("cnpj");
+                
+                System.out.println(""+codigo1);
                 
                 MCliente a1 = new MCliente(codigo1, telefone1, email1, codigoEndereco1, nome1, cnpj1);
                 clientes.add(a1);
