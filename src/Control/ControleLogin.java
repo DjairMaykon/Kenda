@@ -62,7 +62,7 @@ public class ControleLogin {
             
             validado = true;
             JOptionPane.showMessageDialog(null, "Usuario Válido");
-            telaLogin.dispose();
+            telaLogin.setVisible(false);
             ControlePrincipal.iniciar();
             
         }else{    

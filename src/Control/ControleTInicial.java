@@ -66,7 +66,7 @@ class ControleTInicial {
             }
         });
              
-               telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
+          telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acaoMICadastrarSetor(e);

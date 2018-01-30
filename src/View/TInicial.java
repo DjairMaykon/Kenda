@@ -5,6 +5,16 @@
  */
 package View;
 
+import View.TelasCadastrar.TCadastrarCliente;
+import View.TelasCadastrar.TCadastrarFornecedor;
+import View.TelasCadastrar.TCadastrarSetor;
+import View.TelasCadastrar.TCadastrarTinta;
+import View.TelasCadastrar.TCadastrarTransportadora;
+import View.TelasNovo.TNovoAvaliacaoTinta;
+import View.TelasNovo.TNovoProducao;
+import View.TelasNovo.TNovoExpedicao;
+import View.TelasNovo.TNovoMateriaPrima;
+import View.TelasNovo.TNovoPedido;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
@@ -163,8 +173,6 @@ public class TInicial extends javax.swing.JFrame {
                 .addGap(9, 9, 9))
         );
 
-        jDPPrincipal.setBackground(new java.awt.Color(57, 93, 117));
-
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("© M.K. Corporation");
 
@@ -181,7 +189,7 @@ public class TInicial extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDPPrincipalLayout.createSequentialGroup()
+            .addGroup(jDPPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -189,9 +197,9 @@ public class TInicial extends javax.swing.JFrame {
         jDPPrincipalLayout.setVerticalGroup(
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 93, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 34, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -387,7 +395,7 @@ public class TInicial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jPMenuAcessoRapido, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jDPPrincipal)
                 .addGap(0, 0, 0))
         );
@@ -395,10 +403,39 @@ public class TInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JMenuItem getjMICadastrarSetor() {
-        return jMICadastrarSetor;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new TInicial().setVisible(true);
+        });
     }
-    
+
     public JMenuItem getjSMIPedidosEmProducao() {
         return jSMIPedidosEmProducao;
     }
@@ -433,6 +470,14 @@ public class TInicial extends javax.swing.JFrame {
 
     public JCheckBoxMenuItem getjCBMIVizualisarBarraDeAcessoRapido() {
         return jCBMIVizualisarBarraDeAcessoRapido;
+    }
+
+    public JMenuItem getjMICadastrarSetor() {
+        return jMICadastrarSetor;
+    }
+
+    public JDesktopPane getjDesktopPane1() {
+        return jDPPrincipal;
     }
 
     public JMenuBar getjMBTelaInicial() {
