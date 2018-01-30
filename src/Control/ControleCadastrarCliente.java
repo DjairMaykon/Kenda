@@ -11,7 +11,20 @@ import View.TelasCadastrar.TCadastrarCliente;
  */
 public class ControleCadastrarCliente {
     
-    private TCadastrarCliente cadastrarCliente= new TCadastrarCliente(); 
+    private TCadastrarCliente cadastrarCliente;
+    
+    
+     public ControleCadastrarCliente() {
+    
+       cadastrarCliente = new TCadastrarCliente();
+    
+    }
+
+    public TCadastrarCliente getCadastrarCliente() {
+        return cadastrarCliente;
+    }
+
+   
     
     
     
