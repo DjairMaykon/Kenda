@@ -71,7 +71,7 @@ public class MTintas {
     
         PreparedStatement pstmt = null;
         
-        String sql = "INSERT INTO TINTAS (cod, funcionalide, custo, cor) VALUES(?,?,?,?)"; // banco
+        String sql = "INSERT INTO TINTAS (cod, funcionalidade, custo, cor) VALUES(?,?,?,?)"; // banco
         
         try {
             

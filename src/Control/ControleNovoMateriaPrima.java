@@ -29,7 +29,8 @@ class ControleNovoMateriaPrima {
     private TNovoMateriaPrima telaNovoMateriaPrima;
     private MMateriaPrima modeloMateriaPrima;
     private MFornece modeloFornece;
-
+    private int custo = 0;
+    
     public ControleNovoMateriaPrima() {
     
         telaNovoMateriaPrima = new TNovoMateriaPrima();
@@ -73,11 +74,16 @@ class ControleNovoMateriaPrima {
             public void actionPerformed(ActionEvent e) {
               
                 Integer codigoDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do Fornecedor: "));
-                String nomeDaMateriaPrima = JOptionPane.showInputDialog("Digite o nome do Fornecedor: ");
+                String nomeDaMateriaPrima = JOptionPane.showInputDialog("Digite o nome do fornecedor: ");
                 Integer qtdDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite o custo da Materia Prima do Fornecedor: "));
                 
                 DefaultTableModel modelo = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
                 modelo.addRow(new Object[]{codigoDaMateriaprima, nomeDaMateriaPrima, qtdDaMateriaprima});
+                
+                
+                custo += qtdDaMateriaprima;
+                
+                telaNovoMateriaPrima.getjTFCusto().setText(""+custo);
                 
             }
         });
@@ -88,9 +94,14 @@ class ControleNovoMateriaPrima {
                 
                 int linha = telaNovoMateriaPrima.getjTFornecedores().getSelectedRow();
                 DefaultTableModel modelo = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
+                
+                custo -= (int)telaNovoMateriaPrima.getjTFornecedores().getValueAt(linha, 2);
+                
                 modelo.removeRow(linha);
                 telaNovoMateriaPrima.getjTFornecedores().setModel(modelo);
                 telaNovoMateriaPrima.getjBRemoverrFornecedor().setEnabled(false);
+                
+                
                 
             }
         });
@@ -128,10 +139,10 @@ class ControleNovoMateriaPrima {
     public void cadastrarFornecedor(){
         
         modeloMateriaPrima.setDescricao(telaNovoMateriaPrima.getjTADescricao().getText());
-        modeloMateriaPrima.adicionar();
+        modeloMateriaPrima.setEstoque(Integer.parseInt(telaNovoMateriaPrima.getjTFEstoque().getText()));
   
         DefaultTableModel m = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
-        
+  
         for(int i = 0; i < m.getRowCount(); i++){
             
             modeloFornece.setCodigoMateriaPrima(modeloMateriaPrima.getCodigo());
@@ -140,6 +151,16 @@ class ControleNovoMateriaPrima {
             modeloFornece.adicionar();
             
         }
+        
+        custo /= modeloMateriaPrima.getEstoque();
+        
+        modeloMateriaPrima.setCusto(custo);
+        
+        modeloMateriaPrima.adicionar();
+        
+        telaNovoMateriaPrima.getjTFCusto().setText(""+custo);
+        
+        JOptionPane.showMessageDialog(null, "Custo Calculado");
         
         telaNovoMateriaPrima.dispose();
         

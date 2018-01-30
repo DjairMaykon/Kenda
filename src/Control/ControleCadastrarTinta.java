@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Model.MMateriaPrima;
 import Model.MNecessita;
 import Model.MTintas;
 import View.TelasCadastrar.TCadastrarTinta;
@@ -25,14 +26,14 @@ public class ControleCadastrarTinta {
     
     private TCadastrarTinta telaCadastrarTinta; 
     private MTintas modeloTinta;
-    private MNecessita modeloNecessita;
+    private ArrayList<MNecessita> modeloNecessita;
     
     public ControleCadastrarTinta() {
     
         telaCadastrarTinta = new TCadastrarTinta();
        
         modeloTinta = new MTintas();
-        modeloNecessita = new MNecessita();
+        modeloNecessita = new ArrayList<>();
       
         ArrayList<MTintas> listar = modeloTinta.listar();
         
@@ -83,7 +84,6 @@ public class ControleCadastrarTinta {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                System.out.println("000000");
                 int linha = telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getSelectedRow();
                 System.out.println("-"+linha);
                 DefaultTableModel modelo = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
@@ -132,19 +132,46 @@ public class ControleCadastrarTinta {
         
         modeloTinta.setFuncionalidade(telaCadastrarTinta.getjTFFuncionalidade().getText());
         modeloTinta.setCor(telaCadastrarTinta.getjTFCor().getText());
-        modeloTinta.adicionar();
-  
+        
+        double custo = 0;
         DefaultTableModel m = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
+        
+        ArrayList<MMateriaPrima> listaMP = new MMateriaPrima().listar();
         
         for(int i = 0; i < m.getRowCount(); i++){
             
-            modeloNecessita.setCodigoMateriaPrima((int) m.getValueAt(i, 0));
-            modeloNecessita.setCodigoTinta(modeloTinta.getCodTinta());
-            modeloNecessita.setQtd_materia_prima((int) m.getValueAt(i, 2));
-            modeloNecessita.adicionar();
+            MNecessita n1 = new MNecessita();
+            
+            n1.setCodigoMateriaPrima((int) m.getValueAt(i, 0));
+            n1.setCodigoTinta(modeloTinta.getCodTinta());
+            n1.setQtd_materia_prima((int) m.getValueAt(i, 2));
+            
+            modeloNecessita.add(n1);
+            
+            for(int j = 0; j < listaMP.size(); j++){
+            
+                if(listaMP.get(j).getCodigo() == n1.getCodigoMateriaPrima()){
+                    
+                    custo += listaMP.get(j).getCusto()*n1.getQtd_materia_prima();
+                    
+                }
+            
+            }
             
         }
         
+        
+        JOptionPane.showMessageDialog(null, "Custo Calculado");
+
+        modeloTinta.setCusto(custo);
+        
+        for(MNecessita n : modeloNecessita){
+            
+            n.adicionar();
+            
+        }
+        
+        modeloTinta.adicionar();
         telaCadastrarTinta.dispose();
         
     }

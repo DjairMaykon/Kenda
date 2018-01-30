@@ -20,11 +20,19 @@ public class MMateriaPrima{
     private Connection con = null;
     private int codigo;
     private String descricao;
-    private String nome;
+    private int estoque;
     private double custo;
 
     public MMateriaPrima() {
         
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
     }
 
     public int getCodigo() {
@@ -49,14 +57,6 @@ public class MMateriaPrima{
         this.descricao = descricao;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public double getCusto() {
         return custo;
     }
@@ -68,13 +68,14 @@ public class MMateriaPrima{
     public void adicionar(){
         
         PreparedStatement pstmt = null;
-        String sql="INSERT INTO MATERIA_PRIMA(COD, DESCRICAO, CUSTO) VALUES(?,?,?)";
+        String sql="INSERT INTO MATERIA_PRIMA(COD, DESCRICAO, CUSTO, ESTOQUE) VALUES(?,?,?,?)";
         try {   
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(2,descricao);
             pstmt.setDouble(3,custo);
             pstmt.setInt(1,codigo);
+            pstmt.setInt(4,estoque);
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -101,12 +102,13 @@ public class MMateriaPrima{
     
     public void alterar(){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE MATERIA_PRIMA SET DESCRICAO=?, CUSTO=? WHERE COD=? ";
+        String sql=" UPDATE MATERIA_PRIMA SET DESCRICAO=?, CUSTO=?, ESTOQUE=? WHERE COD=? ";
         try {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,descricao);
-            pstmt.setInt(4, codigo);
+            pstmt.setInt(5, codigo);
+            pstmt.setInt(4, estoque);
             pstmt.setDouble(2,custo);
             pstmt.executeUpdate();
             
@@ -132,10 +134,12 @@ public class MMateriaPrima{
             while(rs.next()){
                 
                 int codigo1 = rs.getInt("cod");
+                int est = rs.getInt("estoque");
                 String descricao1 = rs.getString("descricao");
                 Double custo1 = rs.getDouble("custo");
                 
                 MMateriaPrima u1 = new MMateriaPrima(codigo1, descricao1, custo1);
+                u1.setEstoque(est);
                 materias.add(u1);
             }
             

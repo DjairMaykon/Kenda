@@ -56,9 +56,14 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLCodigoPedido2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jTFEstoque" min="-2" pref="207" max="-2" attributes="0"/>
+                      </Group>
                       <Component id="jScrollPane2" alignment="1" pref="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLCodigoPedido" min="-2" max="-2" attributes="0"/>
@@ -136,7 +141,12 @@
                           <Component id="jScrollPane2" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLCodigoPedido2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFEstoque" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -280,6 +290,24 @@
               <ComponentRef name="jTFCodigoMateriaPrima"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Custo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLCodigoPedido2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="12" style="0"/>
+            </Property>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="jTFCodigoMateriaPrima"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Estoque:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTFEstoque">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="0"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
