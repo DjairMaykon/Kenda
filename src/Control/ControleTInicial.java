@@ -60,7 +60,6 @@ class ControleTInicial {
             }
         });
            
-           
             
              telaInicial.getjMICadastrarFuncionario().addActionListener(new ActionListener() {
             @Override

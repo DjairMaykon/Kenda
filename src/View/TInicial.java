@@ -69,7 +69,7 @@ public class TInicial extends javax.swing.JFrame {
         jMICadastrarFuncionario = new javax.swing.JMenuItem();
         jMICadastrarTransportadora = new javax.swing.JMenuItem();
         jMICadastrarFornecedores = new javax.swing.JMenuItem();
-        jMICadastrarFornecedores1 = new javax.swing.JMenuItem();
+        jMICadastrarSetor = new javax.swing.JMenuItem();
         jMListar = new javax.swing.JMenu();
         jSMListarTintas = new javax.swing.JMenu();
         jSMITintaCatalogo = new javax.swing.JMenuItem();
@@ -179,11 +179,9 @@ public class TInicial extends javax.swing.JFrame {
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jDPPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addGroup(jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDPPrincipalLayout.setVerticalGroup(
@@ -245,9 +243,9 @@ public class TInicial extends javax.swing.JFrame {
         jMICadastrarFornecedores.setText("Fornecedores");
         jMCadastrar.add(jMICadastrarFornecedores);
 
-        jMICadastrarFornecedores1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMICadastrarFornecedores1.setText("Setor");
-        jMCadastrar.add(jMICadastrarFornecedores1);
+        jMICadastrarSetor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jMICadastrarSetor.setText("Setor");
+        jMCadastrar.add(jMICadastrarSetor);
 
         jMBTelaInicial.add(jMCadastrar);
 
@@ -394,6 +392,10 @@ public class TInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public JMenuItem getjMICadastrarSetor() {
+        return jMICadastrarSetor;
+    }
     
     public JMenuItem getjSMIPedidosEmProducao() {
         return jSMIPedidosEmProducao;
@@ -614,8 +616,8 @@ public class TInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIBuscarEndereco;
     private javax.swing.JMenuItem jMICadastrarCliente;
     private javax.swing.JMenuItem jMICadastrarFornecedores;
-    private javax.swing.JMenuItem jMICadastrarFornecedores1;
     private javax.swing.JMenuItem jMICadastrarFuncionario;
+    private javax.swing.JMenuItem jMICadastrarSetor;
     private javax.swing.JMenuItem jMICadastrarTinta;
     private javax.swing.JMenuItem jMICadastrarTransportadora;
     private javax.swing.JMenuItem jMIHistoricoDeAvaliacao;
