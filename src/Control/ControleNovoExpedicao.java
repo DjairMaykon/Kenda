@@ -21,7 +21,7 @@ class ControleNovoExpedicao {
     
     }
 
-    public TNovoExpedicao getTelaNovoPedido() {
+    public TNovoExpedicao getTelaNovoExpedicao() {
         return telaNovoExpedicao;
     }
     

@@ -21,7 +21,7 @@ class ControleNovoAvaliacaoTinta {
     
     }
 
-    public TNovoAvaliacaoTinta getTelaNovoPedido() {
+    public TNovoAvaliacaoTinta getTelaNovoAvaliacaoTinta() {
         return telaNovoAvaliacaoTinta;
     }
     

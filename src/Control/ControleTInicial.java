@@ -32,6 +32,34 @@ class ControleTInicial {
             }
         });
         
+        telaInicial.getjMINovoProducao().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMINovoProducao(e);
+            }
+        });
+        
+        telaInicial.getjMINovoExpedicao().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMINovoExpedicao(e);
+            }
+        });
+        
+        telaInicial.getjMINovoMateriaPrima().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMINovoMateriaPrima(e);
+            }
+        });
+        
+        telaInicial.getjMINovoAvaliacaoDeTinta().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMINovoAvaliacaoTinta(e);
+            }
+        });
+        
         telaInicial.getjMICadastrarCliente().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,6 +110,37 @@ class ControleTInicial {
         ControleNovoPedido cNovoPedido = new ControleNovoPedido();
         telaInicial.getjDPPrincipal().add(cNovoPedido.getTelaNovoPedido());
         cNovoPedido.getTelaNovoPedido().setVisible(true);
+        
+    }
+    
+    public void acaoMINovoProducao(ActionEvent evt){
+        
+        ControleNovoProducao cNovoProducao = new ControleNovoProducao();
+        telaInicial.getjDPPrincipal().add(cNovoProducao.getTelaNovoProducao());
+        cNovoProducao.getTelaNovoProducao().setVisible(true);
+        
+    }
+    
+    public void acaoMINovoExpedicao(ActionEvent evt){
+        
+        ControleNovoExpedicao cNovoExpedicao = new ControleNovoExpedicao();
+        telaInicial.getjDPPrincipal().add(cNovoExpedicao.getTelaNovoExpedicao());
+        cNovoExpedicao.getTelaNovoExpedicao().setVisible(true);
+        
+    }
+    public void acaoMINovoMateriaPrima(ActionEvent evt){
+        
+        ControleNovoMateriaPrima cNovoMateriaPrima = new ControleNovoMateriaPrima();
+        telaInicial.getjDPPrincipal().add(cNovoMateriaPrima.getTelaNovoMateriaPrima());
+        cNovoMateriaPrima.getTelaNovoMateriaPrima().setVisible(true);
+        
+    }
+    
+    public void acaoMINovoAvaliacaoTinta(ActionEvent evt){
+        
+        ControleNovoAvaliacaoTinta cNovoAvaliacaoTinta = new ControleNovoAvaliacaoTinta();
+        telaInicial.getjDPPrincipal().add(cNovoAvaliacaoTinta.getTelaNovoAvaliacaoTinta());
+        cNovoAvaliacaoTinta.getTelaNovoAvaliacaoTinta().setVisible(true);
         
     }
     

@@ -21,7 +21,7 @@ class ControleNovoMateriaPrima {
     
     }
 
-    public TNovoMateriaPrima getTelaNovoPedido() {
+    public TNovoMateriaPrima getTelaNovoMateriaPrima() {
         return telaNovoMateriaPrima;
     }
     
