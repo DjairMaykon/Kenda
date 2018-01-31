@@ -1,0 +1,1 @@
+jdbc:firebirdsql:localhost/3050:C:\\BANCO KENDA.FDB

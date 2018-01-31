@@ -218,7 +218,7 @@ public class TNovoPedido extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     public JButton getjBCancelarNovoPedido() {
         return jBCancelarNovoPedido;
     }

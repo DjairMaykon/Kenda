@@ -5,24 +5,9 @@
  */
 package View;
 
-import View.TelasCadastrar.TCadastrarCliente;
-import View.TelasCadastrar.TCadastrarFornecedor;
-import View.TelasCadastrar.TCadastrarSetor;
-import View.TelasCadastrar.TCadastrarTinta;
-import View.TelasCadastrar.TCadastrarTransportadora;
-import View.TelasNovo.TNovoAvaliacaoTinta;
-import View.TelasNovo.TNovoProducao;
-import View.TelasNovo.TNovoExpedicao;
-import View.TelasNovo.TNovoMateriaPrima;
-import View.TelasNovo.TNovoPedido;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.net.URL;
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JDesktopPane;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
@@ -37,13 +22,6 @@ public class TInicial extends javax.swing.JFrame {
      */
     public TInicial() {
         initComponents();
-        inicializarIcone();
-    }
-
-    private void inicializarIcone() {
-        URL caminhoImagem = this.getClass().getClassLoader().getResource(".\\imagens\\Sistema logo.png");
-        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
-        this.setIconImage(iconeTitulo);
     }
 
     /**
@@ -79,7 +57,7 @@ public class TInicial extends javax.swing.JFrame {
         jMICadastrarFuncionario = new javax.swing.JMenuItem();
         jMICadastrarTransportadora = new javax.swing.JMenuItem();
         jMICadastrarFornecedores = new javax.swing.JMenuItem();
-        jMICadastrarFornecedores1 = new javax.swing.JMenuItem();
+        jMICadastrarSetor = new javax.swing.JMenuItem();
         jMListar = new javax.swing.JMenu();
         jSMListarTintas = new javax.swing.JMenu();
         jSMITintaCatalogo = new javax.swing.JMenuItem();
@@ -173,6 +151,8 @@ public class TInicial extends javax.swing.JFrame {
                 .addGap(9, 9, 9))
         );
 
+        jDPPrincipal.setBackground(new java.awt.Color(57, 93, 117));
+
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("© M.K. Corporation");
 
@@ -186,9 +166,9 @@ public class TInicial extends javax.swing.JFrame {
         jDPPrincipalLayout.setHorizontalGroup(
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -211,47 +191,22 @@ public class TInicial extends javax.swing.JFrame {
 
         jMINovoPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMINovoPedido.setText("Pedido");
-        jMINovoPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMINovoPedidoActionPerformed(evt);
-            }
-        });
         jMNovo.add(jMINovoPedido);
 
         jMINovoProducao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMINovoProducao.setText("Produção");
-        jMINovoProducao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMINovoProducaoActionPerformed(evt);
-            }
-        });
         jMNovo.add(jMINovoProducao);
 
         jMINovoExpedicao.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMINovoExpedicao.setText("Expedição");
-        jMINovoExpedicao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMINovoExpedicaoActionPerformed(evt);
-            }
-        });
         jMNovo.add(jMINovoExpedicao);
 
         jMINovoMateriaPrima.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMINovoMateriaPrima.setText("Materia Prima");
-        jMINovoMateriaPrima.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMINovoMateriaPrimaActionPerformed(evt);
-            }
-        });
         jMNovo.add(jMINovoMateriaPrima);
 
         jMINovoAvaliacaoDeTinta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMINovoAvaliacaoDeTinta.setText("Avaliação de Tinta");
-        jMINovoAvaliacaoDeTinta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMINovoAvaliacaoDeTintaActionPerformed(evt);
-            }
-        });
         jMNovo.add(jMINovoAvaliacaoDeTinta);
 
         jMBTelaInicial.add(jMNovo);
@@ -260,20 +215,10 @@ public class TInicial extends javax.swing.JFrame {
 
         jMICadastrarTinta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarTinta.setText("Tinta");
-        jMICadastrarTinta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMICadastrarTintaActionPerformed(evt);
-            }
-        });
         jMCadastrar.add(jMICadastrarTinta);
 
         jMICadastrarCliente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarCliente.setText("Cliente");
-        jMICadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMICadastrarClienteActionPerformed(evt);
-            }
-        });
         jMCadastrar.add(jMICadastrarCliente);
 
         jMICadastrarFuncionario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -282,30 +227,15 @@ public class TInicial extends javax.swing.JFrame {
 
         jMICadastrarTransportadora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarTransportadora.setText("Transportadora");
-        jMICadastrarTransportadora.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMICadastrarTransportadoraActionPerformed(evt);
-            }
-        });
         jMCadastrar.add(jMICadastrarTransportadora);
 
         jMICadastrarFornecedores.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICadastrarFornecedores.setText("Fornecedores");
-        jMICadastrarFornecedores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMICadastrarFornecedoresActionPerformed(evt);
-            }
-        });
         jMCadastrar.add(jMICadastrarFornecedores);
 
-        jMICadastrarFornecedores1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMICadastrarFornecedores1.setText("Setor");
-        jMICadastrarFornecedores1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMICadastrarFornecedores1ActionPerformed(evt);
-            }
-        });
-        jMCadastrar.add(jMICadastrarFornecedores1);
+        jMICadastrarSetor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jMICadastrarSetor.setText("Setor");
+        jMCadastrar.add(jMICadastrarSetor);
 
         jMBTelaInicial.add(jMCadastrar);
 
@@ -423,11 +353,6 @@ public class TInicial extends javax.swing.JFrame {
         jCBMIVizualisarBarraDeAcessoRapido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jCBMIVizualisarBarraDeAcessoRapido.setSelected(true);
         jCBMIVizualisarBarraDeAcessoRapido.setText("Barra de Acesso Rápido");
-        jCBMIVizualisarBarraDeAcessoRapido.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged(evt);
-            }
-        });
         jMConfiguracoes.add(jCBMIVizualisarBarraDeAcessoRapido);
 
         jMBTelaInicial.add(jMConfiguracoes);
@@ -457,133 +382,6 @@ public class TInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMINovoPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINovoPedidoActionPerformed
-        // TODO add your handling code here:
-        TNovoPedido telaNovoPedido = new TNovoPedido();
-        jDPPrincipal.add(telaNovoPedido);
-        telaNovoPedido.setVisible(true);
-    }//GEN-LAST:event_jMINovoPedidoActionPerformed
-
-    private void jMINovoProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINovoProducaoActionPerformed
-        // TODO add your handling code here:
-        
-        TNovoProducao telaNovoPedido = new TNovoProducao();
-        jDPPrincipal.add(telaNovoPedido);
-        telaNovoPedido.setVisible(true);
-        
-    }//GEN-LAST:event_jMINovoProducaoActionPerformed
-
-    private void jMINovoExpedicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINovoExpedicaoActionPerformed
-        // TODO add your handling code here:
-        
-        TNovoExpedicao telaNovoPedido = new TNovoExpedicao();
-        jDPPrincipal.add(telaNovoPedido);
-        telaNovoPedido.setVisible(true);
-        
-    }//GEN-LAST:event_jMINovoExpedicaoActionPerformed
-
-    private void jMINovoMateriaPrimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINovoMateriaPrimaActionPerformed
-        // TODO add your handling code here:
-        
-        TNovoMateriaPrima telaNovoMateriaPrima = new TNovoMateriaPrima();
-        jDPPrincipal.add(telaNovoMateriaPrima);
-        telaNovoMateriaPrima.setVisible(true);
-        
-    }//GEN-LAST:event_jMINovoMateriaPrimaActionPerformed
-
-    private void jMINovoAvaliacaoDeTintaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINovoAvaliacaoDeTintaActionPerformed
-        // TODO add your handling code here:
-        
-        TNovoAvaliacaoTinta telaNovoAvaliacaoTinta = new TNovoAvaliacaoTinta();
-        jDPPrincipal.add(telaNovoAvaliacaoTinta);
-        telaNovoAvaliacaoTinta.setVisible(true);
-        
-    }//GEN-LAST:event_jMINovoAvaliacaoDeTintaActionPerformed
-
-    private void jMICadastrarTintaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarTintaActionPerformed
-        // TODO add your handling code here:
-        
-        TCadastrarTinta telaCadastrarTinta = new TCadastrarTinta();
-        jDPPrincipal.add(telaCadastrarTinta);
-        telaCadastrarTinta.setVisible(true);
-        
-    }//GEN-LAST:event_jMICadastrarTintaActionPerformed
-
-    private void jMICadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarClienteActionPerformed
-        // TODO add your handling code here:
-        
-        TCadastrarCliente telaCadastrarCliente = new TCadastrarCliente();
-        jDPPrincipal.add(telaCadastrarCliente);
-        telaCadastrarCliente.setVisible(true);
-        
-    }//GEN-LAST:event_jMICadastrarClienteActionPerformed
-
-    private void jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged
-        // TODO add your handling code here:
-        
-        if(jCBMIVizualisarBarraDeAcessoRapido.isSelected())
-            jPMenuAcessoRapido.setVisible(true);
-        else
-            jPMenuAcessoRapido.setVisible(false);
-        
-    }//GEN-LAST:event_jCBMIVizualisarBarraDeAcessoRapidoItemStateChanged
-
-    private void jMICadastrarFornecedores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarFornecedores1ActionPerformed
-        TCadastrarSetor telaCadastrarSetor = new TCadastrarSetor();
-        jDPPrincipal.add(telaCadastrarSetor);
-        telaCadastrarSetor.setVisible(true);      // TODO add your handling code here:
-    }//GEN-LAST:event_jMICadastrarFornecedores1ActionPerformed
-
-    private void jMICadastrarTransportadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarTransportadoraActionPerformed
-        TCadastrarTransportadora telaCadastrarTransportadora = new TCadastrarTransportadora();
-        jDPPrincipal.add(telaCadastrarTransportadora);
-        telaCadastrarTransportadora.setVisible(true);
-                                             // TODO add your handling code here:
-    }//GEN-LAST:event_jMICadastrarTransportadoraActionPerformed
-
-    private void jMICadastrarFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICadastrarFornecedoresActionPerformed
-        TCadastrarFornecedor telaCadastrarFornecedor = new TCadastrarFornecedor();
-        jDPPrincipal.add(telaCadastrarFornecedor);
-        telaCadastrarFornecedor.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jMICadastrarFornecedoresActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new TInicial().setVisible(true);
-        });
-    }
-
-    public JMenuItem getjSMIPedidosEmProducao() {
-        return jSMIPedidosEmProducao;
-    }
 
     public JButton getjBAjuda() {
         return jBAjuda;
@@ -617,24 +415,8 @@ public class TInicial extends javax.swing.JFrame {
         return jCBMIVizualisarBarraDeAcessoRapido;
     }
 
-    public JDesktopPane getjDesktopPane1() {
+    public JDesktopPane getjDPPrincipal() {
         return jDPPrincipal;
-    }
-
-    public JMenuBar getjMBTelaInicial() {
-        return jMBTelaInicial;
-    }
-
-    public JMenu getjMCadastrar() {
-        return jMCadastrar;
-    }
-
-    public JMenu getjMConfiguracoes() {
-        return jMConfiguracoes;
-    }
-
-    public JMenu getjMFerramentas() {
-        return jMFerramentas;
     }
 
     public JMenuItem getjMIBuscarEndereco() {
@@ -651,6 +433,10 @@ public class TInicial extends javax.swing.JFrame {
 
     public JMenuItem getjMICadastrarFuncionario() {
         return jMICadastrarFuncionario;
+    }
+
+    public JMenuItem getjMICadastrarSetor() {
+        return jMICadastrarSetor;
     }
 
     public JMenuItem getjMICadastrarTinta() {
@@ -697,18 +483,6 @@ public class TInicial extends javax.swing.JFrame {
         return jMIRelatorioVendas;
     }
 
-    public JMenu getjMListar() {
-        return jMListar;
-    }
-
-    public JMenu getjMNovo() {
-        return jMNovo;
-    }
-
-    public JMenu getjMRelatorio() {
-        return jMRelatorio;
-    }
-
     public JPanel getjPMenuAcessoRapido() {
         return jPMenuAcessoRapido;
     }
@@ -733,6 +507,18 @@ public class TInicial extends javax.swing.JFrame {
         return jSMIExpedicaoTransportadoras;
     }
 
+    public JMenuItem getjSMIPedidosEmExpedição() {
+        return jSMIPedidosEmExpedição;
+    }
+
+    public JMenuItem getjSMIPedidosEmLaboratorio() {
+        return jSMIPedidosEmLaboratorio;
+    }
+
+    public JMenuItem getjSMIPedidosEmProducao() {
+        return jSMIPedidosEmProducao;
+    }
+
     public JMenuItem getjSMIPedidosFinalizados() {
         return jSMIPedidosFinalizados;
     }
@@ -752,38 +538,7 @@ public class TInicial extends javax.swing.JFrame {
     public JMenuItem getjSMITintasAvaliacao() {
         return jSMITintasAvaliacao;
     }
-
-    public JMenu getjSMListarEstoque() {
-        return jSMListarEstoque;
-    }
-
-    public JMenu getjSMListarExpedição() {
-        return jSMListarExpedição;
-    }
-
-    public JMenu getjSMListarPedidos() {
-        return jSMListarPedidos;
-    }
-
-    public JMenu getjSMListarProducao() {
-        return jSMListarProducao;
-    }
-
-    public JMenu getjSMListarTintas() {
-        return jSMListarTintas;
-    }
-
-    public JDesktopPane getjDPPrincipal() {
-        return jDPPrincipal;
-    }
-
-    public JMenuItem getjSMIPedidosEmExpedição() {
-        return jSMIPedidosEmExpedição;
-    }
-
-    public JMenuItem getjSMIPedidosEmLaboratorio() {
-        return jSMIPedidosEmLaboratorio;
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAjuda;
@@ -804,8 +559,8 @@ public class TInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIBuscarEndereco;
     private javax.swing.JMenuItem jMICadastrarCliente;
     private javax.swing.JMenuItem jMICadastrarFornecedores;
-    private javax.swing.JMenuItem jMICadastrarFornecedores1;
     private javax.swing.JMenuItem jMICadastrarFuncionario;
+    private javax.swing.JMenuItem jMICadastrarSetor;
     private javax.swing.JMenuItem jMICadastrarTinta;
     private javax.swing.JMenuItem jMICadastrarTransportadora;
     private javax.swing.JMenuItem jMIHistoricoDeAvaliacao;

@@ -36,8 +36,8 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTListarProducaoEmAndamento = new javax.swing.JTable();
-        jTFListarProducaoEmAndamento = new javax.swing.JTextField();
+        jTListarProducaoFinalizados = new javax.swing.JTable();
+        jTFEntradaPesquisa = new javax.swing.JTextField();
         jBBuscar = new javax.swing.JButton();
 
         setClosable(true);
@@ -46,7 +46,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(57, 93, 117));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTListarProducaoEmAndamento.setModel(new javax.swing.table.DefaultTableModel(
+        jTListarProducaoFinalizados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -54,7 +54,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
                 "Codigo Producao", "Codigo Pedido", "Codigo Funcionario", "Situacao", "Custo", "Data"
             }
         ));
-        jScrollPane1.setViewportView(jTListarProducaoEmAndamento);
+        jScrollPane1.setViewportView(jTListarProducaoFinalizados);
 
         jBBuscar.setText("Buscar");
 
@@ -67,7 +67,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTFListarProducaoEmAndamento, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFEntradaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 10, Short.MAX_VALUE)))
@@ -78,7 +78,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFListarProducaoEmAndamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFEntradaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -109,7 +109,7 @@ public class TListarProducaoFinalizados extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBBuscar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTFListarProducaoEmAndamento;
-    private javax.swing.JTable jTListarProducaoEmAndamento;
+    private javax.swing.JTextField jTFEntradaPesquisa;
+    private javax.swing.JTable jTListarProducaoFinalizados;
     // End of variables declaration//GEN-END:variables
 }

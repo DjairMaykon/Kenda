@@ -98,7 +98,7 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Código", "Nome", "Custo"
+                "Código", "Nome", "Quantidade"
             }
         ));
         jScrollPane1.setViewportView(jTMateriasPrimasUtilizadas);

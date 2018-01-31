@@ -6,9 +6,6 @@
 package View.Listar.Expedicao;
 
 
-import View.Listar.Producao.*;
-import View.Listar.Tintas.*;
-import View.TelasCadastrar.*;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -25,6 +22,14 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
         initComponents();
         
     }
+
+    public JButton getjBBuscar() {
+        return jBBuscar;
+    }
+
+    public JTextField getjTFEntradaPesquisa() {
+        return jTFEntradaPesquisa;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,7 +43,7 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTListarExpedicaoEmAndamento = new javax.swing.JTable();
-        jTFListarExpedicaoEmAndamento = new javax.swing.JTextField();
+        jTFEntradaPesquisa = new javax.swing.JTextField();
         jBBuscar = new javax.swing.JButton();
 
         setClosable(true);
@@ -52,7 +57,7 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo Expedicao", "Codigo Pedido", "Codigo Transportadora", "Descricao", "Data de Saida", "Data de Entrega", "Situacao", "Custo"
+                "Codigo Expedição", "Codigo Pedido", "Codigo Transportadora", "Descrição", "Data de Saida", "Data de Entrega", "Situação", "Custo"
             }
         ));
         jScrollPane1.setViewportView(jTListarExpedicaoEmAndamento);
@@ -68,7 +73,7 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTFListarExpedicaoEmAndamento)
+                        .addComponent(jTFEntradaPesquisa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -78,7 +83,7 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFListarExpedicaoEmAndamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFEntradaPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -109,7 +114,7 @@ public class TListarExpedicaoEmAndamento extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBBuscar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTFListarExpedicaoEmAndamento;
+    private javax.swing.JTextField jTFEntradaPesquisa;
     private javax.swing.JTable jTListarExpedicaoEmAndamento;
     // End of variables declaration//GEN-END:variables
 }

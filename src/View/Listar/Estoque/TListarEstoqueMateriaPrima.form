@@ -61,7 +61,7 @@
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jTFListarEstoqueMateriaPrima" min="-2" pref="416" max="-2" attributes="0"/>
+                          <Component id="jTFEntradaPesquisa" min="-2" pref="416" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jBBusca" min="-2" pref="172" max="-2" attributes="0"/>
                       </Group>
@@ -75,7 +75,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTFListarEstoqueMateriaPrima" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFEntradaPesquisa" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBBusca" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -134,7 +134,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="jTFListarEstoqueMateriaPrima">
+        <Component class="javax.swing.JTextField" name="jTFEntradaPesquisa">
         </Component>
         <Component class="javax.swing.JButton" name="jBBusca">
           <Properties>

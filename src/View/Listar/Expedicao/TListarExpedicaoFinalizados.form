@@ -61,7 +61,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane1" pref="788" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jTFListarExpedicaoEmAndamento" max="32767" attributes="0"/>
+                          <Component id="jTFEntradaPesquisa" max="32767" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jBBuscar" min="-2" pref="172" max="-2" attributes="0"/>
                       </Group>
@@ -75,7 +75,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTFListarExpedicaoEmAndamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFEntradaPesquisa" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -93,17 +93,17 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTListarExpedicaoEmAndamento">
+            <Component class="javax.swing.JTable" name="jTListarExpedicaoFinalizados">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="8" rowCount="0">
-                    <Column editable="true" title="Codigo Expedicao" type="java.lang.Object"/>
+                    <Column editable="true" title="Codigo Expedi&#xe7;&#xe3;oo" type="java.lang.Object"/>
                     <Column editable="true" title="Codigo Pedido" type="java.lang.Object"/>
                     <Column editable="true" title="Codigo Transportadora" type="java.lang.Object"/>
-                    <Column editable="true" title="Descricao" type="java.lang.Object"/>
+                    <Column editable="true" title="Descri&#xe7;&#xe3;o" type="java.lang.Object"/>
                     <Column editable="true" title="Data de Saida" type="java.lang.Object"/>
                     <Column editable="true" title="Data de Entrega" type="java.lang.Object"/>
-                    <Column editable="true" title="Situacao" type="java.lang.Object"/>
+                    <Column editable="true" title="Situa&#xe7;&#xe3;o" type="java.lang.Object"/>
                     <Column editable="true" title="Custo" type="java.lang.Object"/>
                   </Table>
                 </Property>
@@ -158,7 +158,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="jTFListarExpedicaoEmAndamento">
+        <Component class="javax.swing.JTextField" name="jTFEntradaPesquisa">
         </Component>
         <Component class="javax.swing.JButton" name="jBBuscar">
           <Properties>

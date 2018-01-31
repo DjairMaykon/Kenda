@@ -5,12 +5,10 @@
  */
 package View.Ferramentas;
 
-
-import View.Listar.Estoque.*;
-import View.Listar.Pedidos.*;
-import View.Listar.Tintas.*;
-import View.TelasCadastrar.*;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -47,7 +45,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
         jLSituacao = new javax.swing.JLabel();
         jCBSituacao = new javax.swing.JComboBox<>();
         jLData = new javax.swing.JLabel();
-        jDCDataDaProducao = new com.toedter.calendar.JDateChooser();
         jBSalvar = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
         jLCodigodaTinta = new javax.swing.JLabel();
@@ -61,7 +58,7 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTTintasProduzidas = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        jTFBuscarCEP = new javax.swing.JTextField();
+        jTFCEP = new javax.swing.JTextField();
         jBBuscar = new javax.swing.JButton();
         jLFerramentaCEP = new javax.swing.JLabel();
         jLFerramentaUF = new javax.swing.JLabel();
@@ -104,8 +101,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
 
         jLData.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLData.setText("Data:");
-
-        jDCDataDaProducao.setEnabled(false);
 
         jBSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBSalvar.setText("Salvar");
@@ -172,7 +167,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTFCustoProducao, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jDCDataDaProducao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jCBSituacao, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -182,17 +176,17 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                                     .addComponent(jTFCodigoProducao, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jBAdicionarTinta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jBRemoverTinta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jSeparator1))
                         .addGap(10, 10, 10))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(jBCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -212,9 +206,7 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                             .addComponent(jTFCodigoProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoProducao5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDCDataDaProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLData))
+                        .addComponent(jLData)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTFCustoProducao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,7 +271,7 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTFBuscarCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                        .addComponent(jTFCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBBuscar))
                     .addComponent(jTFFerramentaUF)
@@ -305,7 +297,7 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
                 .addComponent(jLFerramentaCEP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFBuscarCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,6 +344,78 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getjBAdicionarTinta() {
+        return jBAdicionarTinta;
+    }
+
+    public JButton getjBBuscar() {
+        return jBBuscar;
+    }
+
+    public JButton getjBCancelar() {
+        return jBCancelar;
+    }
+
+    public JButton getjBProcurarPedido() {
+        return jBProcurarPedido;
+    }
+
+    public JButton getjBRemoverTinta() {
+        return jBRemoverTinta;
+    }
+
+    public JButton getjBSalvar() {
+        return jBSalvar;
+    }
+
+    public JComboBox<String> getjCBSituacao() {
+        return jCBSituacao;
+    }
+
+    public JTextArea getjTADescricaoPedido() {
+        return jTADescricaoPedido;
+    }
+
+    public JTextField getjTFCEP() {
+        return jTFCEP;
+    }
+
+    public JTextField getjTFCodigoPedido() {
+        return jTFCodigoPedido;
+    }
+
+    public JTextField getjTFCodigoProducao() {
+        return jTFCodigoProducao;
+    }
+
+    public JTextField getjTFCustoProducao() {
+        return jTFCustoProducao;
+    }
+
+    public JTextField getjTFFerramentaBairro() {
+        return jTFFerramentaBairro;
+    }
+
+    public JTextField getjTFFerramentaCidade() {
+        return jTFFerramentaCidade;
+    }
+
+    public JTextField getjTFFerramentaNumero() {
+        return jTFFerramentaNumero;
+    }
+
+    public JTextField getjTFFerramentaRua() {
+        return jTFFerramentaRua;
+    }
+
+    public JTextField getjTFFerramentaUF() {
+        return jTFFerramentaUF;
+    }
+
+    public JTable getjTTintasProduzidas() {
+        return jTTintasProduzidas;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarTinta;
     private javax.swing.JButton jBBuscar;
@@ -360,7 +424,6 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBRemoverTinta;
     private javax.swing.JButton jBSalvar;
     private javax.swing.JComboBox<String> jCBSituacao;
-    private com.toedter.calendar.JDateChooser jDCDataDaProducao;
     private javax.swing.JLabel jLCodigoPedido;
     private javax.swing.JLabel jLCodigoProducao5;
     private javax.swing.JLabel jLCodigodaTinta;
@@ -382,7 +445,7 @@ public class TFerramentasBuscarEndereco extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextArea jTADescricaoPedido;
-    private javax.swing.JTextField jTFBuscarCEP;
+    private javax.swing.JTextField jTFCEP;
     private javax.swing.JTextField jTFCodigoPedido;
     private javax.swing.JTextField jTFCodigoProducao;
     private javax.swing.JTextField jTFCustoProducao;

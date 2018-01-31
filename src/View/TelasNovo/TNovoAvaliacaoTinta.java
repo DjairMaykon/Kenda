@@ -29,6 +29,12 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
         return jBCancelarNovaAvaliacao;
     }
 
+    public JTextArea getjTAAvaliacao() {
+        return jTAAvaliacao;
+    }
+
+    
+
     public JButton getjBProcurarTinta() {
         return jBProcurarTinta;
     }

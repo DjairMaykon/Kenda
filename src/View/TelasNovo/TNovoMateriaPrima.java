@@ -236,6 +236,7 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
     public JTable getjTFornecedores() {
         return jTFornecedores;
     }
+    
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarFornecedor;

@@ -95,15 +95,15 @@
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jScrollPane2" pref="364" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" pref="365" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jSeparator2" min="-2" pref="3" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jBCancelar" pref="120" max="32767" attributes="0"/>
-                      <Component id="jBSalvar" max="32767" attributes="0"/>
+                      <Component id="jBCancelarProducao" pref="120" max="32767" attributes="0"/>
+                      <Component id="jBSalvarProducao" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -116,9 +116,9 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jBSalvar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBSalvarProducao" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jBCancelar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBCancelarProducao" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -263,7 +263,7 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBSalvar">
+        <Component class="javax.swing.JButton" name="jBSalvarProducao">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagens/37.png"/>
@@ -271,7 +271,7 @@
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBCancelar">
+        <Component class="javax.swing.JButton" name="jBCancelarProducao">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagens/Delete_01.png"/>
