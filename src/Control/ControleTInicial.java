@@ -205,7 +205,23 @@ class ControleTInicial {
             }
         });
                
-         
+           telaInicial.getjSMITintaCatalogo().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMIListarTitasCatalogo(e);
+            }
+        });
+           
+           
+            telaInicial.getjSMITintasAvaliacao().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoMIListarTitasAvalicoes(e);
+            }
+        });
+            
+            
+               
                
          
          
@@ -413,6 +429,25 @@ class ControleTInicial {
         cListarProducaoFinalizados.gettelaListarProducaoFinalizados().setVisible(true);
         
     }
+       
+        public void acaoMIListarTitasAvalicoes(ActionEvent evt){
+        
+        ControleListarTintasAvaliacoes cListarTintasAvaliacoes = new ControleListarTintasAvaliacoes();
+        telaInicial.getjDPPrincipal().add(cListarTintasAvaliacoes.gettelaListarTintasAvaliacoes());
+        cListarTintasAvaliacoes.gettelaListarTintasAvaliacoes().setVisible(true);
+        
+    }
+        
+      public void acaoMIListarTitasCatalogo(ActionEvent evt){
+        
+        ControleListarTintasCatalogo cListarTintasCatalogo = new ControleListarTintasCatalogo();
+        telaInicial.getjDPPrincipal().add(cListarTintasCatalogo.gettelaListarTintasCatalogo());
+        cListarTintasCatalogo.gettelaListarTintasCatalogo().setVisible(true);
+        
+    }
+     
+      
+      
     
       
       
