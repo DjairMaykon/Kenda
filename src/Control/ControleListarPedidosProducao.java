@@ -5,6 +5,8 @@
  */
 package Control;
 
+import View.Listar.Pedidos.TListarPedidosProducao;
+
 
 
 
@@ -17,16 +19,16 @@ package Control;
  */
 class ControleListarPedidosProducao {
     
-    private TListarPedidosLaboratorio telaListarPedidosLaboratorio;
+    private TListarPedidosProducao telaListarPedidosProducao;
 
     public ControleListarPedidosProducao() {
     
-        telaListarPedidosLaboratorio = new TListarPedidosLaboratorio();
+        telaListarPedidosProducao = new TListarPedidosProducao();
     
     }
 
-    public TListarPedidosLaboratorio gettelaListarPedidosLaboratorio() {
-        return telaListarPedidosLaboratorio;
+    public TListarPedidosProducao gettelaListarPedidosProducao() {
+        return telaListarPedidosProducao;
     }
     
 }
