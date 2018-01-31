@@ -47,7 +47,7 @@ public class ControleCadastrarFuncionario {
               
                 if(validarEntradas()){
                   
-                    cadastrarFornecedor();
+                    cadastrarFuncionario();
                   
                 }
               
@@ -84,7 +84,7 @@ public class ControleCadastrarFuncionario {
         
     }
     
-    public void cadastrarFornecedor(){
+    public void cadastrarFuncionario(){
         
         modeloFuncionario.setCpf(telaCadastrarFuncionario.getjTFCPNJ().getText());
         modeloFuncionario.setEmail(telaCadastrarFuncionario.getjTFEmail().getText());
