@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -36,6 +38,15 @@ public class MCliente {
 
     public String getTelefone() {
         return telefone;
+    }
+
+    public MCliente(int codigo, String telefone, String email, int codigoEndereco, String nome, String cnpj) {
+        this.codigo = codigo;
+        this.telefone = telefone;
+        this.email = email;
+        this.codigoEndereco = codigoEndereco;
+        this.nome = nome;
+        this.cnpj = cnpj;
     }
 
     public void setTelefone(String telefone) {
@@ -153,6 +164,40 @@ public class MCliente {
             throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
             
         }   
+        
+    }
+     
+     public ArrayList<MCliente> listar(){
+        
+        ArrayList<MCliente> clientes = new ArrayList<>();
+        String sql="SELECT * FROM CLIENTE";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                int codigo1 = rs.getInt("cod");
+                String telefone1 = rs.getString("telefone");
+                String email1 = rs.getString("email");
+                int codigoEndereco1 = rs.getInt("cod_end");
+                String nome1 = rs.getString("nome");
+                String cnpj1 = rs.getString("cnpj1");
+                
+                MCliente a1 = new MCliente(codigo1, telefone1, email1, codigoEndereco1, nome1, cnpj1);
+                clientes.add(a1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao alterar Usuario\n" + ex);
+        }
+        
+        return clientes;
         
     }
     

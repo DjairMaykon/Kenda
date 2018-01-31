@@ -7,7 +7,9 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,6 +24,16 @@ public class MEndereco {
     private String rua;
     private int numero;
     private Connection con = null;
+
+    public MEndereco(String cep, String uf, String cidade, String bairro, int codigo, String rua, int numero) {
+        this.cep = cep;
+        this.uf = uf;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.codigo = codigo;
+        this.rua = rua;
+        this.numero = numero;
+    }
     
 
     public String getCep() {
@@ -137,6 +149,41 @@ public class MEndereco {
         } catch (SQLException ex) {
             System.out.println("Erro ao alterar");
         }
+        
+    }
+    
+    public ArrayList<MEndereco> listar(){
+        
+        ArrayList<MEndereco> enderecos = new ArrayList<>();
+        String sql="SELECT * FROM ENDERECO";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                String cep1 = rs.getString("cep");
+                String uf1 = rs.getString("uf");
+                String cidade1 = rs.getString("cidade");
+                String bairro1 = rs.getString("bairro");
+                int codigo1 = rs.getInt("cod");
+                String rua1 = rs.getString("rua");
+                int numero1 = rs.getInt("numero");
+                
+                MEndereco u1 = new MEndereco(cep1, uf1, cidade1, bairro1, codigo1, rua1, numero1);
+                enderecos.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao alterar Usuario\n" + ex);
+        }
+        
+        return enderecos;
         
     }
    
