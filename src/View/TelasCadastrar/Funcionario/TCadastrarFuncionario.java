@@ -93,7 +93,9 @@ public class TCadastrarFuncionario extends javax.swing.JInternalFrame {
         try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("###.###.###-##");    jTFCPF = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)-#####-####");    jTFCPF = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jTFEndereco = new javax.swing.JTextField();
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("#####-###");    jTFCPF = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente2 = new javax.swing.JLabel();
         jBuscarEndereco = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();

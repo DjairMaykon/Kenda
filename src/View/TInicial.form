@@ -500,9 +500,6 @@
               <Dimension value="[40, 40]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBAjudaActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBSobreOUsuario">
           <Properties>
@@ -523,9 +520,6 @@
               <Dimension value="[40, 40]"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSairDoUsuarioActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

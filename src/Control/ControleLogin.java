@@ -77,6 +77,11 @@ public class ControleLogin {
         return modeloUsuario;
     }
     
+     public TLogin gettelaTLogin() {
+        return telaLogin;
+    }
+    
+    
     public boolean isValidado() {
         return validado;
     }

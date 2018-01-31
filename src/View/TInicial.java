@@ -109,22 +109,12 @@ public class TInicial extends javax.swing.JFrame {
 
         jBAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Aide.png"))); // NOI18N
         jBAjuda.setPreferredSize(new java.awt.Dimension(40, 40));
-        jBAjuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAjudaActionPerformed(evt);
-            }
-        });
 
         jBSobreOUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/User-Info.png"))); // NOI18N
         jBSobreOUsuario.setPreferredSize(new java.awt.Dimension(40, 40));
 
         jBSairDoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logout-iloveimg-resized.png"))); // NOI18N
         jBSairDoUsuario.setPreferredSize(new java.awt.Dimension(40, 40));
-        jBSairDoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBSairDoUsuarioActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPMenuAcessoRapidoLayout = new javax.swing.GroupLayout(jPMenuAcessoRapido);
         jPMenuAcessoRapido.setLayout(jPMenuAcessoRapidoLayout);
@@ -391,14 +381,6 @@ public class TInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBSairDoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairDoUsuarioActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jBSairDoUsuarioActionPerformed
-
-    private void jBAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAjudaActionPerformed
-        JOptionPane.showMessageDialog(null,"Sistema de Banco de Dados para organizar a empres Kenda Farbem");
-    }//GEN-LAST:event_jBAjudaActionPerformed
 
     public JButton getjBAjuda() {
         return jBAjuda;

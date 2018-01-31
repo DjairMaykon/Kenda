@@ -22,6 +22,12 @@ class ControleTInicial {
         telaInicial = new TInicial();
         telaInicial.setVisible(true);
         
+          telaInicial.getjBSairDoUsuario().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                acaoSair(e);
+            }
+        });
         telaInicial.getjMINovoPedido().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -443,6 +449,14 @@ class ControleTInicial {
         ControleListarTintasCatalogo cListarTintasCatalogo = new ControleListarTintasCatalogo();
         telaInicial.getjDPPrincipal().add(cListarTintasCatalogo.gettelaListarTintasCatalogo());
         cListarTintasCatalogo.gettelaListarTintasCatalogo().setVisible(true);
+        
+    }
+     
+        public void acaoSair(ActionEvent evt){
+        
+         ControleLogin ccontroleLogin = new ControleLogin();
+        ccontroleLogin.gettelaTLogin().setVisible(true);
+        telaInicial.dispose();
         
     }
      

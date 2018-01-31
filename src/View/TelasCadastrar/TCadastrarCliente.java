@@ -94,7 +94,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
         jTFTelefone = new javax.swing.JTextField();
         try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)-#####-#####");    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jTFEndereco = new javax.swing.JTextField();
-        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("#####-####");    jTFEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("#####-###");    jTFEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente2 = new javax.swing.JLabel();
         jBuscarEndereco = new javax.swing.JButton();
 

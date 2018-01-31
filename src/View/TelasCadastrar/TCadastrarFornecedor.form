@@ -275,7 +275,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter(&quot;#####-####&quot;);    jTFCodigoEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter(&quot;#####-###&quot;);    jTFCodigoEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLCodigoCliente2">
