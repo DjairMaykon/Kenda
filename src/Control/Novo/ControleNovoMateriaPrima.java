@@ -5,15 +5,26 @@
  */
 package Control.Novo;
 
+import Control.Utils.ControleToolTip;
 import Model.MFornece;
+import Model.MFornecedores;
 import Model.MMateriaPrima;
 import View.TelasNovo.TNovoMateriaPrima;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.event.InternalFrameAdapter;
+import javax.swing.event.InternalFrameEvent;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,27 +36,65 @@ public class ControleNovoMateriaPrima {
     private TNovoMateriaPrima telaNovoMateriaPrima;
     private MMateriaPrima modeloMateriaPrima;
     private MFornece modeloFornece;
-    private int custo = 0;
+    ArrayList<MFornecedores> modeloFornecedores;
+    
+    private ControleToolTip toolTip;
+    private String invalido = "";
     
     public ControleNovoMateriaPrima() {
     
         telaNovoMateriaPrima = new TNovoMateriaPrima();
     
         modeloMateriaPrima = new MMateriaPrima();
+        modeloMateriaPrima.setCusto(0);
         modeloFornece = new MFornece();
-      
-        ArrayList<MMateriaPrima> listar = modeloMateriaPrima.listar();
         
-        if(listar.isEmpty()){
-            
-            modeloMateriaPrima.setCodigo(0);
-            
-        }else{
-            
-            int c = listar.get(listar.size()-1).getCodigo() + 1;
-            modeloMateriaPrima.setCodigo(c);
-            
-        }
+        toolTip = new ControleToolTip();
+      
+        telaNovoMateriaPrima.addInternalFrameListener(new InternalFrameAdapter() {
+            @Override
+            public void internalFrameOpened(InternalFrameEvent e) {
+                
+                modeloFornecedores = new MFornecedores().listar();
+                ArrayList<MMateriaPrima> listar = modeloMateriaPrima.listar();
+                if(listar.isEmpty()){
+
+                    modeloMateriaPrima.setCodigo(0);
+
+                }else{
+
+                    int c = listar.get(listar.size()-1).getCodigo() + 1;
+                    modeloMateriaPrima.setCodigo(c);
+
+                }
+                telaNovoMateriaPrima.getjTFCodigoMateriaPrima().setText(String.valueOf(modeloMateriaPrima.getCodigo()));
+
+                if(!modeloFornecedores.isEmpty()){
+
+                    DefaultComboBoxModel modeloCB = new DefaultComboBoxModel();
+                    modeloFornecedores.forEach((f) -> {
+                        modeloCB.addElement(f.getNome());
+                    });
+                    telaNovoMateriaPrima.getjCBFornecedores().setModel(modeloCB);
+
+                }else{
+
+                    JOptionPane.showMessageDialog(null, "Não há Fornecedores Cadastrados!!!", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    telaNovoMateriaPrima.dispose();
+
+                }
+            }
+            @Override
+            public void internalFrameClosing(InternalFrameEvent e) {
+                toolTip.hideToolTip();
+            }
+        });
+        telaNovoMateriaPrima.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentMoved(ComponentEvent e) {
+                toolTip.hideToolTip();
+            }
+        });
         
         telaNovoMateriaPrima.getjTFornecedores().addMouseListener(new MouseAdapter() {
             @Override
@@ -63,64 +112,100 @@ public class ControleNovoMateriaPrima {
 
         });
         
-        telaNovoMateriaPrima.getjTFCodigoMateriaPrima().setText(String.valueOf(modeloMateriaPrima.getCodigo()));
-      
+        ArrayList<MFornecedores> itensAdicionados = new ArrayList<>();
+        
+        telaNovoMateriaPrima.getjBAdicionarFornecedor().addActionListener((ActionEvent e) -> {
+            
+            MFornecedores m = modeloFornecedores.get(telaNovoMateriaPrima.getjCBFornecedores().getSelectedIndex());
+            
+            if(itensAdicionados.indexOf(m) >= 0)
+                return;
+            
+            DefaultTableModel model = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
+            
+            double custo1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o valor do Custo dessa Materia Prima no Fornecedor " + m.getNome(), "Inserir Custo", JOptionPane.QUESTION_MESSAGE));
+            
+            model.addRow(new Object[]{m.getCodigo(), m.getNome(), custo1});
+            
+            itensAdicionados.add(m);
+            
+            custo1 = 0;
+            
+            for(int i = 0; i < telaNovoMateriaPrima.getjTFornecedores().getRowCount(); i++){
+                
+                custo1 += (double) telaNovoMateriaPrima.getjTFornecedores().getValueAt(i, 2);
+                
+            }
+            
+            custo1 /= telaNovoMateriaPrima.getjTFornecedores().getRowCount();
+            modeloMateriaPrima.setCusto(custo1);
+            telaNovoMateriaPrima.getjTFCusto().setText("" + custo1);
+            
+        });
+        
+        telaNovoMateriaPrima.getjBRemoverrFornecedor().addActionListener((ActionEvent e) -> {
+        
+             int linhaSelecionada = telaNovoMateriaPrima.getjTFornecedores().getSelectedRow();
+             
+             int codigoFE = (int) telaNovoMateriaPrima.getjTFornecedores().getValueAt(linhaSelecionada, 0);
+
+             MFornecedores removerMF = null;
+             
+            for(MFornecedores i : itensAdicionados){
+                 if(i.getCodigo() == codigoFE){
+                     removerMF = i;
+                     System.out.println("2");
+                 }
+             }
+
+            itensAdicionados.remove(removerMF);
+            
+             DefaultTableModel model = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
+             model.removeRow(linhaSelecionada);
+             telaNovoMateriaPrima.getjTFornecedores().setModel(model);
+
+        });
+        
+        telaNovoMateriaPrima.getjBSalvarNovoMateriaPrima().addActionListener((ActionEvent e) -> {
+            if(validarEntradas())
+                cadastrarFornecedor();
+        });
+        
+        telaNovoMateriaPrima.getjBCancelarNovoMateriaPrima().addActionListener((ActionEvent e) -> {
+            cancelarCadastro();
+        });
+        
+        telaNovoMateriaPrima.getjTADescricao().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+             
+                if(invalido.equals("descricao")){
+                    invalido = "";
+                    toolTip.hideToolTip();
+                }
+                
+            }
+        });
+        telaNovoMateriaPrima.getjTFEstoque().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+             
+                if(invalido.equals("estoque")){
+                    invalido = "";
+                    toolTip.hideToolTip();
+                }
+                
+            }
+        });
         telaNovoMateriaPrima.getjBAdicionarFornecedor().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              
-                Integer codigoDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do Fornecedor: "));
-                String nomeDaMateriaPrima = JOptionPane.showInputDialog("Digite o nome do fornecedor: ");
-                Integer qtdDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite o custo da Materia Prima do Fornecedor: "));
-                
-                DefaultTableModel modelo = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
-                modelo.addRow(new Object[]{codigoDaMateriaprima, nomeDaMateriaPrima, qtdDaMateriaprima});
-                
-                
-                custo += qtdDaMateriaprima;
-                
-                telaNovoMateriaPrima.getjTFCusto().setText(""+custo);
-                
-            }
-        });
-        
-        telaNovoMateriaPrima.getjBRemoverrFornecedor().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                int linha = telaNovoMateriaPrima.getjTFornecedores().getSelectedRow();
-                DefaultTableModel modelo = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
-                
-                custo -= (int)telaNovoMateriaPrima.getjTFornecedores().getValueAt(linha, 2);
-                
-                modelo.removeRow(linha);
-                telaNovoMateriaPrima.getjTFornecedores().setModel(modelo);
-                telaNovoMateriaPrima.getjBRemoverrFornecedor().setEnabled(false);
-                
-                
-                
-            }
-        });
-        
-        telaNovoMateriaPrima.getjBSalvarNovoMateriaPrima().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              
-                if(validarEntradas()){
-                  
-                    cadastrarFornecedor();
-                  
+             
+                if(invalido.equals("tabelaVazia")){
+                    invalido = "";
+                    toolTip.hideToolTip();
                 }
-              
-            }
-        });
-        
-        telaNovoMateriaPrima.getjBCancelarNovoMateriaPrima().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              
-                cancelarCadastro();
-              
+                
             }
         });
     
@@ -128,34 +213,50 @@ public class ControleNovoMateriaPrima {
 
     public boolean validarEntradas(){
         
+        if(telaNovoMateriaPrima.getjTADescricao().getText().isEmpty()){
+            
+            invalido = "descricao";
+            telaNovoMateriaPrima.getjTADescricao().requestFocus();
+            toolTip.showToolTip(telaNovoMateriaPrima.getjTADescricao(), "Insira uma Descrição");
+            return false;
+
+        }else if(telaNovoMateriaPrima.getjTFornecedores().getRowCount() == 0){
+            
+            invalido = "tabelaVazia";
+            telaNovoMateriaPrima.getjBAdicionarFornecedor().requestFocus();
+            toolTip.showToolTip(telaNovoMateriaPrima.getjBAdicionarFornecedor(), "Adicione um Fornecedor");
+            return false;
+            
+        }else if(telaNovoMateriaPrima.getjTFEstoque().getText().isEmpty()){
+            
+            invalido = "estoque";
+            telaNovoMateriaPrima.getjTFEstoque().requestFocus();
+            toolTip.showToolTip(telaNovoMateriaPrima.getjTFEstoque(), "Insira um valor de Estoque");
+            return false;
+            
+        }
+        
+        toolTip.hideToolTip();
         return true;
+        
         
     }
     
     public void cadastrarFornecedor(){
         
         modeloMateriaPrima.setDescricao(telaNovoMateriaPrima.getjTADescricao().getText());
-  
-        DefaultTableModel m = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
-  
-        for(int i = 0; i < m.getRowCount(); i++){
+        modeloMateriaPrima.setEstoque(Integer.parseInt(telaNovoMateriaPrima.getjTFEstoque().getText()));
+        modeloMateriaPrima.adicionar();
+        
+        modeloFornece.setCodigoMateriaPrima(modeloMateriaPrima.getCodigo());
+        
+        for(int i = 0; i < telaNovoMateriaPrima.getjTFornecedores().getRowCount(); i++){
             
-            modeloFornece.setCodigoMateriaPrima(modeloMateriaPrima.getCodigo());
-            modeloFornece.setCodigoFornecedores((int) m.getValueAt(i, 0));
-            modeloFornece.setCusto((int) m.getValueAt(i, 2));
+            modeloFornece.setCodigoFornecedores((int) telaNovoMateriaPrima.getjTFornecedores().getValueAt(i, 0));
+            modeloFornece.setCusto((double) telaNovoMateriaPrima.getjTFornecedores().getValueAt(i, 2));
             modeloFornece.adicionar();
             
         }
-        
-        custo /= modeloMateriaPrima.getEstoque();
-        
-        modeloMateriaPrima.setCusto(custo);
-        
-        modeloMateriaPrima.adicionar();
-        
-        telaNovoMateriaPrima.getjTFCusto().setText(""+custo);
-        
-        JOptionPane.showMessageDialog(null, "Custo Calculado");
         
         telaNovoMateriaPrima.dispose();
         
@@ -163,6 +264,7 @@ public class ControleNovoMateriaPrima {
     
     public void cancelarCadastro(){
         
+        toolTip.hideToolTip();
         telaNovoMateriaPrima.dispose();
         
     }

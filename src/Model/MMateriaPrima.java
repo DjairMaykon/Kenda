@@ -154,28 +154,17 @@ public class MMateriaPrima{
         
     }
     
-    public ArrayList<MMateriaPrima> listar(String campo, Object v){
-        
-        Object valor;
-        
-        switch(campo.toLowerCase()){
-            case "codigo":
-                campo = "cod";
-                valor = new Integer((int) v);
-                break;
-                
-                
-        }
+    public ArrayList<MMateriaPrima> listar(String query){
         
         ArrayList<MMateriaPrima> materias = new ArrayList<>();
-        String sql="SELECT * FROM MATERIA_PRIMA";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         
         try {
         
             con = new MConnectionFactory().getConnection();
-            pstmt = con.prepareStatement(sql);
+            pstmt = con.prepareStatement(query);
+            
             rs = pstmt.executeQuery();
             
             while(rs.next()){

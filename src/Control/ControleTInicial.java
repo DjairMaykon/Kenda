@@ -157,24 +157,21 @@ public class ControleTInicial {
             eventoChamarTelaCadastrarTransportadora(e);
         });
         
-          telaInicial.getjBSairDoUsuario().addActionListener((e) -> {
-              eventoSairDoUsuario(e);
+        telaInicial.getjBSairDoUsuario().addActionListener((e) -> {
+            eventoSairDoUsuario(e);
         });
-            telaInicial.getjBAjuda().addActionListener((e) -> {
-              eventoChamarTelaAjuda(e);
+        telaInicial.getjBAjuda().addActionListener((e) -> {
+            eventoChamarTelaAjuda(e);
         });
-            
-            telaInicial.getjBCatalogoDeTintas().addActionListener((e) -> {
-              eventoCatalogoDeTintas(e);
+        telaInicial.getjBCatalogoDeTintas().addActionListener((e) -> {
+            eventoCatalogoDeTintas(e);
         });
-            
-              
-            telaInicial.getjMIListarClientes().addActionListener((e) -> {
-              eventoListarClientes(e);
+        
+        telaInicial.getjMIListarClientes().addActionListener((e) -> {
+            eventoListarClientes(e);
         });
-            
-            telaInicial.getjSMIEstoqueFornecedores().addActionListener((e) -> {
-              eventoListarFornecedores(e);
+        telaInicial.getjSMIEstoqueFornecedores().addActionListener((e) -> {
+            eventoListarFornecedores(e);
         });
         
     }
@@ -311,10 +308,8 @@ public class ControleTInicial {
     
     private void eventoSairDoUsuario(ActionEvent e){
         
-        ControleLogin cControleLogin = new ControleLogin();
-        
         telaInicial.dispose();
-        cControleLogin.acaoBLogin(e);
+        ControlePrincipal.login();
     }
     
      private void eventoCatalogoDeTintas(ActionEvent e){

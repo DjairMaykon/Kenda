@@ -95,6 +95,14 @@ public class ControleCadastrarTinta {
                 String nomeDaMateriaPrima = JOptionPane.showInputDialog("Digite o nome da Materia Prima: ");
                 Integer qtdDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade da Materia Prima: "));
                 
+                ArrayList<MMateriaPrima> ms = new MMateriaPrima().listar();
+                
+                for(MMateriaPrima m : ms){
+                    System.out.println(m.getCodigo()+", "+
+                                       m.getDescricao()+", "+
+                                        m.getCusto());
+                }
+                
                 DefaultTableModel modelo = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
                 modelo.addRow(new Object[]{codigoDaMateriaprima, nomeDaMateriaPrima, qtdDaMateriaprima});
                 
