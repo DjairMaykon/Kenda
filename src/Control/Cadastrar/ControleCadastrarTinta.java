@@ -6,6 +6,7 @@
 package Control.Cadastrar;
 
 import Control.Utils.ControleToolTip;
+import Model.MFornecedores;
 import Model.MMateriaPrima;
 import Model.MNecessita;
 import Model.MTintas;
@@ -17,6 +18,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
@@ -29,7 +31,7 @@ public class ControleCadastrarTinta {
     
     private TCadastrarTinta telaCadastrarTinta; 
     private MTintas modeloTinta;
-    private ArrayList<MNecessita> modeloNecessita;
+    private MNecessita modeloNecessita;
     
     private ControleToolTip toolTip;
     private String invalido = "";
@@ -38,7 +40,7 @@ public class ControleCadastrarTinta {
     
         telaCadastrarTinta = new TCadastrarTinta();
         modeloTinta = new MTintas();
-        modeloNecessita = new ArrayList<>();
+        modeloNecessita = new MNecessita();
         
         toolTip = new ControleToolTip();
         
@@ -57,6 +59,38 @@ public class ControleCadastrarTinta {
         }
         
         telaCadastrarTinta.addInternalFrameListener(new InternalFrameAdapter() {
+            @Override
+            public void internalFrameOpened(InternalFrameEvent e) {
+                
+                modeloFornecedores = new MFornecedores().listar();
+                ArrayList<MMateriaPrima> listar = modeloMateriaPrima.listar();
+                if(listar.isEmpty()){
+
+                    modeloMateriaPrima.setCodigo(0);
+
+                }else{
+
+                    int c = listar.get(listar.size()-1).getCodigo() + 1;
+                    modeloMateriaPrima.setCodigo(c);
+
+                }
+                telaNovoMateriaPrima.getjTFCodigoMateriaPrima().setText(String.valueOf(modeloMateriaPrima.getCodigo()));
+
+                if(!modeloFornecedores.isEmpty()){
+
+                    DefaultComboBoxModel modeloCB = new DefaultComboBoxModel();
+                    modeloFornecedores.forEach((f) -> {
+                        modeloCB.addElement(f.getNome());
+                    });
+                    telaNovoMateriaPrima.getjCBFornecedores().setModel(modeloCB);
+
+                }else{
+
+                    JOptionPane.showMessageDialog(null, "Não há Fornecedores Cadastrados!!!", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    telaNovoMateriaPrima.dispose();
+
+                }
+            }
             @Override
             public void internalFrameClosing(InternalFrameEvent e) {
                 toolTip.hideToolTip();
