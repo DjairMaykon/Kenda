@@ -129,6 +129,10 @@ public class ControleTInicial {
             eventoChamarTelaCadastrarTransportadora(e);
         });
         
+          telaInicial.getjBSairDoUsuario().addActionListener((e) -> {
+              SairDoUsuario(e);
+        });
+        
     }
     
     public void eventoChamarTelaNovoAvaliacaoDeTinta(ActionEvent evt){
@@ -250,6 +254,15 @@ public class ControleTInicial {
         telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getTelaCadastrarTransportadora());
         cCadastrarTransportadora.getTelaCadastrarTransportadora().setVisible(true);
         
+    }
+    
+    
+    private void SairDoUsuario(ActionEvent e){
+        
+        ControleLogin cControleLogin = new ControleLogin();
+        
+        telaInicial.dispose();
+        cControleLogin.acaoBLogin(e);
     }
     
 }
