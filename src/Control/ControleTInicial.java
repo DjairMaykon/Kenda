@@ -3,6 +3,7 @@ package Control;
 import Control.Novo.*;
 import Control.Cadastrar.*;
 import Model.MUsuario;
+import View.Listar.Tintas.TListarTintasCatalogo;
 import View.TInicial;
 import View.TelasNovo.*;
 import View.TelasCadastrar.*;
@@ -10,6 +11,7 @@ import View.TelasCadastrar.Funcionario.TCadastrarFuncionario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,6 +34,8 @@ public class ControleTInicial {
     private ControleCadastrarSetor cCadastrarSetor;
     private ControleCadastrarTinta cCadastrarTinta;
     private ControleCadastrarTransportadora cCadastrarTransportadora;
+    private ControleListarTintasCatalogo cListarTintasCatalogo;
+    
     
     public ControleTInicial(MUsuario u1) {
         
@@ -47,6 +51,7 @@ public class ControleTInicial {
         cCadastrarSetor = null;
         cCadastrarTinta = null;
         cCadastrarTransportadora = null;
+        cListarTintasCatalogo=null;
         
         modeloUsuario = u1;
         telaInicial = new TInicial();
@@ -91,11 +96,20 @@ public class ControleTInicial {
                 if(e.getChild() instanceof TCadastrarTransportadora){
                     cCadastrarTransportadora = null;
                 }
+                 if(e.getChild() instanceof TListarTintasCatalogo ){
+                    cListarTintasCatalogo = null;
+                }
             }
         });
         
         telaInicial.getjMINovoAvaliacaoDeTinta().addActionListener((ActionEvent e) -> {
             eventoChamarTelaNovoAvaliacaoDeTinta(e);
+        });
+         telaInicial.getjBCadastrarCliente().addActionListener((ActionEvent e) -> {
+            eventoChamarTelaCadastrarCliente(e);
+        });
+         telaInicial.getjBNovoPedido().addActionListener((ActionEvent e) -> {
+            eventoChamarTelaNovoPedido(e);
         });
         telaInicial.getjMINovoExpedicao().addActionListener((ActionEvent e) -> {
             eventoChamarTelaNovoExpedicao(e);
@@ -130,7 +144,14 @@ public class ControleTInicial {
         });
         
           telaInicial.getjBSairDoUsuario().addActionListener((e) -> {
-              SairDoUsuario(e);
+              eventoSairDoUsuario(e);
+        });
+            telaInicial.getjBAjuda().addActionListener((e) -> {
+              eventoChamarTelaAjuda(e);
+        });
+            
+            telaInicial.getjBCatalogoDeTintas().addActionListener((e) -> {
+              eventoCatalogoDeTintas(e);
         });
         
     }
@@ -256,13 +277,31 @@ public class ControleTInicial {
         
     }
     
+    private void eventoChamarTelaAjuda(ActionEvent e) {
     
-    private void SairDoUsuario(ActionEvent e){
+        
+        JOptionPane.showMessageDialog(null,"Sistema de Gerenciamento de Banco de Dados é simples de usar, possui desde adicionar \ndados ao banco"
+                + " a listar informações. Ainda tem acesso rápido pelo menu inferior.");
+        
+    }
+    
+    
+    private void eventoSairDoUsuario(ActionEvent e){
         
         ControleLogin cControleLogin = new ControleLogin();
         
         telaInicial.dispose();
         cControleLogin.acaoBLogin(e);
+    }
+    
+     private void eventoCatalogoDeTintas(ActionEvent e){
+        
+          if(cListarTintasCatalogo != null)
+            return;
+        
+        cListarTintasCatalogo = new ControleListarTintasCatalogo();
+        telaInicial.getjDPPrincipal().add(cListarTintasCatalogo.gettelaListarTintasCatalogo());
+        cListarTintasCatalogo.gettelaListarTintasCatalogo().setVisible(true);
     }
     
 }
