@@ -9,9 +9,13 @@ import Model.MSetor;
 import View.TelasCadastrar.TCadastrarSetor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import javax.swing.event.InternalFrameAdapter;
+import javax.swing.event.InternalFrameEvent;
 /**
  *
  * @author Matheus
@@ -46,7 +50,20 @@ public class ControleCadastrarSetor {
         }
         
         telaCadastrarSetor.getjTFCodigoSetor().setText(String.valueOf(modeloSetor.getCodigo()));
-      
+              
+        telaCadastrarSetor.addInternalFrameListener(new InternalFrameAdapter() {
+            @Override
+            public void internalFrameClosing(InternalFrameEvent e) {
+                toolTip.hideToolTip();
+            }
+        });
+        telaCadastrarSetor.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentMoved(ComponentEvent e) {
+                toolTip.hideToolTip();
+            }
+        });
+        
         telaCadastrarSetor.getjBCadastrarSetor().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -11,6 +11,8 @@ import Model.MEndereco;
 import View.TelasCadastrar.TCadastrarCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class ControleCadastrarCliente {
     private ControleToolTip toolTip;
     private String invalido = "";
     
-     public ControleCadastrarCliente() {
+    public ControleCadastrarCliente() {
          
         telaCadastrarCliente = new TCadastrarCliente();
         modeloCliente = new MCliente();
@@ -52,10 +54,16 @@ public class ControleCadastrarCliente {
         
         modeloCliente.setCodigoEndereco(-1);
         telaCadastrarCliente.getjTFCodigoCliente().setText(String.valueOf(modeloCliente.getCodigo()));
-      
+        
         telaCadastrarCliente.addInternalFrameListener(new InternalFrameAdapter() {
             @Override
             public void internalFrameClosing(InternalFrameEvent e) {
+                toolTip.hideToolTip();
+            }
+        });
+        telaCadastrarCliente.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentMoved(ComponentEvent e) {
                 toolTip.hideToolTip();
             }
         });

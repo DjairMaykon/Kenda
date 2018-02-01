@@ -5,16 +5,21 @@
  */
 package Control.Cadastrar;
 
+import Control.Utils.ControleToolTip;
 import Model.MMateriaPrima;
 import Model.MNecessita;
 import Model.MTintas;
 import View.TelasCadastrar.TCadastrarTinta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.event.InternalFrameAdapter;
+import javax.swing.event.InternalFrameEvent;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -26,15 +31,20 @@ public class ControleCadastrarTinta {
     private MTintas modeloTinta;
     private ArrayList<MNecessita> modeloNecessita;
     
+    private ControleToolTip toolTip;
+    private String invalido = "";
+    
     public ControleCadastrarTinta() {
     
         telaCadastrarTinta = new TCadastrarTinta();
-       
         modeloTinta = new MTintas();
         modeloNecessita = new ArrayList<>();
-      
-        ArrayList<MTintas> listar = modeloTinta.listar();
         
+        toolTip = new ControleToolTip();
+        
+        telaCadastrarTinta.getjTFFuncionalidade().requestFocus();
+        
+        ArrayList<MTintas> listar = modeloTinta.listar();
         if(listar.isEmpty()){
             
             modeloTinta.setCodigo(0);
@@ -45,6 +55,19 @@ public class ControleCadastrarTinta {
             modeloTinta.setCodigo(c);
             
         }
+        
+        telaCadastrarTinta.addInternalFrameListener(new InternalFrameAdapter() {
+            @Override
+            public void internalFrameClosing(InternalFrameEvent e) {
+                toolTip.hideToolTip();
+            }
+        });
+        telaCadastrarTinta.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentMoved(ComponentEvent e) {
+                toolTip.hideToolTip();
+            }
+        });
         
         telaCadastrarTinta.getjTMateriasPrimasUtilizadas().addMouseListener(new MouseAdapter() {
             @Override
@@ -70,7 +93,7 @@ public class ControleCadastrarTinta {
               
                 Integer codigoDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite o código da Materia Prima: "));
                 String nomeDaMateriaPrima = JOptionPane.showInputDialog("Digite o nome da Materia Prima: ");
-                Integer qtdDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite o quantidade da Materia Prima: "));
+                Integer qtdDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade da Materia Prima: "));
                 
                 DefaultTableModel modelo = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
                 modelo.addRow(new Object[]{codigoDaMateriaprima, nomeDaMateriaPrima, qtdDaMateriaprima});

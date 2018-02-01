@@ -124,10 +124,10 @@ public class TCadastrarTransportadora extends javax.swing.JInternalFrame {
         jBCancelarTransportadora = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
         jTFCNPJ = new javax.swing.JTextField();
-        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("##.###.###//####-##");    jTFCNPJ = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("##.###.###/####-##");    jTFCNPJ = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
-        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)-#####-#####");    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)#####-####");    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jTFCodigoEndereco = new javax.swing.JTextField();
         try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("#####-###");    jTFCodigoEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente2 = new javax.swing.JLabel();
@@ -153,36 +153,45 @@ public class TCadastrarTransportadora extends javax.swing.JInternalFrame {
         jLCodigoOS.setText("Nome:");
 
         jTFNome.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNome.setNextFocusableComponent(jTFUnidadeFrete);
 
         jTFUnidadeFrete.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFUnidadeFrete.setNextFocusableComponent(jTFCNPJ);
 
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Unidade de Frete:");
 
         jBCadastrarTransportadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBCadastrarTransportadora.setText("Cadastrar");
+        jBCadastrarTransportadora.setNextFocusableComponent(jBCancelarTransportadora);
 
         jBCancelarTransportadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
         jBCancelarTransportadora.setText("Cancelar");
+        jBCancelarTransportadora.setNextFocusableComponent(jTFNome);
 
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setText("CNPJ:");
 
         jTFCNPJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCNPJ.setNextFocusableComponent(jTFTelefone);
 
         jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente1.setText("Telefone:");
 
         jTFTelefone.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFTelefone.setNextFocusableComponent(jTFCodigoEndereco);
 
         jTFCodigoEndereco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCodigoEndereco.setNextFocusableComponent(jBuscarEndereco);
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente2.setText("Endereço:");
 
         jBuscarEndereco.setText("Buscar");
+        jBuscarEndereco.setNextFocusableComponent(jTFFrete);
 
         jTFFrete.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFFrete.setNextFocusableComponent(jBCadastrarTransportadora);
 
         jLCodigoCliente3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente3.setText("Frete:");
@@ -269,7 +278,7 @@ public class TCadastrarTransportadora extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTFFrete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLCodigoCliente3))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

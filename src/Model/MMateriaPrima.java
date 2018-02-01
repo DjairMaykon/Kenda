@@ -153,4 +153,49 @@ public class MMateriaPrima{
         return materias;
         
     }
+    
+    public ArrayList<MMateriaPrima> listar(String campo, Object v){
+        
+        Object valor;
+        
+        switch(campo.toLowerCase()){
+            case "codigo":
+                campo = "cod";
+                valor = new Integer((int) v);
+                break;
+                
+                
+        }
+        
+        ArrayList<MMateriaPrima> materias = new ArrayList<>();
+        String sql="SELECT * FROM MATERIA_PRIMA";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+        
+            con = new MConnectionFactory().getConnection();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()){
+                
+                int codigo1 = rs.getInt("cod");
+                int est = rs.getInt("estoque");
+                String descricao1 = rs.getString("descricao");
+                Double custo1 = rs.getDouble("custo");
+                
+                MMateriaPrima u1 = new MMateriaPrima(codigo1, descricao1, est, custo1);
+                u1.setEstoque(est);
+                materias.add(u1);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Erro ao listar MateriaPrima\n" + ex);
+        }
+        
+        return materias;
+        
+    }
+    
 }

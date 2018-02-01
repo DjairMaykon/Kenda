@@ -72,17 +72,21 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
         jLCodigoOS.setText("Funcionalidade:");
 
         jTFFuncionalidade.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFFuncionalidade.setNextFocusableComponent(jTFCor);
 
         jTFCor.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCor.setNextFocusableComponent(jBAdicionarMateriaPrima);
 
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Cor:");
 
         jBCadastrarTinta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBCadastrarTinta.setText("Cadastrar");
+        jBCadastrarTinta.setNextFocusableComponent(jBCancelarTinta);
 
         jBCancelarTinta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
         jBCancelarTinta.setText("Cancelar");
+        jBCancelarTinta.setNextFocusableComponent(jTFFuncionalidade);
 
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setLabelFor(jTFCor);
@@ -92,6 +96,7 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
         jBAdicionarMateriaPrima.setText("Adicionar");
         jBAdicionarMateriaPrima.setBorder(null);
         jBAdicionarMateriaPrima.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBAdicionarMateriaPrima.setNextFocusableComponent(jBCadastrarTinta);
 
         jTMateriasPrimasUtilizadas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
