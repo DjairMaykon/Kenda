@@ -10,6 +10,7 @@ import View.Listar.Pedidos.*;
 import View.Listar.Tintas.*;
 import View.TelasCadastrar.*;
 import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -25,6 +26,19 @@ public class TListarEstoqueMateriaPrima extends javax.swing.JInternalFrame {
         initComponents();
         
     }
+
+    public JButton getjBBusca() {
+        return jBBusca;
+    }
+
+    public JTextField getjTFEntradaPesquisa() {
+        return jTFEntradaPesquisa;
+    }
+
+    public JTable getjTListarEstoqueMateriaPrima() {
+        return jTListarEstoqueMateriaPrima;
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,7 +68,7 @@ public class TListarEstoqueMateriaPrima extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo da Materia Prima", "Custo", "Nome", "Descrição"
+                "Codigo da Materia Prima", "Custo", "Descrição", "Estoque"
             }
         ));
         jScrollPane1.setViewportView(jTListarEstoqueMateriaPrima);
