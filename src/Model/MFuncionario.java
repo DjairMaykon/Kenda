@@ -27,7 +27,20 @@ public class MFuncionario {
     private String cpf;
     private String telefone;
     private InputStream foto;
+    
     private Connection con = null;
+
+    public MFuncionario(int codigo, int codigoEnd, String email, double salario, String login, String nome, String cpf, String telefone, InputStream foto) {
+        this.codigo = codigo;
+        this.codigoEnd = codigoEnd;
+        this.email = email;
+        this.salario = salario;
+        this.login = login;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.foto = foto;
+    }
 
     public MFuncionario() {
     
@@ -97,18 +110,6 @@ public class MFuncionario {
         this.telefone = telefone;
     }
 
-    public MFuncionario(int codigo, int codigoEnd, String email, double salario, String login, String nome, String cpf, String telefone, InputStream foto) {
-        this.codigo = codigo;
-        this.codigoEnd = codigoEnd;
-        this.email = email;
-        this.salario = salario;
-        this.login = login;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.foto = foto;
-    }
-
     public InputStream getFoto() {
         return foto;
     }
@@ -140,7 +141,7 @@ public class MFuncionario {
             pstmt.execute();
             
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro ao inserir\n"+ex);
+            throw new RuntimeException("Erro ao inserir Funcionario\n"+ex);
         }
         
     }
@@ -160,7 +161,7 @@ public class MFuncionario {
             pstmt.execute();
             
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro ao deletar\n"+ex);
+            throw new RuntimeException("Erro ao deletar Funcionario\n"+ex);
         }
         
     }
@@ -188,7 +189,7 @@ public class MFuncionario {
             pstmt.execute();
             
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro ao inserir\n"+ex);
+            throw new RuntimeException("Erro ao alterar Funcionario\n"+ex);
         }
         
     }

@@ -24,9 +24,10 @@ public class MTransportadoras {
     private String unidadeDoFrete;
     private String telefone;
     private double frete;
+    
     private Connection con = null;
 
-    public MTransportadoras(int codEnd, String nome, String cnpj, String unidadeDoFrete, String telefone, String telefone1, int codigo) {
+    public MTransportadoras(String nome, int codEnd, String cnpj, int codigo, String unidadeDoFrete, String telefone, double frete) {
         this.nome = nome;
         this.codEnd = codEnd;
         this.cnpj = cnpj;
@@ -40,8 +41,6 @@ public class MTransportadoras {
         
     }
     
-    
-
     public String getNome() {
         return nome;
     }
@@ -181,20 +180,20 @@ public class MTransportadoras {
             while(rs.next()){
                 
                 int codigo1 = rs.getInt("cod");
-                String frete1 = rs.getString("frete");
+                double frete1 = rs.getDouble("frete");
                 String unidadedefrete1 = rs.getString("unidade_do_frete");
                 String nome1 = rs.getString("nome");
                 String cnpj1 = rs.getString("cnpj");
                 String telefone1 = rs.getString("telefone");
                 int codigoEndereco1 = rs.getInt("cod_end");
                 
-                MTransportadoras f1 = new MTransportadoras(codigo1, frete1, unidadedefrete1, nome1, cnpj1, telefone1, codigoEndereco1);
+                MTransportadoras f1 = new MTransportadoras(nome1, codigoEndereco1, cnpj1, codigo1, unidadedefrete1, telefone1, frete1);
                 transportadoras.add(f1);
                 
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao listar Usuario\n" + ex);
+            System.out.println("Erro ao listar Tranportadoras\n" + ex);
         }
         
         return transportadoras;

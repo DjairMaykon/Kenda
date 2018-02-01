@@ -8,6 +8,10 @@ package View.TelasNovo;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -239,6 +243,46 @@ public class TNovoPedido extends javax.swing.JInternalFrame {
         return jDCDataDoPedido;
     }
 
+    public JLabel getjLCodigoCliente() {
+        return jLCodigoCliente;
+    }
+
+    public JLabel getjLCodigoOS() {
+        return jLCodigoOS;
+    }
+
+    public JLabel getjLCodigoPedido() {
+        return jLCodigoPedido;
+    }
+
+    public JLabel getjLData() {
+        return jLData;
+    }
+
+    public JLabel getjLDescricao() {
+        return jLDescricao;
+    }
+
+    public JLabel getjLSituacao() {
+        return jLSituacao;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
     public JTextArea getjTADescricao() {
         return jTADescricao;
     }
@@ -254,7 +298,7 @@ public class TNovoPedido extends javax.swing.JInternalFrame {
     public JTextField getjTFCodigoPedido() {
         return jTFCodigoPedido;
     }
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCancelarNovoPedido;
     private javax.swing.JButton jBProcurarCliente;

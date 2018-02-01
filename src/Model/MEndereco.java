@@ -20,12 +20,14 @@ import java.util.logging.Logger;
  * @author Kaione
  */
 public class MEndereco {
+    
     private String cep; 
     private String uf;
     private String cidade;
     private String bairro;
     private int codigo;
     private String rua;
+    
     private Connection con = null;
 
     public MEndereco(String cep, String uf, String cidade, String bairro, int codigo, String rua) {
@@ -37,7 +39,10 @@ public class MEndereco {
         this.rua = rua;
     }
     
-
+    public MEndereco() {
+    
+    }
+   
     public String getCep() {
         return cep;
     }
@@ -102,7 +107,7 @@ public class MEndereco {
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar:\n"+ex);
+            System.out.println("Erro ao adicionar Endereco:\n"+ex);
         }
         
     }
@@ -117,7 +122,7 @@ public class MEndereco {
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao excluir Endereco:\n"+ex);
         }
         
     }
@@ -138,7 +143,7 @@ public class MEndereco {
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Endereco:\n"+ex);
         }
         
     }
@@ -172,62 +177,10 @@ public class MEndereco {
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Usuario\n" + ex);
+            System.out.println("Erro ao listar Endereco:\n"+ex);
         }
         
         return enderecos;
-        
-    }
-
-    public MEndereco() {
-    
-    }
-   
-    public static MEndereco buscarEndereco(String _cep){
-        
-        MEndereco end = null;
-        
-        try {
-            
-            end = new MEndereco();
-            
-            ArrayList<MEndereco> listar = end.listar();
-        
-            if(listar.isEmpty()){
-            
-                end.setCodigo(0);
-            
-            }else{
-                
-                for(MEndereco e : listar){
-                    
-                    if(e.cep.equals(_cep)){
-                        
-                        return e;
-                        
-                    }
-                    
-                }
-                
-                int c = listar.get(0).getCodigo() + 1;
-                end.setCodigo(c);
-                
-            }
-            
-            ViaCEP vCep = new ViaCEP(_cep);
-            end.setBairro(vCep.getBairro());
-            end.setCep(_cep);
-            end.setCidade(vCep.getLocalidade());
-            end.setRua(vCep.getLogradouro());
-            end.setUf(vCep.getUf());
-            
-            end.adicionar();
-            
-        } catch (ViaCEPException ex) {
-            Logger.getLogger(MEndereco.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return end;
         
     }
     

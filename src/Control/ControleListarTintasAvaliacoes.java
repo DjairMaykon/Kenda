@@ -7,8 +7,6 @@ package Control;
 
 import View.Listar.Tintas.TListarTintasAvaliacoes;
 
-
-
 /**
  *
  * @author Djair Maykon

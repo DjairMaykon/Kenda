@@ -102,6 +102,9 @@ public class MPedido {
     public void setCusto(double custo) {
         this.custo = custo;
     }
+
+    public MPedido() {
+    }
     
     public void adicionar(){
         

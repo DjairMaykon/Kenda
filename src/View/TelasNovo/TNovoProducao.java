@@ -8,6 +8,10 @@ package View.TelasNovo;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -141,7 +145,15 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
             new String [] {
                 "Código", "Custo", "Quantidade"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTTintasProduzidas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -257,23 +269,23 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JButton getjBCancelar() {
-        return jBCancelarProducao;
+    public JButton getjBAdicionarTinta() {
+        return jBAdicionarTinta;
     }
 
     public JButton getjBCancelarProducao() {
         return jBCancelarProducao;
     }
 
-    public JButton getjBSalvarProducao() {
-        return jBSalvarProducao;
-    }
-
     public JButton getjBProcurarPedido() {
         return jBProcurarPedido;
     }
 
-    public JButton getjBSalvar() {
+    public JButton getjBRemoverTinta() {
+        return jBRemoverTinta;
+    }
+
+    public JButton getjBSalvarProducao() {
         return jBSalvarProducao;
     }
 
@@ -283,6 +295,58 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
 
     public JDateChooser getjDCDataDaProducao() {
         return jDCDataDaProducao;
+    }
+
+    public JLabel getjLCodigoPedido() {
+        return jLCodigoPedido;
+    }
+
+    public JLabel getjLCodigoProducao() {
+        return jLCodigoProducao;
+    }
+
+    public JLabel getjLCodigodaTinta() {
+        return jLCodigodaTinta;
+    }
+
+    public JLabel getjLCustoProducao() {
+        return jLCustoProducao;
+    }
+
+    public JLabel getjLData() {
+        return jLData;
+    }
+
+    public JLabel getjLQtdProducao1() {
+        return jLQtdProducao1;
+    }
+
+    public JLabel getjLSituacao() {
+        return jLSituacao;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public JTextArea getjTADescricaoPedido() {
+        return jTADescricaoPedido;
     }
 
     public JTextField getjTFCodigoPedido() {
@@ -297,23 +361,9 @@ public class TNovoProducao extends javax.swing.JInternalFrame {
         return jTFCustoProducao;
     }
 
-    public JButton getjBAdicionarTinta() {
-        return jBAdicionarTinta;
-    }
-
-    public JButton getjBRemoverTinta() {
-        return jBRemoverTinta;
-    }
-
-    public JTextArea getjTADescricaoPedido() {
-        return jTADescricaoPedido;
-    }
-
     public JTable getjTTintasProduzidas() {
         return jTTintasProduzidas;
     }
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarTinta;

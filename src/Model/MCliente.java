@@ -16,29 +16,15 @@ import java.util.ArrayList;
  * @author JFelipe
  */
 public class MCliente {
+    
     private int codigo;
     private String telefone  ;
     private String email;
     private int codigoEndereco;
     private String nome;
     private String cnpj;
+    
     private Connection con;
-
-    public MCliente() {
-        this.con = null;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo_cliente(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
 
     public MCliente(int codigo, String telefone, String email, int codigoEndereco, String nome, String cnpj) {
         this.codigo = codigo;
@@ -47,6 +33,21 @@ public class MCliente {
         this.codigoEndereco = codigoEndereco;
         this.nome = nome;
         this.cnpj = cnpj;
+    }
+
+    public MCliente() {
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getTelefone() {
+        return telefone;
     }
 
     public void setTelefone(String telefone) {
@@ -65,8 +66,8 @@ public class MCliente {
         return codigoEndereco;
     }
 
-    public void setCodigoEndereco(int codigoendereco) {
-        this.codigoEndereco = codigoendereco;
+    public void setCodigoEndereco(int codigoEndereco) {
+        this.codigoEndereco = codigoEndereco;
     }
 
     public String getNome() {
@@ -84,7 +85,7 @@ public class MCliente {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-    
+
     public void adicionar(){
     
         PreparedStatement pstmt = null;
@@ -108,7 +109,7 @@ public class MCliente {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao adicionar Cliente:\n" + ex);
             
         }   
         
@@ -132,7 +133,7 @@ public class MCliente {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao deletar Cliente:\n" + ex);
             
         }   
         
@@ -161,7 +162,7 @@ public class MCliente {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao alterar Cliente:\n" + ex);
             
         }   
         
@@ -189,14 +190,12 @@ public class MCliente {
                 String nome1 = rs.getString("nome");
                 String cnpj1 = rs.getString("cnpj");
                 
-                System.out.println(""+codigo1);
-                
                 MCliente a1 = new MCliente(codigo1, telefone1, email1, codigoEndereco1, nome1, cnpj1);
                 clientes.add(a1);
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Cliente\n" + ex);
+            System.out.println("Erro ao listar Cliente\n" + ex);
         }
         
         return clientes;

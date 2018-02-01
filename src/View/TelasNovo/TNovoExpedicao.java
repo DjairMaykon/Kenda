@@ -8,6 +8,10 @@ package View.TelasNovo;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -275,6 +279,54 @@ public class TNovoExpedicao extends javax.swing.JInternalFrame {
 
     public JDateChooser getjDCDataDeSaida() {
         return jDCDataDeSaida;
+    }
+
+    public JLabel getjLCodigoExpedicao() {
+        return jLCodigoExpedicao;
+    }
+
+    public JLabel getjLCodigoExpedicao1() {
+        return jLCodigoExpedicao1;
+    }
+
+    public JLabel getjLCodigoExpedicao2() {
+        return jLCodigoExpedicao2;
+    }
+
+    public JLabel getjLCodigoOS() {
+        return jLCodigoOS;
+    }
+
+    public JLabel getjLCodigoOS1() {
+        return jLCodigoOS1;
+    }
+
+    public JLabel getjLCodigoOS2() {
+        return jLCodigoOS2;
+    }
+
+    public JLabel getjLDescricao() {
+        return jLDescricao;
+    }
+
+    public JLabel getjLSituacao() {
+        return jLSituacao;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
     }
 
     public JTextArea getjTADescricao() {

@@ -7,12 +7,6 @@ package Control;
 
 import View.Listar.Expedicao.TListarExpedicaoEmAndamento;
 
-
-
-
-
-
-
 /**
  *
  * @author Djair Maykon

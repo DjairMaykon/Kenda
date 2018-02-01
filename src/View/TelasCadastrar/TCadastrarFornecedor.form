@@ -199,12 +199,18 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
             </Property>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="jTFEmail"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTFEmail">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
+            </Property>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="jTFCNPJ"/>
             </Property>
           </Properties>
         </Component>
@@ -222,6 +228,9 @@
               <Image iconType="3" name="/imagens/37.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="jBCancelarFornecedor"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jBCancelarFornecedor">
@@ -230,6 +239,9 @@
               <Image iconType="3" name="/imagens/Delete_01.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="jTFNome"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLCodigoM">
@@ -265,7 +277,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter(&quot;(##)-#####-#####&quot;);    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter(&quot;(##)#####-####&quot;);    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="jTFCodigoEndereco">
@@ -295,6 +307,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="11" style="0"/>
+            </Property>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="jBCadastrarFornecedor"/>
             </Property>
           </Properties>
         </Component>

@@ -16,10 +16,21 @@ import java.util.ArrayList;
  * @author JFelipe
  */
 public class MFaz {
+    
     private int codigoProducao;
     private int codigoTinta;
     private int qtd;
+    
     private Connection con =null;
+
+    public MFaz(int codigoProducao, int codigoTinta, int qtd) {
+        this.codigoProducao = codigoProducao;
+        this.codigoTinta = codigoTinta;
+        this.qtd = qtd;
+    }
+
+    public MFaz() {
+    }
 
     public int getCodigoProducao() {
         return codigoProducao;
@@ -41,12 +52,6 @@ public class MFaz {
         return qtd;
     }
 
-    public MFaz(int codigoProducao, int codigoTinta, int qtd) {
-        this.codigoProducao = codigoProducao;
-        this.codigoTinta = codigoTinta;
-        this.qtd = qtd;
-    }
-
     public void setQtd(int qtd) {
         this.qtd = qtd;
     }
@@ -64,40 +69,71 @@ public class MFaz {
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Faz:\n"+ex);
         }
         
     }
     
-    public void deletar(){
+    public void deletar(String por){
+        
         PreparedStatement pstmt = null;
-        String sql="DELETE FROM FAZ WHERE COD_PRODUCAO=? ";
+        String sql="DELETE FROM FAZ WHERE ?=? ";
+        
+        int cod = 0;
+        
+        if(por.equals("troducao")){
+            por = "cod_troducao";
+            cod = codigoProducao;
+        }else if(por.equals("tinta")){
+            por = "cod_tinta";
+            cod = codigoTinta;
+        }else{
+            System.err.println("Parametro incorreto: (producao) ou (tinta)");
+            return;
+        }
+        
         try {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
-            pstmt.setInt(1,codigoProducao);
+            pstmt.setString(1, por);
+            pstmt.setInt(2,cod);
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao excluir Faz:\n"+ex);
         }
         
     }
     
     
-    public void alterar(){
+    public void alterar(String por){
         PreparedStatement pstmt = null;
-        String sql=" UPDATE FROM FAZ COD_TINTA=?, QTD=? WHERE COD_PRODUCAO=? ";
+        String sql=" UPDATE FROM FAZ QTD=? WHERE ?=? ";
+        
+        int cod = 0;
+        
+        if(por.equals("troducao")){
+            por = "cod_troducao";
+            cod = codigoProducao;
+        }else if(por.equals("tinta")){
+            por = "cod_tinta";
+            cod = codigoTinta;
+        }else{
+            System.err.println("Parametro incorreto: (producao) ou (tinta)");
+            return;
+        }
+        
         try {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,codigoTinta);
             pstmt.setInt(2,qtd);
-            pstmt.setInt(3,codigoProducao);
+            pstmt.setString(3, por);
+            pstmt.setInt(4,cod);
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Faz:\n"+ex);
         }
         
     }

@@ -3,14 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Control.Novo;
 
 import Model.MFornece;
-import Model.MFornecedores;
 import Model.MMateriaPrima;
-import Model.MNecessita;
-import Model.MTintas;
-import View.TelasCadastrar.TCadastrarTinta;
 import View.TelasNovo.TNovoMateriaPrima;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Djair Maykon
  */
-class ControleNovoMateriaPrima {
+public class ControleNovoMateriaPrima {
     
     private TNovoMateriaPrima telaNovoMateriaPrima;
     private MMateriaPrima modeloMateriaPrima;
@@ -139,7 +135,6 @@ class ControleNovoMateriaPrima {
     public void cadastrarFornecedor(){
         
         modeloMateriaPrima.setDescricao(telaNovoMateriaPrima.getjTADescricao().getText());
-        modeloMateriaPrima.setEstoque(Integer.parseInt(telaNovoMateriaPrima.getjTFEstoque().getText()));
   
         DefaultTableModel m = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
   

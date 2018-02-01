@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Control.Cadastrar;
 
 import Model.MMateriaPrima;
 import Model.MNecessita;
@@ -11,8 +11,6 @@ import Model.MTintas;
 import View.TelasCadastrar.TCadastrarTinta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -143,8 +141,8 @@ public class ControleCadastrarTinta {
             MNecessita n1 = new MNecessita();
             
             n1.setCodigoMateriaPrima((int) m.getValueAt(i, 0));
-            n1.setCodigoTinta(modeloTinta.getCodTinta());
-            n1.setQtd_materia_prima((int) m.getValueAt(i, 2));
+            n1.setCodigoTinta(modeloTinta.getCodigo());
+            n1.setQtdMateriaPrima((int) m.getValueAt(i, 2));
             
             modeloNecessita.add(n1);
             
@@ -152,7 +150,7 @@ public class ControleCadastrarTinta {
             
                 if(listaMP.get(j).getCodigo() == n1.getCodigoMateriaPrima()){
                     
-                    custo += listaMP.get(j).getCusto()*n1.getQtd_materia_prima();
+                    custo += listaMP.get(j).getCusto()*n1.getQtdMateriaPrima();
                     
                 }
             

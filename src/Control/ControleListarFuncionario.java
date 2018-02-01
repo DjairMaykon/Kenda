@@ -7,14 +7,6 @@ package Control;
 
 import View.Listar.Funcionario.TListarFuncionario;
 
-
-
-
-
-
-
-
-
 /**
  *
  * @author Djair Maykon

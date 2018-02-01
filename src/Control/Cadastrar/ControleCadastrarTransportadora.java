@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Control.Cadastrar;
+import Control.Utils.UtilEndereco;
 import Model.MEndereco;
 import Model.MTransportadoras;
 import View.TelasCadastrar.TCadastrarTransportadora;
@@ -60,7 +61,7 @@ public class ControleCadastrarTransportadora {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                MEndereco end = MEndereco.buscarEndereco(telaCadastrarTransportadora.getjTFCodigoEndereco().getText());
+                MEndereco end = UtilEndereco.buscarEndereco(telaCadastrarTransportadora.getjTFCodigoEndereco().getText());
                 
                 JOptionPane.showMessageDialog(null, "CEP: "+end.getCep()+"\n"+
                                               "UF: "+end.getUf() + "\n"+

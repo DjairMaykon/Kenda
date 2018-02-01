@@ -20,6 +20,7 @@ public class MUsuario {
     private String login;
     private String senha;
     private int nivelDeAcesso;
+    
     private Connection con = null;
 
     public MUsuario(String login, String senha, int nivelDeAcesso) {
@@ -29,6 +30,7 @@ public class MUsuario {
     }
 
     public MUsuario() {
+        
     }
 
     public String getLogin() {
@@ -64,9 +66,11 @@ public class MUsuario {
             
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
+            
             pstmt.setString(1,login);
             pstmt.setString(2,senha);
             pstmt.setInt(3,nivelDeAcesso);
+            
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -84,6 +88,7 @@ public class MUsuario {
             
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
+            
             pstmt.setString(1,login);
             pstmt.executeUpdate();
             
@@ -103,9 +108,11 @@ public class MUsuario {
         
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
+            
             pstmt.setString(1,senha);
             pstmt.setInt(2,nivelDeAcesso);
             pstmt.setString(3, login);
+            
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {

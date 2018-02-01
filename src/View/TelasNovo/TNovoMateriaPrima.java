@@ -6,6 +6,10 @@
 package View.TelasNovo;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -50,8 +54,6 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
         jLCodigoM = new javax.swing.JLabel();
         jTFCusto = new javax.swing.JTextField();
         jLCodigoPedido1 = new javax.swing.JLabel();
-        jLCodigoPedido2 = new javax.swing.JLabel();
-        jTFEstoque = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -87,9 +89,17 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Código", "Nome", "Custo"
+                "Código", "Nome", "Custo", "Quantidade"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTFornecedores);
 
         jBAdicionarFornecedor.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
@@ -113,12 +123,6 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
         jLCodigoPedido1.setLabelFor(jTFCodigoMateriaPrima);
         jLCodigoPedido1.setText("Custo:");
 
-        jLCodigoPedido2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLCodigoPedido2.setLabelFor(jTFCodigoMateriaPrima);
-        jLCodigoPedido2.setText("Estoque:");
-
-        jTFEstoque.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -126,14 +130,10 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLCodigoPedido2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTFEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLCodigoPedido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTFCodigoMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -149,7 +149,7 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLCodigoPedido1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTFCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,11 +190,7 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
                             .addComponent(jBAdicionarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLCodigoPedido2)
-                    .addComponent(jTFEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -217,36 +213,64 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JTextField getjTFEstoque() {
-        return jTFEstoque;
+    public JButton getjBAdicionarFornecedor() {
+        return jBAdicionarFornecedor;
     }
 
     public JButton getjBCancelarNovoMateriaPrima() {
         return jBCancelarNovoMateriaPrima;
     }
 
+    public JButton getjBRemoverrFornecedor() {
+        return jBRemoverrFornecedor;
+    }
+
     public JButton getjBSalvarNovoMateriaPrima() {
         return jBSalvarNovoMateriaPrima;
     }
 
-    public JTextArea getjTACompostosQuimicos() {
+    public JLabel getjLCodigoM() {
+        return jLCodigoM;
+    }
+
+    public JLabel getjLCodigoPedido() {
+        return jLCodigoPedido;
+    }
+
+    public JLabel getjLCodigoPedido1() {
+        return jLCodigoPedido1;
+    }
+
+    public JLabel getjLDescricao() {
+        return jLDescricao;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public JTextArea getjTADescricao() {
         return jTADescricao;
     }
 
     public JTextField getjTFCodigoMateriaPrima() {
         return jTFCodigoMateriaPrima;
-    }
-
-    public JButton getjBAdicionarFornecedor() {
-        return jBAdicionarFornecedor;
-    }
-
-    public JButton getjBRemoverrFornecedor() {
-        return jBRemoverrFornecedor;
-    }
-
-    public JTextArea getjTADescricao() {
-        return jTADescricao;
     }
 
     public JTextField getjTFCusto() {
@@ -256,8 +280,7 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
     public JTable getjTFornecedores() {
         return jTFornecedores;
     }
-    
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarFornecedor;
     private javax.swing.JButton jBCancelarNovoMateriaPrima;
@@ -266,7 +289,6 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLCodigoM;
     private javax.swing.JLabel jLCodigoPedido;
     private javax.swing.JLabel jLCodigoPedido1;
-    private javax.swing.JLabel jLCodigoPedido2;
     private javax.swing.JLabel jLDescricao;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -276,7 +298,6 @@ public class TNovoMateriaPrima extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea jTADescricao;
     private javax.swing.JTextField jTFCodigoMateriaPrima;
     private javax.swing.JTextField jTFCusto;
-    private javax.swing.JTextField jTFEstoque;
     private javax.swing.JTable jTFornecedores;
     // End of variables declaration//GEN-END:variables
 }

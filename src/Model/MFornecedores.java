@@ -24,6 +24,7 @@ public class MFornecedores {
     private String cnpj;
     private String telefone;
     private int codigoEndereco;
+    
     private Connection con;
 
     public MFornecedores(int codigo, String email, String site, String nome, String cnpj, String telefone, int codigoEndereco) {
@@ -121,7 +122,7 @@ public class MFornecedores {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR/n" + ex);
+            throw new RuntimeException("Erro ao adicionar fornecedores\n" + ex);
             
         }   
         
@@ -144,7 +145,7 @@ public class MFornecedores {
 
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO Deletar/n" + ex);
+            throw new RuntimeException("Erro ao Deletar fornecedores\n" + ex);
             
         }   
         
@@ -175,7 +176,7 @@ public class MFornecedores {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO Alterar/n" + ex);
+            throw new RuntimeException("Erro ao Alterar fornecedores/n" + ex);
             
         }   
         
@@ -212,7 +213,7 @@ public class MFornecedores {
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao listar Usuario\n" + ex);
+            System.out.println("Erro ao listar Fornecedores\n" + ex);
         }
         
         return fornecedores;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Control.Novo;
 
 import View.TelasNovo.TNovoExpedicao;
 
@@ -11,7 +11,7 @@ import View.TelasNovo.TNovoExpedicao;
  *
  * @author Djair Maykon
  */
-class ControleNovoExpedicao {
+public class ControleNovoExpedicao {
     
     private TNovoExpedicao telaNovoExpedicao;
 

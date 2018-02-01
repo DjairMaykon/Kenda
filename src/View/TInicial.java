@@ -8,8 +8,10 @@ package View;
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -23,6 +25,7 @@ public class TInicial extends javax.swing.JFrame {
      */
     public TInicial() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -168,9 +171,11 @@ public class TInicial extends javax.swing.JFrame {
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jDPPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDPPrincipalLayout.setVerticalGroup(
@@ -418,6 +423,30 @@ public class TInicial extends javax.swing.JFrame {
         return jDPPrincipal;
     }
 
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JMenuBar getjMBTelaInicial() {
+        return jMBTelaInicial;
+    }
+
+    public JMenu getjMCadastrar() {
+        return jMCadastrar;
+    }
+
+    public JMenu getjMConfiguracoes() {
+        return jMConfiguracoes;
+    }
+
+    public JMenu getjMFerramentas() {
+        return jMFerramentas;
+    }
+
     public JMenuItem getjMIBuscarEndereco() {
         return jMIBuscarEndereco;
     }
@@ -482,6 +511,18 @@ public class TInicial extends javax.swing.JFrame {
         return jMIRelatorioVendas;
     }
 
+    public JMenu getjMListar() {
+        return jMListar;
+    }
+
+    public JMenu getjMNovo() {
+        return jMNovo;
+    }
+
+    public JMenu getjMRelatorio() {
+        return jMRelatorio;
+    }
+
     public JPanel getjPMenuAcessoRapido() {
         return jPMenuAcessoRapido;
     }
@@ -537,7 +578,26 @@ public class TInicial extends javax.swing.JFrame {
     public JMenuItem getjSMITintasAvaliacao() {
         return jSMITintasAvaliacao;
     }
-    
+
+    public JMenu getjSMListarEstoque() {
+        return jSMListarEstoque;
+    }
+
+    public JMenu getjSMListarExpedição() {
+        return jSMListarExpedição;
+    }
+
+    public JMenu getjSMListarPedidos() {
+        return jSMListarPedidos;
+    }
+
+    public JMenu getjSMListarProducao() {
+        return jSMListarProducao;
+    }
+
+    public JMenu getjSMListarTintas() {
+        return jSMListarTintas;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAjuda;

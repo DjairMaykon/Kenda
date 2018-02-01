@@ -78,10 +78,10 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLCodigoPedido = new javax.swing.JLabel();
-        jTFCodigoCliente = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLCodigoOS = new javax.swing.JLabel();
+        jTFCodigoCliente = new javax.swing.JTextField();
         jTFNome = new javax.swing.JTextField();
         jTFEmail = new javax.swing.JTextField();
         jLDescricao = new javax.swing.JLabel();
@@ -89,10 +89,16 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
         jBCancelarCliente = new javax.swing.JButton();
         jLCodigoM = new javax.swing.JLabel();
         jTFCNPJ = new javax.swing.JTextField();
-        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("##.###.###/####-##");    jTFCNPJ = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
+        try{    
+            javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter("##.###.###/####-##");    
+            jTFCNPJ = new javax.swing.JFormattedTextField(data); 
+        }catch(Exception e){ }
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
-        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)-#####-#####");    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
+        try{
+            javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter("(##)#####-####");    
+            jTFTelefone = new javax.swing.JFormattedTextField(data); 
+        }catch (Exception e){ }
         jTFEndereco = new javax.swing.JTextField();
         try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("#####-###");    jTFEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente2 = new javax.swing.JLabel();
@@ -108,47 +114,55 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
         jLCodigoPedido.setLabelFor(jTFCodigoCliente);
         jLCodigoPedido.setText("Código do Cliente:");
 
-        jTFCodigoCliente.setEditable(false);
-        jTFCodigoCliente.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         jLCodigoOS.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoOS.setLabelFor(jTFNome);
         jLCodigoOS.setText("Nome:");
 
+        jTFCodigoCliente.setEditable(false);
+        jTFCodigoCliente.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
         jTFNome.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNome.setNextFocusableComponent(jTFEmail);
 
         jTFEmail.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFEmail.setNextFocusableComponent(jTFCNPJ);
 
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Email:");
 
         jBCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBCadastrarCliente.setText("Cadastrar");
+        jBCadastrarCliente.setNextFocusableComponent(jBCancelarCliente);
 
         jBCancelarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
         jBCancelarCliente.setText("Cancelar");
+        jBCancelarCliente.setNextFocusableComponent(jTFNome);
 
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setLabelFor(jTFEmail);
         jLCodigoM.setText("CNPJ:");
 
         jTFCNPJ.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCNPJ.setNextFocusableComponent(jTFTelefone);
 
         jLCodigoCliente1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente1.setLabelFor(jTFEmail);
         jLCodigoCliente1.setText("Telefone:");
 
         jTFTelefone.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFTelefone.setNextFocusableComponent(jTFEndereco);
 
         jTFEndereco.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFEndereco.setNextFocusableComponent(jBuscarEndereco);
 
         jLCodigoCliente2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente2.setLabelFor(jTFEmail);
         jLCodigoCliente2.setText("Endereço:");
 
         jBuscarEndereco.setText("Buscar");
+        jBuscarEndereco.setNextFocusableComponent(jBCadastrarCliente);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -241,7 +255,7 @@ public class TCadastrarCliente extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

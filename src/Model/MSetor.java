@@ -16,13 +16,21 @@ import java.util.ArrayList;
  * @author Kaione
  */
 public class MSetor {
-    private Connection con = null;
+    
     private String nome;
     private int codigo;
     private String descricao;
-
+    
+    private Connection con = null;
+    
     public MSetor() {
         
+    }
+
+    public MSetor(String nome, int codigo, String descricao) {
+        this.nome = nome;
+        this.codigo = codigo;
+        this.descricao = descricao;
     }
 
     public String getNome() {
@@ -37,12 +45,6 @@ public class MSetor {
         return codigo;
     }
 
-    public MSetor(String nome, int codigo, String descricao) {
-        this.nome = nome;
-        this.codigo = codigo;
-        this.descricao = descricao;
-    }
-
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
@@ -54,7 +56,7 @@ public class MSetor {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-   
+    
     public void adicionar(){
         
         PreparedStatement pstmt = null;
@@ -124,8 +126,6 @@ public class MSetor {
                 String nome1 = rs.getString("nome");        
                 int codigo1 = rs.getInt("cod");
                 String descricao1 = rs.getString("descricao");
-                
-                
                 
                 MSetor u1 = new MSetor(nome1, codigo1, descricao1);
                 setam.add(u1);

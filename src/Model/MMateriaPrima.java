@@ -17,12 +17,21 @@ import java.util.ArrayList;
  * @author JFelipe
  */
 public class MMateriaPrima{
-    private Connection con = null;
+    
     private int codigo;
     private String descricao;
     private int estoque;
     private double custo;
 
+    private Connection con = null;
+
+    public MMateriaPrima(int codigo, String descricao, int estoque, double custo) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.estoque = estoque;
+        this.custo = custo;
+    }
+    
     public MMateriaPrima() {
         
     }
@@ -45,12 +54,6 @@ public class MMateriaPrima{
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public MMateriaPrima(int codigo, String descricao, double custo) {
-        this.codigo = codigo;
-        this.descricao = descricao;
-        this.custo = custo;
     }
 
     public void setDescricao(String descricao) {
@@ -107,8 +110,8 @@ public class MMateriaPrima{
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,descricao);
-            pstmt.setInt(5, codigo);
-            pstmt.setInt(4, estoque);
+            pstmt.setInt(4, codigo);
+            pstmt.setInt(3, estoque);
             pstmt.setDouble(2,custo);
             pstmt.executeUpdate();
             
@@ -138,7 +141,7 @@ public class MMateriaPrima{
                 String descricao1 = rs.getString("descricao");
                 Double custo1 = rs.getDouble("custo");
                 
-                MMateriaPrima u1 = new MMateriaPrima(codigo1, descricao1, custo1);
+                MMateriaPrima u1 = new MMateriaPrima(codigo1, descricao1, est, custo1);
                 u1.setEstoque(est);
                 materias.add(u1);
             }

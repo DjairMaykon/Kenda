@@ -21,8 +21,20 @@ public class MHistoricoDeAvaliacao {
     private int codigoFuncionario;
     private String avalicao;
     private Date data;
+    
     private Connection con = null;
+    
+    public MHistoricoDeAvaliacao(int codigo, int codigoTinta, int codigoFuncionario, String avalicao, Date data) {
+        this.codigo = codigo;
+        this.codigoTinta = codigoTinta;
+        this.codigoFuncionario = codigoFuncionario;
+        this.avalicao = avalicao;
+        this.data = data;
+    }
 
+    public MHistoricoDeAvaliacao() {
+    }
+    
     public int getCodigo() {
         return codigo;
     }
@@ -55,14 +67,6 @@ public class MHistoricoDeAvaliacao {
         this.avalicao = avalicao;
     }
 
-    public MHistoricoDeAvaliacao(int codigo, int codigoTinta, int codigoFuncionario, String avalicao, Date data) {
-        this.codigo = codigo;
-        this.codigoTinta = codigoTinta;
-        this.codigoFuncionario = codigoFuncionario;
-        this.avalicao = avalicao;
-        this.data = data;
-    }
-
     public Date getData() {
         return data;
     }
@@ -85,7 +89,7 @@ public class MHistoricoDeAvaliacao {
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao adicionar");
+            System.out.println("Erro ao adicionar Historico de avaliação\n" + ex);
         }
         
     }
@@ -100,7 +104,7 @@ public class MHistoricoDeAvaliacao {
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir");
+            System.out.println("Erro ao excluir Historico de avaliação\n" + ex);
         }
         
     }
@@ -120,7 +124,7 @@ public class MHistoricoDeAvaliacao {
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar");
+            System.out.println("Erro ao alterar Historico de avaliação\n" + ex);
         }
         
     }
@@ -151,7 +155,7 @@ public class MHistoricoDeAvaliacao {
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao listar HistoricoDeAvaliacao\n" + ex);
+            System.out.println("Erro ao listar Historico de Avaliacao\n" + ex);
         }
         
         return historicos;

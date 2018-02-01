@@ -7,11 +7,6 @@ package Control;
 
 import View.Listar.Pedidos.TListarPedidosFinalizado;
 
-
-
-
-
-
 /**
  *
  * @author Djair Maykon

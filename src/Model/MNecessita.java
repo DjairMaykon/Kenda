@@ -6,7 +6,6 @@
 package Model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,11 +16,19 @@ import java.util.ArrayList;
  * @author JFelipe
  */
 public class MNecessita {
+    
     private int codigoTinta;
-    private int qtd_materia_prima;
+    private int qtdMateriaPrima;
     private int codigoMateriaPrima;
+    
     private Connection con;
-
+    
+    public MNecessita(int codigoTinta, int qtd_materia_prima, int codigoMateriaPrima) {
+        this.codigoTinta = codigoTinta;
+        this.qtdMateriaPrima = qtd_materia_prima;
+        this.codigoMateriaPrima = codigoMateriaPrima;
+    }
+    
     public MNecessita() {
         
     }
@@ -34,22 +41,16 @@ public class MNecessita {
         this.codigoTinta = codigoTinta;
     }
 
-    public int getQtd_materia_prima() {
-        return qtd_materia_prima;
+    public int getQtdMateriaPrima() {
+        return qtdMateriaPrima;
     }
 
-    public void setQtd_materia_prima(int qtd_materia_prima) {
-        this.qtd_materia_prima = qtd_materia_prima;
+    public void setQtdMateriaPrima(int qtdMateriaPrima) {
+        this.qtdMateriaPrima = qtdMateriaPrima;
     }
 
     public int getCodigoMateriaPrima() {
         return codigoMateriaPrima;
-    }
-
-    public MNecessita(int codigoTinta, int qtd_materia_prima, int codigoMateriaPrima) {
-        this.codigoTinta = codigoTinta;
-        this.qtd_materia_prima = qtd_materia_prima;
-        this.codigoMateriaPrima = codigoMateriaPrima;
     }
 
     public void setCodigoMateriaPrima(int codigoMateriaPrima) {
@@ -69,24 +70,37 @@ public class MNecessita {
         
             pstmt.setInt(1, codigoTinta); //strings /\
             pstmt.setInt(2,codigoMateriaPrima);
-            pstmt.setInt(3,qtd_materia_prima);
+            pstmt.setInt(3,qtdMateriaPrima);
+            
             pstmt.executeUpdate();
             
            
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao adicionar Necessita\n" + ex);
             
         }   
         
     }
     
-    public void deletar(){
+    public void deletar(String por){
     
         PreparedStatement pstmt = null;
+        int cod = 0;
         
-        String sql1 = "DELETE FROM necessita WHERE cod_tinta = ?";
+        if(por.equals("tinta")){
+            por = "cod_tinta";
+            cod = codigoTinta;
+        }else if(por.equals("materia prima")){
+            por = "cod_materia_prima";
+            cod = codigoMateriaPrima;
+        }else{
+            System.err.println("Parametro incorreto: (tinta) ou (materia prima)");
+            return;
+        }
+        
+        String sql1 = "DELETE FROM necessita WHERE ? = ?";
      
         // banco 
         
@@ -95,53 +109,61 @@ public class MNecessita {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
-            pstmt.setInt(1, codigoTinta);
+            pstmt.setString(1, por);
+            pstmt.setInt(2, cod);
             
             pstmt.executeUpdate();
        
-            
-            
-            
-            
-            
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO DELETAR\n" + ex);
+            throw new RuntimeException("Erro ao deletar Necessita\n" + ex);
             
         }   
         
     }
     
-     public void alterar(){
+     public void alterar(String por){
     
         PreparedStatement pstmt = null;
         
-     
+        int cod = 0;
+        
+        if(por.equals("tinta")){
+            por = "cod_tinta";
+            cod = codigoTinta;
+        }else if(por.equals("materia prima")){
+            por = "cod_materia_prima";
+            cod = codigoMateriaPrima;
+        }else{
+            System.err.println("Parametro incorreto: (tinta) ou (materia prima)");
+            return;
+        }
         
         try {
                     
             
-            String sql1 = "UPDATE NECESSITA SET qtd_materia_prima=? WHERE cod_tinta = ?";
+            String sql1 = "UPDATE NECESSITA SET qtd_materia_prima=? WHERE ? = ?";
 
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
-           //strings /\
-            pstmt.setInt(1,qtd_materia_prima);
-            pstmt.setInt(2,codigoTinta);//strings /\
+            
+            pstmt.setInt(1,qtdMateriaPrima);
+            pstmt.setString(2,por);
+            pstmt.setInt(3,cod);
            
             
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO ao alterar\n" + ex);
+            throw new RuntimeException("Erro ao alterar Necessita\n" + ex);
             
         }   
         
     }
      
-     public ArrayList<MNecessita> listar(){
+    public ArrayList<MNecessita> listar(){
         
         ArrayList<MNecessita> necessitam = new ArrayList<>();
         String sql="SELECT * FROM NECESSITA";

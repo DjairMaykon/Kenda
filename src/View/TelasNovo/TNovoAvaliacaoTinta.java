@@ -7,7 +7,10 @@ package View.TelasNovo;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -24,16 +27,10 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
         initComponents();
         
     }
-
+    
     public JButton getjBCancelarNovaAvaliacao() {
         return jBCancelarNovaAvaliacao;
     }
-
-    public JTextArea getjTAAvaliacao() {
-        return jTAAvaliacao;
-    }
-
-    
 
     public JButton getjBProcurarTinta() {
         return jBProcurarTinta;
@@ -43,11 +40,43 @@ public class TNovoAvaliacaoTinta extends javax.swing.JInternalFrame {
         return jBSalvarNovaAvaliacao;
     }
 
-    public JDateChooser getjDCDataDaTinta() {
+    public JDateChooser getjDCDataDaAvaliacao() {
         return jDCDataDaAvaliacao;
     }
 
-    public JTextArea getjTADescricao() {
+    public JLabel getjLCodigoCliente() {
+        return jLCodigoCliente;
+    }
+
+    public JLabel getjLCodigoPedido() {
+        return jLCodigoPedido;
+    }
+
+    public JLabel getjLData() {
+        return jLData;
+    }
+
+    public JLabel getjLDescricao() {
+        return jLDescricao;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public JTextArea getjTAAvaliacao() {
         return jTAAvaliacao;
     }
 

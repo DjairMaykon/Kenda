@@ -104,18 +104,22 @@ public class TCadastrarSetor extends javax.swing.JInternalFrame {
         jLCodigoOS.setText("Nome:");
 
         jTFNome.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNome.setNextFocusableComponent(jTADescricao);
 
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Descrição:");
 
         jBCadastrarSetor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBCadastrarSetor.setText("Cadastrar");
+        jBCadastrarSetor.setNextFocusableComponent(jBCancelarSetor);
 
         jBCancelarSetor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
         jBCancelarSetor.setText("Cancelar");
+        jBCancelarSetor.setNextFocusableComponent(jTFNome);
 
         jTADescricao.setColumns(20);
         jTADescricao.setRows(5);
+        jTADescricao.setNextFocusableComponent(jBCadastrarSetor);
         jScrollPane1.setViewportView(jTADescricao);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

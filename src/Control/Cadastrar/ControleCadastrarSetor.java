@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Control.Cadastrar;
 import Model.MSetor;
 import View.TelasCadastrar.TCadastrarSetor;
 import java.awt.event.ActionEvent;

@@ -5,7 +5,7 @@
  */
 package Control;
 
-import View.TInicial;
+import Model.MUsuario;
 
 
 /**
@@ -14,23 +14,39 @@ import View.TInicial;
  */
 public class ControlePrincipal {
 
-    private static ControleLogin cLogin;
-    private static ControleTInicial cTInicial;
+    private static ControleLogin cLogin = null;
+    private static ControleTInicial cTInicial = null;
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
        
+        login();
+        
+    }
+
+    public static void login() {
+        
+        if(cTInicial instanceof ControleTInicial)
+            cTInicial = null;
+        
         cLogin = new ControleLogin();
         
     }
 
-    public static void iniciar() {
+    public static void iniciar(MUsuario u) {
         // TODO code application logic here
     
-        cTInicial = new ControleTInicial(cLogin.getModeloUsuario());
+        if(cLogin instanceof ControleLogin)
+            cLogin = null;
         
+        cTInicial = new ControleTInicial(u);
+        
+    }
+
+    public static ControleTInicial getcTInicial() {
+        return cTInicial;
     }
     
 }

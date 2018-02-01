@@ -1,473 +1,255 @@
 package Control;
 
+import Control.Novo.*;
+import Control.Cadastrar.*;
 import Model.MUsuario;
 import View.TInicial;
+import View.TelasNovo.*;
+import View.TelasCadastrar.*;
+import View.TelasCadastrar.Funcionario.TCadastrarFuncionario;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.ContainerAdapter;
+import java.awt.event.ContainerEvent;
 
 /**
  *
  * @author Djair Maykon
  */
-class ControleTInicial {
-    
+public class ControleTInicial {
+
     private TInicial telaInicial;
     private MUsuario modeloUsuario;
-
-    public ControleTInicial(MUsuario u1) {
     
+    private ControleNovoAvaliacaoTinta cNovoAvaliacaoDeTinta;
+    private ControleNovoExpedicao cNovoExpedicao;
+    private ControleNovoMateriaPrima cNovoMateriaPrima;
+    private ControleNovoPedido cNovoPedido;
+    private ControleNovoProducao cNovoProducao;
+
+    private ControleCadastrarCliente cCadastrarCliente;
+    private ControleCadastrarFornecedor cCadastrarFornecedor;
+    private ControleCadastrarFuncionario cCadastrarFuncionario;
+    private ControleCadastrarSetor cCadastrarSetor;
+    private ControleCadastrarTinta cCadastrarTinta;
+    private ControleCadastrarTransportadora cCadastrarTransportadora;
+    
+    public ControleTInicial(MUsuario u1) {
+        
+        this.cNovoAvaliacaoDeTinta = null;
+        this.cNovoExpedicao = null;
+        this.cNovoMateriaPrima = null;
+        this.cNovoPedido = null;
+        this.cNovoProducao = null;
+        
+        cCadastrarCliente = null;
+        cCadastrarFornecedor = null;
+        cCadastrarFuncionario = null;
+        cCadastrarSetor = null;
+        cCadastrarTinta = null;
+        cCadastrarTransportadora = null;
+        
         modeloUsuario = u1;
         telaInicial = new TInicial();
         telaInicial.setVisible(true);
         
-          telaInicial.getjBSairDoUsuario().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoSair(e);
-            }
-        });
-        telaInicial.getjMINovoPedido().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMINovoPedido(e);
-            }
-        });
-        
-        telaInicial.getjMINovoProducao().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMINovoProducao(e);
-            }
-        });
-        
-        telaInicial.getjMINovoExpedicao().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMINovoExpedicao(e);
-            }
-        });
-        
-        telaInicial.getjMINovoMateriaPrima().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMINovoMateriaPrima(e);
-            }
-        });
-        
-        telaInicial.getjMINovoAvaliacaoDeTinta().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMINovoAvaliacaoTinta(e);
-            }
-        });
-        
-        telaInicial.getjMICadastrarCliente().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMICadastrarCliente(e);
-            }
-        });
-        
-        telaInicial.getjMICadastrarTinta().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMICadastrarTinta(e);
-            }
-        });
-        
-        telaInicial.getjMICadastrarTransportadora().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMICadastrarTransportadora(e);
-            }
-        });
-        
-        telaInicial.getjMICadastrarFornecedores().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMICadastrarFornecedor(e);
-            }
-        });
-           
+        telaInicial.getjDPPrincipal().addContainerListener(new ContainerAdapter() {
             
-        telaInicial.getjMICadastrarFuncionario().addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMICadastrarFuncionario(e);
-            }
-        });
-             
-        telaInicial.getjMICadastrarSetor().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMICadastrarSetor(e);
+            public void componentRemoved(ContainerEvent e) {
+                
+                if(e.getChild() instanceof TNovoAvaliacaoTinta){
+                    cNovoAvaliacaoDeTinta = null;
+                }
+                if(e.getChild() instanceof TNovoExpedicao){
+                    cNovoExpedicao = null;
+                }
+                if(e.getChild() instanceof TNovoMateriaPrima){
+                    cNovoMateriaPrima = null;
+                }
+                if(e.getChild() instanceof TNovoPedido){
+                    cNovoPedido = null;
+                }
+                if(e.getChild() instanceof TNovoProducao){
+                    cNovoProducao = null;
+                }
+                
+                if(e.getChild() instanceof TCadastrarCliente){
+                    cCadastrarCliente = null;
+                }
+                if(e.getChild() instanceof TCadastrarFornecedor){
+                    cCadastrarFornecedor = null;
+                }
+                if(e.getChild() instanceof TCadastrarFuncionario){
+                    cCadastrarFuncionario = null;
+                }
+                if(e.getChild() instanceof TCadastrarSetor){
+                    cCadastrarSetor = null;
+                }
+                if(e.getChild() instanceof TCadastrarTinta){
+                    cCadastrarTinta = null;
+                }
+                if(e.getChild() instanceof TCadastrarTransportadora){
+                    cCadastrarTransportadora = null;
+                }
             }
         });
         
-        telaInicial.getjCBMIVizualisarBarraDeAcessoRapido().addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if(telaInicial.getjCBMIVizualisarBarraDeAcessoRapido().isSelected())
-                    telaInicial.getjPMenuAcessoRapido().setVisible(true);
-                else
-                    telaInicial.getjPMenuAcessoRapido().setVisible(false);
-            }
+        telaInicial.getjMINovoAvaliacaoDeTinta().addActionListener((ActionEvent e) -> {
+            eventoChamarTelaNovoAvaliacaoDeTinta(e);
+        });
+        telaInicial.getjMINovoExpedicao().addActionListener((ActionEvent e) -> {
+            eventoChamarTelaNovoExpedicao(e);
+        });
+        telaInicial.getjMINovoMateriaPrima().addActionListener((ActionEvent e) -> {
+            eventoChamarTelaNovoMateriaPrima(e);
+        });
+        telaInicial.getjMINovoPedido().addActionListener((ActionEvent e) -> {
+            eventoChamarTelaNovoPedido(e);
+        });
+        telaInicial.getjMINovoProducao().addActionListener((ActionEvent e) -> {
+            eventoChamarTelaNovoProducao(e);
         });
         
-        telaInicial.getjMIListarClientes().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarCliente(e);
-            }
+        telaInicial.getjMICadastrarCliente().addActionListener((e) -> {
+            eventoChamarTelaCadastrarCliente(e);
         });
-        
-          
-        telaInicial.getjMIListarFuncionarios().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarFuncionario(e);
-            }
+        telaInicial.getjMICadastrarFornecedores().addActionListener((e) -> {
+            eventoChamarTelaCadastrarFornecedores(e);
         });
-        
-         telaInicial.getjSMIEstoqueFornecedores().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarEstoqueFornecedores(e);
-            }
+        telaInicial.getjMICadastrarFuncionario().addActionListener((e) -> {
+            eventoChamarTelaCadastrarFuncionario(e);
         });
-         
-          telaInicial.getjSMIEstoqueMateriaPrima().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarEstoqueMateriaPrima(e);
-            }
+        telaInicial.getjMICadastrarSetor().addActionListener((e) -> {
+            eventoChamarTelaCadastrarSetor(e);
         });
-          
-           telaInicial.getjSMIExpedicaoEmAndamento().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarExpedicaoEmAndamento(e);
-            }
+        telaInicial.getjMICadastrarTinta().addActionListener((e) -> {
+            eventoChamarTelaCadastrarTinta(e);
         });
-           
-           telaInicial.getjSMIExpedicaoFinalizados().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarExpedicaoFinalizados(e);
-            }
+        telaInicial.getjMICadastrarTransportadora().addActionListener((e) -> {
+            eventoChamarTelaCadastrarTransportadora(e);
         });
-         
-             telaInicial.getjSMIExpedicaoTransportadoras().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarExpedicaoTransportadora(e);
-            }
-        });
-             
-              telaInicial.getjSMIPedidosEmExpedição().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarPedidosExpedicao(e);
-            }
-        });
-              
-              
-               telaInicial.getjSMIPedidosEmLaboratorio().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarPedidosLaboratorio(e);
-            }
-        });
-               
-                 
-               telaInicial.getjSMIPedidosEmProducao().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarPedidosProducao(e);
-            }
-        });
-               
-                  telaInicial.getjSMIPedidosFinalizados().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarPedidosFinalizado(e);
-            }
-        });
-           
-            
-            telaInicial.getjSMIProducaoFinalizados().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarProducaoFinalizados(e);
-            }
-        });
-            
-            telaInicial.getjSMIProducaoEmAndamento().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarProducaoEmAndamento(e);
-            }
-        });
-               
-           telaInicial.getjSMITintaCatalogo().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarTitasCatalogo(e);
-            }
-        });
-           
-           
-            telaInicial.getjSMITintasAvaliacao().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                acaoMIListarTitasAvalicoes(e);
-            }
-        });
-            
-            
-               
-               
-         
-         
-    }
-    
-    
-    
-    public void acaoMINovoPedido(ActionEvent evt){
-        
-        ControleNovoPedido cNovoPedido = new ControleNovoPedido();
-        telaInicial.getjDPPrincipal().add(cNovoPedido.getTelaNovoPedido());
-        cNovoPedido.getTelaNovoPedido().setVisible(true);
         
     }
     
-    public void acaoMINovoProducao(ActionEvent evt){
+    public void eventoChamarTelaNovoAvaliacaoDeTinta(ActionEvent evt){
         
-        ControleNovoProducao cNovoProducao = new ControleNovoProducao();
-        telaInicial.getjDPPrincipal().add(cNovoProducao.getTelaNovoProducao());
-        cNovoProducao.getTelaNovoProducao().setVisible(true);
+        if(cNovoAvaliacaoDeTinta != null)
+            return;
         
+        cNovoAvaliacaoDeTinta = new ControleNovoAvaliacaoTinta();
+        telaInicial.getjDPPrincipal().add(cNovoAvaliacaoDeTinta.getTelaNovoAvaliacaoTinta());
+        cNovoAvaliacaoDeTinta.getTelaNovoAvaliacaoTinta().setVisible(true);
+                
     }
     
-    public void acaoMINovoExpedicao(ActionEvent evt){
+    public void eventoChamarTelaNovoExpedicao(ActionEvent evt){
         
-        ControleNovoExpedicao cNovoExpedicao = new ControleNovoExpedicao();
+        if(cNovoExpedicao != null)
+            return;
+        
+        cNovoExpedicao = new ControleNovoExpedicao();
         telaInicial.getjDPPrincipal().add(cNovoExpedicao.getTelaNovoExpedicao());
         cNovoExpedicao.getTelaNovoExpedicao().setVisible(true);
-        
+                
     }
-    public void acaoMINovoMateriaPrima(ActionEvent evt){
+    
+    public void eventoChamarTelaNovoMateriaPrima(ActionEvent evt){
         
-        ControleNovoMateriaPrima cNovoMateriaPrima = new ControleNovoMateriaPrima();
+        if(cNovoMateriaPrima != null)
+            return;
+        
+        cNovoMateriaPrima = new ControleNovoMateriaPrima();
         telaInicial.getjDPPrincipal().add(cNovoMateriaPrima.getTelaNovoMateriaPrima());
         cNovoMateriaPrima.getTelaNovoMateriaPrima().setVisible(true);
-        
+                
     }
     
-    public void acaoMINovoAvaliacaoTinta(ActionEvent evt){
+    public void eventoChamarTelaNovoPedido(ActionEvent evt){
         
-        ControleNovoAvaliacaoTinta cNovoAvaliacaoTinta = new ControleNovoAvaliacaoTinta();
-        telaInicial.getjDPPrincipal().add(cNovoAvaliacaoTinta.getTelaNovoAvaliacaoTinta());
-        cNovoAvaliacaoTinta.getTelaNovoAvaliacaoTinta().setVisible(true);
+        if(cNovoPedido != null)
+            return;
         
+        cNovoPedido = new ControleNovoPedido();
+        telaInicial.getjDPPrincipal().add(cNovoPedido.getTelaNovoPedido());
+        cNovoPedido.getTelaNovoPedido().setVisible(true);
+                
     }
     
-    public void acaoMICadastrarCliente(ActionEvent evt){
+    public void eventoChamarTelaNovoProducao(ActionEvent evt){
         
-        ControleCadastrarCliente cCadastrarCliente = new ControleCadastrarCliente();
+        if(cNovoProducao != null)
+            return;
+        
+        cNovoProducao = new ControleNovoProducao();
+        telaInicial.getjDPPrincipal().add(cNovoProducao.getTelaNovoProducao());
+        cNovoProducao.getTelaNovoProducao().setVisible(true);
+                
+    }
+
+    private void eventoChamarTelaCadastrarCliente(ActionEvent e) {
+    
+        if(cCadastrarCliente != null)
+            return;
+        
+        cCadastrarCliente = new ControleCadastrarCliente();
         telaInicial.getjDPPrincipal().add(cCadastrarCliente.getTelaCadastrarCliente());
         cCadastrarCliente.getTelaCadastrarCliente().setVisible(true);
         
     }
     
+    private void eventoChamarTelaCadastrarFornecedores(ActionEvent e) {
     
-    public void acaoMICadastrarSetor(ActionEvent evt){
+        if(cCadastrarFornecedor != null)
+            return;
         
-        ControleCadastrarSetor cCadastrarSetor = new ControleCadastrarSetor();
-        telaInicial.getjDPPrincipal().add(cCadastrarSetor.getTelaCadastrarSetor());
-        cCadastrarSetor.getTelaCadastrarSetor().setVisible(true);
-        
-    }
-     
-    public void acaoMICadastrarTinta(ActionEvent evt){
-        
-        ControleCadastrarTinta cCadastrarTinta = new ControleCadastrarTinta();
-        telaInicial.getjDPPrincipal().add(cCadastrarTinta.getTelaCadastrarTinta());
-        cCadastrarTinta.getTelaCadastrarTinta().setVisible(true);
-        
-    }
-      
-    public void acaoMICadastrarFornecedor(ActionEvent evt){
-        
-        ControleCadastrarFornecedor cCadastrarFornecedor = new ControleCadastrarFornecedor();
+        cCadastrarFornecedor = new ControleCadastrarFornecedor();
         telaInicial.getjDPPrincipal().add(cCadastrarFornecedor.getTelaCadastrarFornecedor());
         cCadastrarFornecedor.getTelaCadastrarFornecedor().setVisible(true);
         
     }
     
-    public void acaoMICadastrarTransportadora(ActionEvent evt){
+    private void eventoChamarTelaCadastrarFuncionario(ActionEvent e) {
+    
+        if(cCadastrarFuncionario != null)
+            return;
         
-        ControleCadastrarTransportadora cCadastrarTransportadora = new ControleCadastrarTransportadora();
-        telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getTelaCadastrarTransportadora());
-        cCadastrarTransportadora.getTelaCadastrarTransportadora().setVisible(true);
-        
-    }
-          
-    public void acaoMICadastrarFuncionario(ActionEvent evt){
-        
-        ControleCadastrarFuncionario cCadastrarFuncionario = new ControleCadastrarFuncionario();
+        cCadastrarFuncionario = new ControleCadastrarFuncionario();
         telaInicial.getjDPPrincipal().add(cCadastrarFuncionario.getTelaCadastrarFuncionario());
         cCadastrarFuncionario.getTelaCadastrarFuncionario().setVisible(true);
         
     }
     
+    private void eventoChamarTelaCadastrarSetor(ActionEvent e) {
     
-           
-    public void acaoMIListarFuncionario(ActionEvent evt){
+        if(cCadastrarSetor != null)
+            return;
         
-        ControleListarFuncionario cListarFuncionario = new ControleListarFuncionario();
-        telaInicial.getjDPPrincipal().add(cListarFuncionario.gettelaListarFuncionario());
-        cListarFuncionario.gettelaListarFuncionario().setVisible(true);
-        
-    }
-    
-    public void acaoMIListarCliente(ActionEvent evt){
-        
-        ControleListarCliente cListarCliente = new ControleListarCliente();
-        telaInicial.getjDPPrincipal().add(cListarCliente.getListarCliente());
-        cListarCliente.getListarCliente().setVisible(true);
+        cCadastrarSetor = new ControleCadastrarSetor();
+        telaInicial.getjDPPrincipal().add(cCadastrarSetor.getTelaCadastrarSetor());
+        cCadastrarSetor.getTelaCadastrarSetor().setVisible(true);
         
     }
     
+    private void eventoChamarTelaCadastrarTinta(ActionEvent e) {
     
-     public void acaoMIListarEstoqueFornecedores(ActionEvent evt){
+        if(cCadastrarTinta != null)
+            return;
         
-        ControleListarEstoqueFornecedores cListarEstoqueFornecedores = new ControleListarEstoqueFornecedores();
-        telaInicial.getjDPPrincipal().add(cListarEstoqueFornecedores.gettelaListarEstoqueFornecedores());
-        cListarEstoqueFornecedores.gettelaListarEstoqueFornecedores().setVisible(true);
-        
-    }
-     
-     
-     public void acaoMIListarEstoqueMateriaPrima(ActionEvent evt){
-        
-        ControleListarEstoqueMateriaPrima cListarEstoqueMateriaPrima = new ControleListarEstoqueMateriaPrima();
-        telaInicial.getjDPPrincipal().add(cListarEstoqueMateriaPrima.gettelaListarEstoqueMateriaPrima());
-        cListarEstoqueMateriaPrima.gettelaListarEstoqueMateriaPrima().setVisible(true);
+        cCadastrarTinta = new ControleCadastrarTinta();
+        telaInicial.getjDPPrincipal().add(cCadastrarTinta.getTelaCadastrarTinta());
+        cCadastrarTinta.getTelaCadastrarTinta().setVisible(true);
         
     }
-     
-     
-       public void acaoMIListarExpedicaoEmAndamento(ActionEvent evt){
-        
-        ControleListarExpedicaoEmAndamento cListarExpedicaoEmAndamento = new ControleListarExpedicaoEmAndamento();
-        telaInicial.getjDPPrincipal().add(cListarExpedicaoEmAndamento.gettelaListarExpedicaoEmAndamento());
-        cListarExpedicaoEmAndamento.gettelaListarExpedicaoEmAndamento().setVisible(true);
-        
-    }
-       
-        public void acaoMIListarExpedicaoFinalizados(ActionEvent evt){
-        
-        ControleListarExpedicaoFinalizados cListarExpedicaoFinalizados = new ControleListarExpedicaoFinalizados();
-        telaInicial.getjDPPrincipal().add(cListarExpedicaoFinalizados.gettelaListarExpedicaoFinalizados());
-        cListarExpedicaoFinalizados.gettelaListarExpedicaoFinalizados().setVisible(true);
-        
-    }
-        
-        
-         public void acaoMIListarExpedicaoTransportadora(ActionEvent evt){
-        
-        ControleListarExpedicaoTransportadora cListarExpedicaoTransportadora = new ControleListarExpedicaoTransportadora();
-        telaInicial.getjDPPrincipal().add(cListarExpedicaoTransportadora.gettelaListarExpedicaoTransportadora());
-        cListarExpedicaoTransportadora.gettelaListarExpedicaoTransportadora().setVisible(true);
-        
-    }
-         
-         
-        public void acaoMIListarPedidosExpedicao(ActionEvent evt){
-        
-        ControleListarPedidosExpedicao cListarPedidosExpedicao = new ControleListarPedidosExpedicao();
-        telaInicial.getjDPPrincipal().add(cListarPedidosExpedicao.gettelaListarPedidosExpedicao());
-        cListarPedidosExpedicao.gettelaListarPedidosExpedicao().setVisible(true);
-        
-    }
-           
-           
-      public void acaoMIListarPedidosFinalizado(ActionEvent evt){
-        
-        ControleListarPedidosFinalizado cListarPedidosFinalizado = new ControleListarPedidosFinalizado();
-        telaInicial.getjDPPrincipal().add(cListarPedidosFinalizado.gettelaListarPedidosFinalizado());
-        cListarPedidosFinalizado.gettelaListarPedidosFinalizado().setVisible(true);
-        
-    }
-      
-      
-      public void acaoMIListarPedidosLaboratorio(ActionEvent evt){
-        
-        ControleListarPedidosLaboratorio cListarPedidosLaboratorio = new ControleListarPedidosLaboratorio();
-        telaInicial.getjDPPrincipal().add(cListarPedidosLaboratorio.gettelaListarPedidosLaboratorio());
-        cListarPedidosLaboratorio.gettelaListarPedidosLaboratorio().setVisible(true);
-        
-    }
-      
-      public void acaoMIListarPedidosProducao(ActionEvent evt){
-        
-        ControleListarPedidosProducao cListarPedidosProducao = new ControleListarPedidosProducao();
-        telaInicial.getjDPPrincipal().add(cListarPedidosProducao.gettelaListarPedidosProducao());
-        cListarPedidosProducao.gettelaListarPedidosProducao().setVisible(true);
-        
-    }
-      
-       public void acaoMIListarProducaoEmAndamento(ActionEvent evt){
-        
-        ControleListarProducaoEmAndamento cListarProducaoEmAndamento = new ControleListarProducaoEmAndamento();
-        telaInicial.getjDPPrincipal().add(cListarProducaoEmAndamento.gettelaListarProducaoEmAndamento());
-        cListarProducaoEmAndamento.gettelaListarProducaoEmAndamento().setVisible(true);
-        
-    }
-       
-       public void acaoMIListarProducaoFinalizados(ActionEvent evt){
-        
-        ControleListarProducaoFinalizados cListarProducaoFinalizados = new ControleListarProducaoFinalizados();
-        telaInicial.getjDPPrincipal().add(cListarProducaoFinalizados.gettelaListarProducaoFinalizados());
-        cListarProducaoFinalizados.gettelaListarProducaoFinalizados().setVisible(true);
-        
-    }
-       
-        public void acaoMIListarTitasAvalicoes(ActionEvent evt){
-        
-        ControleListarTintasAvaliacoes cListarTintasAvaliacoes = new ControleListarTintasAvaliacoes();
-        telaInicial.getjDPPrincipal().add(cListarTintasAvaliacoes.gettelaListarTintasAvaliacoes());
-        cListarTintasAvaliacoes.gettelaListarTintasAvaliacoes().setVisible(true);
-        
-    }
-        
-      public void acaoMIListarTitasCatalogo(ActionEvent evt){
-        
-        ControleListarTintasCatalogo cListarTintasCatalogo = new ControleListarTintasCatalogo();
-        telaInicial.getjDPPrincipal().add(cListarTintasCatalogo.gettelaListarTintasCatalogo());
-        cListarTintasCatalogo.gettelaListarTintasCatalogo().setVisible(true);
-        
-    }
-     
-        public void acaoSair(ActionEvent evt){
-        
-         ControleLogin ccontroleLogin = new ControleLogin();
-        ccontroleLogin.gettelaTLogin().setVisible(true);
-        telaInicial.dispose();
-        
-    }
-     
-      
-      
     
-      
-      
+    private void eventoChamarTelaCadastrarTransportadora(ActionEvent e) {
     
-    
-    
-    
+        if(cCadastrarTransportadora != null)
+            return;
+        
+        cCadastrarTransportadora = new ControleCadastrarTransportadora();
+        telaInicial.getjDPPrincipal().add(cCadastrarTransportadora.getTelaCadastrarTransportadora());
+        cCadastrarTransportadora.getTelaCadastrarTransportadora().setVisible(true);
+        
+    }
     
 }

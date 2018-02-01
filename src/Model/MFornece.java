@@ -16,15 +16,22 @@ import java.util.ArrayList;
  * @author JFelipe
  */
 public class MFornece {
+    
     private int codigoFornecedores;
     private int codigoMateriaPrima;
     private double custo;
+    
     private Connection con;
 
     public MFornece() {
     
     }
     
+    public MFornece(int codigoFornecedores, int codigoMateriaPrima, double custo) {
+        this.codigoFornecedores = codigoFornecedores;
+        this.codigoMateriaPrima = codigoMateriaPrima;
+        this.custo = custo;
+    }
 
     public int getCodigoFornecedores() {
         return codigoFornecedores;
@@ -36,12 +43,6 @@ public class MFornece {
 
     public int getCodigoMateriaPrima() {
         return codigoMateriaPrima;
-    }
-
-    public MFornece(int codigoFornecedores, int codigoMateriaPrima, double custo) {
-        this.codigoFornecedores = codigoFornecedores;
-        this.codigoMateriaPrima = codigoMateriaPrima;
-        this.custo = custo;
     }
 
     public void setCodigoMateriaPrima(int codigoMateriaPrima) {
@@ -76,66 +77,84 @@ public class MFornece {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao adicionar Fornece:\n" + ex);
             
         }   
         
     }
     
-    public void deletar(){
+    public void deletar(String por){
     
         PreparedStatement pstmt = null;
-        
-        String sql1 = "DELETE FROM FORNECE WHERE cod_materia_prima = ?";
+        String sql1 = "DELETE FROM FORNECE WHERE ? = ?";
      
-        // banco 
+        int cod = 0;
+        
+        if(por.equals("fornecedores")){
+            por = "cod_fornecedores";
+            cod = codigoFornecedores;
+        }else if(por.equals("materia prima")){
+            por = "cod_materia_prima";
+            cod = codigoMateriaPrima;
+        }else{
+            System.err.println("Parametro incorreto: (fornecedores) ou (materia prima)");
+            return;
+        }
         
         try {
             
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
-            pstmt.setInt(1, codigoMateriaPrima);
+            pstmt.setString(1, por);
+            pstmt.setInt(2, cod);
             
             pstmt.executeUpdate();
-       
-            
-            
-            
-            
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO DELETAR\n" + ex);
+            throw new RuntimeException("Erro ao deletar Fornece:\n" + ex);
             
         }   
         
     }
     
-     public void alterar(){
+     public void alterar(String por){
     
         PreparedStatement pstmt = null;
         
-     
+        int cod = 0;
+        
+        if(por.equals("fornecedores")){
+            por = "cod_fornecedores";
+            cod = codigoFornecedores;
+        }else if(por.equals("materia prima")){
+            por = "cod_materia_prima";
+            cod = codigoMateriaPrima;
+        }else{
+            System.err.println("Parametro incorreto: (fornecedores) ou (materia prima)");
+            return;
+        }
         
         try {
                     
             
-            String sql1 = "UPDATE FORNECE SET custo=? WHERE cod_materia_prima = ?";
+            String sql1 = "UPDATE FORNECE SET custo=? WHERE ? = ?";
 
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
            //strings /\
             pstmt.setDouble(1,custo);
-            pstmt.setInt(2,codigoMateriaPrima);//strings /\
+            pstmt.setString(2, por);
+            pstmt.setInt(3, cod);
            
             
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO ao alterar\n" + ex);
+            throw new RuntimeException("Erro ao alterar Fornece\n" + ex);
             
         }   
         

@@ -6,6 +6,9 @@
 package View.TelasCadastrar;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
 /**
@@ -25,80 +28,80 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         return jBCadastrarFornecedor;
     }
 
-    public void setjBCadastrarFornecedor(JButton jBCadastrarFornecedor) {
-        this.jBCadastrarFornecedor = jBCadastrarFornecedor;
-    }
-
     public JButton getjBCancelarFornecedor() {
         return jBCancelarFornecedor;
-    }
-
-    public void setjBCancelarFornecedor(JButton jBCancelarFornecedor) {
-        this.jBCancelarFornecedor = jBCancelarFornecedor;
     }
 
     public JButton getjBuscarEndereco() {
         return jBuscarEndereco;
     }
 
-    public void setjBuscarEndereco(JButton jBuscarEndereco) {
-        this.jBuscarEndereco = jBuscarEndereco;
+    public JLabel getjLCodigoCliente1() {
+        return jLCodigoCliente1;
     }
 
-    public JTextField getjTFCPNJ() {
+    public JLabel getjLCodigoCliente2() {
+        return jLCodigoCliente2;
+    }
+
+    public JLabel getjLCodigoCliente3() {
+        return jLCodigoCliente3;
+    }
+
+    public JLabel getjLCodigoM() {
+        return jLCodigoM;
+    }
+
+    public JLabel getjLCodigoOS() {
+        return jLCodigoOS;
+    }
+
+    public JLabel getjLCodigoPedido() {
+        return jLCodigoPedido;
+    }
+
+    public JLabel getjLDescricao() {
+        return jLDescricao;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public JTextField getjTFCNPJ() {
         return jTFCNPJ;
-    }
-
-    public void setjTFCPNJ(JTextField jTFCPNJ) {
-        this.jTFCNPJ = jTFCPNJ;
     }
 
     public JTextField getjTFCodigoEndereco() {
         return jTFCodigoEndereco;
     }
 
-    public void setjTFCodigoEndereco(JTextField jTFCodigoEndereco) {
-        this.jTFCodigoEndereco = jTFCodigoEndereco;
-    }
-
     public JTextField getjTFCodigoFornecedor() {
         return jTFCodigoFornecedor;
-    }
-
-    public void setjTFCodigoFornecedor(JTextField jTFCodigoFornecedor) {
-        this.jTFCodigoFornecedor = jTFCodigoFornecedor;
     }
 
     public JTextField getjTFEmail() {
         return jTFEmail;
     }
 
-    public void setjTFEmail(JTextField jTFEmail) {
-        this.jTFEmail = jTFEmail;
-    }
-
     public JTextField getjTFNome() {
         return jTFNome;
-    }
-
-    public void setjTFNome(JTextField jTFNome) {
-        this.jTFNome = jTFNome;
     }
 
     public JTextField getjTFSite() {
         return jTFSite;
     }
 
-    public void setjTFSite(JTextField jTFSite) {
-        this.jTFSite = jTFSite;
-    }
-
     public JTextField getjTFTelefone() {
         return jTFTelefone;
-    }
-
-    public void setjTFTelefone(JTextField jTFTelefone) {
-        this.jTFTelefone = jTFTelefone;
     }
 
     /**
@@ -126,7 +129,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("##.###.###/####-##");    jTFCNPJ = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente1 = new javax.swing.JLabel();
         jTFTelefone = new javax.swing.JTextField();
-        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)-#####-#####");    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
+        try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("(##)#####-####");    jTFTelefone = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jTFCodigoEndereco = new javax.swing.JTextField();
         try{    javax.swing.text.MaskFormatter data= new javax.swing.text.MaskFormatter("#####-###");    jTFCodigoEndereco = new javax.swing.JFormattedTextField(data); }    catch (Exception e){ }
         jLCodigoCliente2 = new javax.swing.JLabel();
@@ -152,17 +155,21 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         jLCodigoOS.setText("Nome:");
 
         jTFNome.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNome.setNextFocusableComponent(jTFEmail);
 
         jTFEmail.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFEmail.setNextFocusableComponent(jTFCNPJ);
 
         jLDescricao.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLDescricao.setText("Email:");
 
         jBCadastrarFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/37.png"))); // NOI18N
         jBCadastrarFornecedor.setText("Cadastrar");
+        jBCadastrarFornecedor.setNextFocusableComponent(jBCancelarFornecedor);
 
         jBCancelarFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Delete_01.png"))); // NOI18N
         jBCancelarFornecedor.setText("Cancelar");
+        jBCancelarFornecedor.setNextFocusableComponent(jTFNome);
 
         jLCodigoM.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoM.setText("CNPJ:");
@@ -182,6 +189,7 @@ public class TCadastrarFornecedor extends javax.swing.JInternalFrame {
         jBuscarEndereco.setText("Buscar");
 
         jTFSite.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFSite.setNextFocusableComponent(jBCadastrarFornecedor);
 
         jLCodigoCliente3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLCodigoCliente3.setText("Site:");

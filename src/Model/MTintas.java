@@ -21,6 +21,7 @@ public class MTintas {
     private int codigo;
     private String cor;
     private double custo;
+    
     private Connection con;
 
     public MTintas() {
@@ -33,14 +34,6 @@ public class MTintas {
 
     public void setFuncionalidade(String funcionalidade) {
         this.funcionalidade = funcionalidade;
-    }
-
-    public int getCodTinta() {
-        return codigo;
-    }
-
-    public void setCodTinta(int codTinta) {
-        this.codigo = codTinta;
     }
 
     public String getCor() {
@@ -111,11 +104,6 @@ public class MTintas {
             pstmt.setInt(1, codigo);
             
             pstmt.executeUpdate();
-       
-            
-            
-            
-            
             
         } catch (SQLException ex) {
             

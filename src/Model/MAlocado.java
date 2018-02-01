@@ -75,28 +75,35 @@ public class MAlocado {
         
     }
     
-    public void deletar(){
+    public void deletar(String por){
     
         PreparedStatement pstmt = null;
         
-        String sql1 = "DELETE FROM alocado WHERE cod_funcionario = ?";
+        String sql1 = "DELETE FROM alocado WHERE ? = ?";
      
-        // banco 
+        int cod = 0;
+        
+        if(por.equals("funcionario")){
+            por = "cod_funcionario";
+            cod = codigoFuncionario;
+        }else if(por.equals("setor")){
+            por = "cod_setor";
+            cod = codigoSetor;
+        }else{
+            System.err.println("Parametro incorreto: (funcionario) ou (setor)");
+            return;
+        }
         
         try {
             
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql1);
         
-            pstmt.setInt(1, codigoFuncionario);
+            pstmt.setString(1, por);
+            pstmt.setInt(2, cod);
             
             pstmt.executeUpdate();
        
-            
-            
-            
-            
-            
         } catch (SQLException ex) {
             
             throw new RuntimeException("ERRO AO DELETAR\n" + ex);
@@ -105,12 +112,25 @@ public class MAlocado {
         
     }
     
-     public void alterar(){
+     public void alterar(String por){
     
         PreparedStatement pstmt = null;
         
-        String sql1 = "UPDATE alocado SET funcao=? WHERE cod_funcionario = ?";
-     
+        String sql1 = "UPDATE alocado SET funcao=? WHERE ? = ?";
+        
+        int cod = 0;
+        
+        if(por.equals("funcionario")){
+            por = "cod_funcionario";
+            cod = codigoFuncionario;
+        }else if(por.equals("setor")){
+            por = "cod_setor";
+            cod = codigoSetor;
+        }else{
+            System.err.println("Parametro incorreto: (funcionario) ou (setor)");
+            return;
+        }
+        
         
         try {
             
@@ -119,7 +139,8 @@ public class MAlocado {
         
            //strings /\
             pstmt.setString(1,funcao);
-            pstmt.setInt(2,codigoFuncionario);//strings /\
+            pstmt.setString(2, por);
+            pstmt.setInt(3, cod);
            
             
             pstmt.executeUpdate();
@@ -149,14 +170,14 @@ public class MAlocado {
                 
                 int codigoSetor1 = rs.getInt("cod_setor");
                 String funcao1 = rs.getString("funcao");
-                int codigoFuncionario1 = rs.getInt("cod_setor");
+                int codigoFuncionario1 = rs.getInt("cod_funcionario");
                 
                 MAlocado a1 = new MAlocado(codigoSetor1, funcao1, codigoFuncionario1);
                 alocados.add(a1);
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Usuario\n" + ex);
+            System.out.println("Erro ao listar Alocado\n" + ex);
         }
         
         return alocados;

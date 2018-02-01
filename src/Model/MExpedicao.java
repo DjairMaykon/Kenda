@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class MExpedicao {
     
-    private Date dataEntra;
+    private Date dataEntre;
     private Date dataSai; 
     private String situacao;
     private int codigo;
@@ -26,26 +26,11 @@ public class MExpedicao {
     private int codTransp;
     private String descricao;
     private double custo;
+
     private Connection con;
 
-    public Date getDataEntra() {
-        return dataEntra;
-    }
-
-    public void setDataEntra(Date dataEntra) {
-        this.dataEntra = dataEntra;
-    }
-
-    public Date getDataSai() {
-        return dataSai;
-    }
-
-    public void setDataSai(Date dataSai) {
-        this.dataSai = dataSai;
-    }
-
     public MExpedicao(Date dataEntra, Date dataSai, String situacao, int codigo, int codPed, int codTransp, String descricao, double custo) {
-        this.dataEntra = dataEntra;
+        this.dataEntre = dataEntra;
         this.dataSai = dataSai;
         this.situacao = situacao;
         this.codigo = codigo;
@@ -55,6 +40,25 @@ public class MExpedicao {
         this.custo = custo;
     }
 
+    public MExpedicao() {
+    }
+
+    public Date getDataEntre() {
+        return dataEntre;
+    }
+
+    public void setDataEntre(Date dataEntre) {
+        this.dataEntre = dataEntre;
+    }
+
+    public Date getDataSai() {
+        return dataSai;
+    }
+
+    public void setDataSai(Date dataSai) {
+        this.dataSai = dataSai;
+    }
+    
     public String getSituacao() {
         return situacao;
     }
@@ -103,13 +107,12 @@ public class MExpedicao {
         this.custo = custo;
     }
     
-    
-    
     public void adicionar(){
     
         PreparedStatement pstmt = null;
         
-        String sql = "INSERT INTO ESPEDICAO(cod, custo, cod_pedido, cod_transportadoras, descricao, data_de_saida, data_de_entrega,situacao) VALUES(?,?,?,?,?,?,?,?)"; // banco
+        String sql = "INSERT INTO ESPEDICAO(cod, custo, cod_pedido, cod_transportadoras, descricao, data_de_saida, data_de_entrega, situacao) "
+                + "VALUES(?,?,?,?,?,?,?,?)"; // banco
         
         try {
             
@@ -122,17 +125,15 @@ public class MExpedicao {
             pstmt.setInt(4, codTransp);
             pstmt.setString(5, descricao);
             pstmt.setDate(6, dataSai);
-            pstmt.setDate(7, dataEntra);
-            pstmt.setString(5, situacao);
+            pstmt.setDate(7, dataEntre);
+            pstmt.setString(8, situacao);
            
-            
-            
             pstmt.executeUpdate();
             
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao adicionar Expedição\n" + ex);
             
         }   
         
@@ -156,7 +157,7 @@ public class MExpedicao {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO ADICIONAR\n" + ex);
+            throw new RuntimeException("Erro ao deletar Expedição\n" + ex);
             
         }   
         
@@ -166,7 +167,7 @@ public class MExpedicao {
     
         PreparedStatement pstmt = null;
         
-        String sql = "UPDATE FROM fornecedores SET custo=?, cod_pedido=?, cod_transportadoras=?, descricao=?, data_de_saida=?, data_de_entrega=?,situacao? where cod=?"; // banco  
+        String sql = "UPDATE FROM fornecedores SET custo=?, cod_pedido=?, cod_transportadoras=?, descricao=?, data_de_saida=?, data_de_entrega=?, situacao? where cod=?"; // banco  
         
         try {
             
@@ -179,7 +180,7 @@ public class MExpedicao {
             pstmt.setInt(3, codTransp);
             pstmt.setString(4, descricao);
             pstmt.setDate(5, dataSai);
-            pstmt.setDate(6, dataEntra);
+            pstmt.setDate(6, dataEntre);
             pstmt.setString(7, situacao);
             pstmt.setInt(8,codigo);
             
@@ -188,7 +189,7 @@ public class MExpedicao {
             
         } catch (SQLException ex) {
             
-            throw new RuntimeException("ERRO AO Alterar\n" + ex);
+            throw new RuntimeException("Erro ao Alterar Expedição\n" + ex);
             
         }   
         
@@ -223,7 +224,7 @@ public class MExpedicao {
             }
             
         } catch (SQLException ex) {
-            System.out.println("Erro ao alterar Usuario\n" + ex);
+            System.out.println("Erro ao listar Expedicao\n" + ex);
         }
         
         return expedicoes;

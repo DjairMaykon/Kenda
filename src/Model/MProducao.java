@@ -18,13 +18,27 @@ import java.util.ArrayList;
  */
 public class MProducao {
     
-    private Connection con =null;
     private Date data;
     private String situacao;
     private int codigoPedido;
     private int codigoFuncionario;
-    private int custo;
+    private double custo;
     private int codigo;
+    
+    private Connection con =null;
+    
+    public MProducao() {
+    
+    }
+
+    public MProducao(Date data, String situacao, int codigoPedido, int codigoFuncionario, double custo, int codigo) {
+        this.data = data;
+        this.situacao = situacao;
+        this.codigoPedido = codigoPedido;
+        this.codigoFuncionario = codigoFuncionario;
+        this.custo = custo;
+        this.codigo = codigo;
+    }
 
     public Date getData() {
         return data;
@@ -46,15 +60,6 @@ public class MProducao {
         return codigoPedido;
     }
 
-    public MProducao(Date data, String situacao, int codigoPedido, int codigoFuncionario, int custo, int codigo, String descricao1, Double custo1) {
-        this.data = data;
-        this.situacao = situacao;
-        this.codigoPedido = codigoPedido;
-        this.codigoFuncionario = codigoFuncionario;
-        this.custo = custo;
-        this.codigo = codigo;
-    }
-
     public void setCodigoPedido(int codigoPedido) {
         this.codigoPedido = codigoPedido;
     }
@@ -67,11 +72,11 @@ public class MProducao {
         this.codigoFuncionario = codigoFuncionario;
     }
 
-    public int getCusto() {
+    public double getCusto() {
         return custo;
     }
 
-    public void setCusto(int custo) {
+    public void setCusto(double custo) {
         this.custo = custo;
     }
 
@@ -82,7 +87,7 @@ public class MProducao {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-     
+    
     public void adicionar(){
         
         PreparedStatement pstmt = null;
@@ -90,12 +95,14 @@ public class MProducao {
         try {   
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
+            
             pstmt.setInt(1,codigo);
             pstmt.setDate(2,data);
             pstmt.setDouble(3,custo);
             pstmt.setInt(4,codigoPedido);
             pstmt.setInt(5,codigoFuncionario);
-            pstmt.setString(7,situacao);
+            pstmt.setString(6,situacao);
+            
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -110,7 +117,9 @@ public class MProducao {
         try {
             con = new MConnectionFactory().getConnection();
             pstmt = con.prepareStatement(sql);
+            
             pstmt.setInt(1,codigo);
+            
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -129,9 +138,9 @@ public class MProducao {
             pstmt.setDate(1,data);
             pstmt.setDouble(2,custo);
             pstmt.setInt(3, codigoPedido);
+            pstmt.setInt(4,codigoFuncionario);
             pstmt.setString(5,situacao);
-            pstmt.setInt(6,codigo);
-            pstmt.setInt(7, codigo);
+            pstmt.setInt(6, codigo);
             pstmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -157,15 +166,12 @@ public class MProducao {
                 
                 Date data1 = rs.getDate("data");
                 String situacao1 = rs.getString("situacao");
-                int codFunc1 = rs.getInt("cod_funcionario");
+                int codigoPedido1 = rs.getInt("cod_pedido");
+                int codigoFuncionario1 = rs.getInt("cod_funcionario");
+                double custo1 = rs.getDouble("custo");
                 int codigo1 = rs.getInt("cod");
-                int codCli1 = rs.getInt("cod_CLI");
-                int codOS1 = rs.getInt("cod_OS");
-                String descricao1 = rs.getString("descricao");
-                Double custo1 = rs.getDouble("custo");
                 
-                
-                MProducao u1 = new MProducao(data1, situacao1, codFunc1, codigo1, codCli1, codOS1, descricao1, custo1);
+                MProducao u1 = new MProducao(data1, situacao1, codigoPedido1, codigoFuncionario1, custo1, codigo1);
                 produzem.add(u1);
             }
             
