@@ -25,4 +25,8 @@ class ControleListarTintasAvaliacoes {
         return telaListarTintasAvaliacoes;
     }
     
+    public void carregarNaTela(){
+        
+    }
+    
 }

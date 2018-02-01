@@ -3,6 +3,8 @@ package Control;
 import Control.Novo.*;
 import Control.Cadastrar.*;
 import Model.MUsuario;
+import View.Listar.Cliente.TListarCliente;
+import View.Listar.Estoque.TListarEstoqueFornecedores;
 import View.Listar.Tintas.TListarTintasCatalogo;
 import View.TInicial;
 import View.TelasNovo.*;
@@ -35,7 +37,9 @@ public class ControleTInicial {
     private ControleCadastrarTinta cCadastrarTinta;
     private ControleCadastrarTransportadora cCadastrarTransportadora;
     private ControleListarTintasCatalogo cListarTintasCatalogo;
-    
+    private ControleListarCliente cListarClientes;
+    private ControleListarEstoqueFornecedores cListarFornecedores;
+    private ControleListarExpedicaoTransportadora cListarTransportadoras;
     
     public ControleTInicial(MUsuario u1) {
         
@@ -44,6 +48,8 @@ public class ControleTInicial {
         this.cNovoMateriaPrima = null;
         this.cNovoPedido = null;
         this.cNovoProducao = null;
+        cListarFornecedores=null;
+        cListarTransportadoras=null;
         
         cCadastrarCliente = null;
         cCadastrarFornecedor = null;
@@ -52,6 +58,7 @@ public class ControleTInicial {
         cCadastrarTinta = null;
         cCadastrarTransportadora = null;
         cListarTintasCatalogo=null;
+        cListarClientes=null;
         
         modeloUsuario = u1;
         telaInicial = new TInicial();
@@ -98,6 +105,13 @@ public class ControleTInicial {
                 }
                  if(e.getChild() instanceof TListarTintasCatalogo ){
                     cListarTintasCatalogo = null;
+                }
+                 if(e.getChild() instanceof TListarCliente){
+                    cListarClientes = null;
+                }
+                 
+                 if(e.getChild() instanceof TListarEstoqueFornecedores){
+                    cListarFornecedores= null;
                 }
             }
         });
@@ -152,6 +166,15 @@ public class ControleTInicial {
             
             telaInicial.getjBCatalogoDeTintas().addActionListener((e) -> {
               eventoCatalogoDeTintas(e);
+        });
+            
+              
+            telaInicial.getjMIListarClientes().addActionListener((e) -> {
+              eventoListarClientes(e);
+        });
+            
+            telaInicial.getjSMIEstoqueFornecedores().addActionListener((e) -> {
+              eventoListarFornecedores(e);
         });
         
     }
@@ -302,6 +325,29 @@ public class ControleTInicial {
         cListarTintasCatalogo = new ControleListarTintasCatalogo();
         telaInicial.getjDPPrincipal().add(cListarTintasCatalogo.gettelaListarTintasCatalogo());
         cListarTintasCatalogo.gettelaListarTintasCatalogo().setVisible(true);
+    }
+     
+     private void eventoListarClientes(ActionEvent e){
+        
+          if(cListarClientes != null)
+            return;
+        
+        cListarClientes = new ControleListarCliente();
+        telaInicial.getjDPPrincipal().add(cListarClientes.getListarCliente());
+        cListarClientes.getListarCliente().setVisible(true);
+        
+    }
+     
+     
+     private void eventoListarFornecedores(ActionEvent e){
+        
+          if(cListarClientes != null)
+            return;
+        
+        cListarFornecedores = new ControleListarEstoqueFornecedores();
+        telaInicial.getjDPPrincipal().add(cListarFornecedores.gettelaListarEstoqueFornecedores());
+        cListarFornecedores.gettelaListarEstoqueFornecedores().setVisible(true);
+        
     }
     
 }

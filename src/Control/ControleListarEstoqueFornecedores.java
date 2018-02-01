@@ -5,7 +5,11 @@
  */
 package Control;
 
+import Model.MCliente;
+import Model.MFornecedores;
 import View.Listar.Estoque.TListarEstoqueFornecedores;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,11 +22,22 @@ class ControleListarEstoqueFornecedores {
     public ControleListarEstoqueFornecedores() {
     
         telaListarEstoqueFornecedores = new TListarEstoqueFornecedores();
+        carregarNaTela();
     
     }
 
     public TListarEstoqueFornecedores gettelaListarEstoqueFornecedores() {
         return telaListarEstoqueFornecedores;
     }
+    
+     public void carregarNaTela(){
+       ArrayList<MFornecedores> fornecedores = new MFornecedores().listar();
+       DefaultTableModel modelo=(DefaultTableModel) telaListarEstoqueFornecedores.getjTListarEstoqueFornecedor().getModel();
+      for(MFornecedores c : fornecedores){
+          modelo.addRow(new Object[]{c.getCodigo(), c.getEmail(), c.getNome(), c.getTelefone(), c.getCnpj(), c.getCodigoEndereco()});
+          telaListarEstoqueFornecedores.getjTListarEstoqueFornecedor().setModel(modelo);
+      }
+      
+     }
     
 }

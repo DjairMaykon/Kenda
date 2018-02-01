@@ -25,4 +25,7 @@ class ControleListarTintasCatalogo {
         return telaListarTintasCatalogo;
     }
     
+    
+    
+    
 }
