@@ -5,6 +5,8 @@ import Control.Cadastrar.*;
 import Model.MUsuario;
 import View.Listar.Cliente.TListarCliente;
 import View.Listar.Estoque.TListarEstoqueFornecedores;
+import View.Listar.Estoque.TListarEstoqueMateriaPrima;
+import View.Listar.Expedicao.TListarExpedicaoTransportadora;
 import View.Listar.Tintas.TListarTintasCatalogo;
 import View.TInicial;
 import View.TelasNovo.*;
@@ -40,6 +42,7 @@ public class ControleTInicial {
     private ControleListarCliente cListarClientes;
     private ControleListarEstoqueFornecedores cListarFornecedores;
     private ControleListarExpedicaoTransportadora cListarTransportadoras;
+     private ControleListarEstoqueMateriaPrima cListarMateriaPrima;
     
     public ControleTInicial(MUsuario u1) {
         
@@ -59,6 +62,7 @@ public class ControleTInicial {
         cCadastrarTransportadora = null;
         cListarTintasCatalogo=null;
         cListarClientes=null;
+        cListarMateriaPrima=null;
         
         modeloUsuario = u1;
         telaInicial = new TInicial();
@@ -112,6 +116,12 @@ public class ControleTInicial {
                  
                  if(e.getChild() instanceof TListarEstoqueFornecedores){
                     cListarFornecedores= null;
+                }
+                  if(e.getChild() instanceof TListarExpedicaoTransportadora){
+                    cListarTransportadoras= null;
+                }
+                   if(e.getChild() instanceof TListarEstoqueMateriaPrima){
+                    cListarMateriaPrima= null;
                 }
             }
         });
@@ -172,6 +182,14 @@ public class ControleTInicial {
         });
         telaInicial.getjSMIEstoqueFornecedores().addActionListener((e) -> {
             eventoListarFornecedores(e);
+        });
+        
+        telaInicial.getjSMIExpedicaoTransportadoras().addActionListener((e) -> {
+            eventoListarTransportadora(e);
+        });
+        
+         telaInicial.getjSMIEstoqueMateriaPrima().addActionListener((e) -> {
+            eventoListarMateriaPrima(e);
         });
         
     }
@@ -336,7 +354,7 @@ public class ControleTInicial {
      
      private void eventoListarFornecedores(ActionEvent e){
         
-          if(cListarClientes != null)
+          if(cListarFornecedores != null)
             return;
         
         cListarFornecedores = new ControleListarEstoqueFornecedores();
@@ -344,5 +362,29 @@ public class ControleTInicial {
         cListarFornecedores.gettelaListarEstoqueFornecedores().setVisible(true);
         
     }
+     
+      private void eventoListarTransportadora(ActionEvent e){
+        
+          if(cListarTransportadoras != null)
+            return;
+        
+        cListarTransportadoras= new ControleListarExpedicaoTransportadora();
+        telaInicial.getjDPPrincipal().add(cListarTransportadoras.gettelaListarExpedicaoTransportadora());
+        cListarTransportadoras.gettelaListarExpedicaoTransportadora().setVisible(true);
+        
+    }
+      
+      
+      private void eventoListarMateriaPrima(ActionEvent e){
+        
+          if(cListarMateriaPrima != null)
+            return;
+        
+        cListarMateriaPrima= new ControleListarEstoqueMateriaPrima();
+        telaInicial.getjDPPrincipal().add(cListarMateriaPrima.gettelaListarEstoqueMateriaPrima());
+        cListarMateriaPrima.gettelaListarEstoqueMateriaPrima().setVisible(true);
+        
+    }
+    
     
 }
