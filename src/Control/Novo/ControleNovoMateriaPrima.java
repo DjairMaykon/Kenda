@@ -121,7 +121,7 @@ public class ControleNovoMateriaPrima {
             
             DefaultTableModel model = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
             
-            double custo1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o valor do Custo dessa Materia Prima no Fornecedor " + m.getNome(), "Inserir Custo", JOptionPane.QUESTION_MESSAGE));
+            double custo1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do Custo dessa Materia Prima no Fornecedor " + m.getNome(), "Inserir Custo", JOptionPane.QUESTION_MESSAGE));
             
             model.addRow(new Object[]{m.getCodigo(), m.getNome(), custo1});
             
@@ -143,24 +143,23 @@ public class ControleNovoMateriaPrima {
         
         telaNovoMateriaPrima.getjBRemoverrFornecedor().addActionListener((ActionEvent e) -> {
         
-             int linhaSelecionada = telaNovoMateriaPrima.getjTFornecedores().getSelectedRow();
+            int linhaSelecionada = telaNovoMateriaPrima.getjTFornecedores().getSelectedRow();
              
-             int codigoFE = (int) telaNovoMateriaPrima.getjTFornecedores().getValueAt(linhaSelecionada, 0);
+            int codigoFE = (int) telaNovoMateriaPrima.getjTFornecedores().getValueAt(linhaSelecionada, 0);
 
-             MFornecedores removerMF = null;
+            MFornecedores removerMF = null;
              
             for(MFornecedores i : itensAdicionados){
-                 if(i.getCodigo() == codigoFE){
-                     removerMF = i;
-                     System.out.println("2");
-                 }
-             }
+                if(i.getCodigo() == codigoFE){
+                    removerMF = i;
+                }
+            }
 
             itensAdicionados.remove(removerMF);
             
-             DefaultTableModel model = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
-             model.removeRow(linhaSelecionada);
-             telaNovoMateriaPrima.getjTFornecedores().setModel(model);
+            DefaultTableModel model = (DefaultTableModel) telaNovoMateriaPrima.getjTFornecedores().getModel();
+            model.removeRow(linhaSelecionada);
+            telaNovoMateriaPrima.getjTFornecedores().setModel(model);
 
         });
         

@@ -38,21 +38,20 @@ public class ControleTInicial {
     private ControleCadastrarSetor cCadastrarSetor;
     private ControleCadastrarTinta cCadastrarTinta;
     private ControleCadastrarTransportadora cCadastrarTransportadora;
+    
     private ControleListarTintasCatalogo cListarTintasCatalogo;
     private ControleListarCliente cListarClientes;
     private ControleListarEstoqueFornecedores cListarFornecedores;
     private ControleListarExpedicaoTransportadora cListarTransportadoras;
-     private ControleListarEstoqueMateriaPrima cListarMateriaPrima;
+    private ControleListarEstoqueMateriaPrima cListarMateriaPrima;
     
     public ControleTInicial(MUsuario u1) {
         
-        this.cNovoAvaliacaoDeTinta = null;
-        this.cNovoExpedicao = null;
-        this.cNovoMateriaPrima = null;
-        this.cNovoPedido = null;
-        this.cNovoProducao = null;
-        cListarFornecedores=null;
-        cListarTransportadoras=null;
+        cNovoAvaliacaoDeTinta = null;
+        cNovoExpedicao = null;
+        cNovoMateriaPrima = null;
+        cNovoPedido = null;
+        cNovoProducao = null;
         
         cCadastrarCliente = null;
         cCadastrarFornecedor = null;
@@ -60,6 +59,9 @@ public class ControleTInicial {
         cCadastrarSetor = null;
         cCadastrarTinta = null;
         cCadastrarTransportadora = null;
+        
+        cListarFornecedores=null;
+        cListarTransportadoras=null;
         cListarTintasCatalogo=null;
         cListarClientes=null;
         cListarMateriaPrima=null;
@@ -104,6 +106,7 @@ public class ControleTInicial {
                 if(e.getChild() instanceof TCadastrarTinta){
                     cCadastrarTinta = null;
                 }
+                
                 if(e.getChild() instanceof TCadastrarTransportadora){
                     cCadastrarTransportadora = null;
                 }
@@ -113,14 +116,13 @@ public class ControleTInicial {
                  if(e.getChild() instanceof TListarCliente){
                     cListarClientes = null;
                 }
-                 
-                 if(e.getChild() instanceof TListarEstoqueFornecedores){
+                if(e.getChild() instanceof TListarEstoqueFornecedores){
                     cListarFornecedores= null;
                 }
-                  if(e.getChild() instanceof TListarExpedicaoTransportadora){
+                if(e.getChild() instanceof TListarExpedicaoTransportadora){
                     cListarTransportadoras= null;
                 }
-                   if(e.getChild() instanceof TListarEstoqueMateriaPrima){
+                if(e.getChild() instanceof TListarEstoqueMateriaPrima){
                     cListarMateriaPrima= null;
                 }
             }
@@ -330,7 +332,7 @@ public class ControleTInicial {
         ControlePrincipal.login();
     }
     
-     private void eventoCatalogoDeTintas(ActionEvent e){
+    private void eventoCatalogoDeTintas(ActionEvent e){
         
           if(cListarTintasCatalogo != null)
             return;
@@ -340,7 +342,7 @@ public class ControleTInicial {
         cListarTintasCatalogo.gettelaListarTintasCatalogo().setVisible(true);
     }
      
-     private void eventoListarClientes(ActionEvent e){
+    private void eventoListarClientes(ActionEvent e){
         
           if(cListarClientes != null)
             return;
@@ -352,7 +354,7 @@ public class ControleTInicial {
     }
      
      
-     private void eventoListarFornecedores(ActionEvent e){
+    private void eventoListarFornecedores(ActionEvent e){
         
           if(cListarFornecedores != null)
             return;
@@ -363,7 +365,7 @@ public class ControleTInicial {
         
     }
      
-      private void eventoListarTransportadora(ActionEvent e){
+    private void eventoListarTransportadora(ActionEvent e){
         
           if(cListarTransportadoras != null)
             return;
@@ -375,7 +377,7 @@ public class ControleTInicial {
     }
       
       
-      private void eventoListarMateriaPrima(ActionEvent e){
+    private void eventoListarMateriaPrima(ActionEvent e){
         
           if(cListarMateriaPrima != null)
             return;

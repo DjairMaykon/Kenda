@@ -7,6 +7,11 @@ package View.TelasCadastrar;
 
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -104,11 +109,11 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Código", "Nome", "Quantidade"
+                "Código", "Quantidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -225,6 +230,10 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getjBAdicionarMateriaPrima() {
+        return jBAdicionarMateriaPrima;
+    }
+
     public JButton getjBCadastrarTinta() {
         return jBCadastrarTinta;
     }
@@ -233,38 +242,70 @@ public class TCadastrarTinta extends javax.swing.JInternalFrame {
         return jBCancelarTinta;
     }
 
+    public JButton getjBRemoverMateriaPrima() {
+        return jBRemoverMateriaPrima;
+    }
+
+    public JComboBox<String> getjCBMateriasPrimas() {
+        return jCBMateriasPrimas;
+    }
+
+    public JLabel getjLCodigoM() {
+        return jLCodigoM;
+    }
+
+    public JLabel getjLCodigoOS() {
+        return jLCodigoOS;
+    }
+
+    public JLabel getjLCodigoPedido() {
+        return jLCodigoPedido;
+    }
+
+    public JLabel getjLDescricao() {
+        return jLDescricao;
+    }
+
+    public JLabel getjLDescricao1() {
+        return jLDescricao1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
     public JTextField getjTFCodigoTinta() {
         return jTFCodigoTinta;
     }
 
     public JTextField getjTFCor() {
-        return jTFCusto;
+        return jTFCor;
     }
 
     public JTextField getjTFCusto() {
-        return jTFCor;
+        return jTFCusto;
     }
 
     public JTextField getjTFFuncionalidade() {
         return jTFFuncionalidade;
     }
 
-    public JButton getjBProcurarMateriaPrima() {
-        return jBAdicionarMateriaPrima;
-    }
-
-    public JButton getjBAdicionarMateriaPrima() {
-        return jBAdicionarMateriaPrima;
-    }
-
-    public JButton getjBRemoverMateriaPrima() {
-        return jBRemoverMateriaPrima;
-    }
-
     public JTable getjTMateriasPrimasUtilizadas() {
         return jTMateriasPrimasUtilizadas;
     }
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdicionarMateriaPrima;
     private javax.swing.JButton jBCadastrarTinta;

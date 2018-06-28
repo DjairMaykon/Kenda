@@ -15,6 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ public class ControleCadastrarTinta {
     private TCadastrarTinta telaCadastrarTinta; 
     private MTintas modeloTinta;
     private MNecessita modeloNecessita;
+    private ArrayList<MMateriaPrima> modeloMateriaPrima;
     
     private ControleToolTip toolTip;
     private String invalido = "";
@@ -46,48 +49,41 @@ public class ControleCadastrarTinta {
         
         telaCadastrarTinta.getjTFFuncionalidade().requestFocus();
         
-        ArrayList<MTintas> listar = modeloTinta.listar();
-        if(listar.isEmpty()){
-            
-            modeloTinta.setCodigo(0);
-            
-        }else{
-            
-            int c = listar.get(listar.size()-1).getCodigo() + 1;
-            modeloTinta.setCodigo(c);
-            
-        }
+        
         
         telaCadastrarTinta.addInternalFrameListener(new InternalFrameAdapter() {
             @Override
             public void internalFrameOpened(InternalFrameEvent e) {
                 
-                modeloFornecedores = new MFornecedores().listar();
-                ArrayList<MMateriaPrima> listar = modeloMateriaPrima.listar();
+                modeloMateriaPrima = new MMateriaPrima().listar();
+                
+                ArrayList<MTintas> listar = modeloTinta.listar();
                 if(listar.isEmpty()){
 
-                    modeloMateriaPrima.setCodigo(0);
+                    modeloTinta.setCodigo(0);
 
                 }else{
 
                     int c = listar.get(listar.size()-1).getCodigo() + 1;
-                    modeloMateriaPrima.setCodigo(c);
+                    modeloTinta.setCodigo(c);
 
                 }
-                telaNovoMateriaPrima.getjTFCodigoMateriaPrima().setText(String.valueOf(modeloMateriaPrima.getCodigo()));
+                
+                telaCadastrarTinta.getjTFCodigoTinta().setText(String.valueOf(modeloTinta.getCodigo()));
+                modeloTinta.setCusto(0);
 
-                if(!modeloFornecedores.isEmpty()){
+                if(!modeloMateriaPrima.isEmpty()){
 
                     DefaultComboBoxModel modeloCB = new DefaultComboBoxModel();
-                    modeloFornecedores.forEach((f) -> {
-                        modeloCB.addElement(f.getNome());
+                    modeloMateriaPrima.forEach((f) -> {
+                        modeloCB.addElement(f.getCodigo());
                     });
-                    telaNovoMateriaPrima.getjCBFornecedores().setModel(modeloCB);
+                    telaCadastrarTinta.getjCBMateriasPrimas().setModel(modeloCB);
 
                 }else{
 
-                    JOptionPane.showMessageDialog(null, "Não há Fornecedores Cadastrados!!!", "Aviso", JOptionPane.WARNING_MESSAGE);
-                    telaNovoMateriaPrima.dispose();
+                    JOptionPane.showMessageDialog(null, "Não há Materias Primas Cadastrados!!!", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    telaCadastrarTinta.dispose();
 
                 }
             }
@@ -119,66 +115,97 @@ public class ControleCadastrarTinta {
 
         });
         
-        telaCadastrarTinta.getjTFCodigoTinta().setText(String.valueOf(modeloTinta.getCodigo()));
-      
+        ArrayList<MMateriaPrima> itensAdicionados = new ArrayList<>();
+        
+        telaCadastrarTinta.getjBAdicionarMateriaPrima().addActionListener((ActionEvent e) -> {
+            
+            MMateriaPrima m = modeloMateriaPrima.get(telaCadastrarTinta.getjCBMateriasPrimas().getSelectedIndex());
+            
+            if(itensAdicionados.indexOf(m) >= 0)
+                return;
+            
+            DefaultTableModel model = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
+            
+            int quantidade1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a Quantidade utilizada da Materia Prima" + m.getCodigo(), "Inserir Quantidade", JOptionPane.QUESTION_MESSAGE));
+            
+            model.addRow(new Object[]{m.getCodigo(), quantidade1});
+            
+            double custo = modeloTinta.getCusto();
+            custo += m.getCusto()*quantidade1;
+            modeloTinta.setCusto(custo);
+            
+            itensAdicionados.add(m);
+            
+            quantidade1 /= telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getRowCount();
+            modeloNecessita.setQtdMateriaPrima(quantidade1);
+            telaCadastrarTinta.getjTFCusto().setText("" + modeloTinta.getCusto());
+            
+        });
+        
+        telaCadastrarTinta.getjBRemoverMateriaPrima().addActionListener((ActionEvent e) -> {
+            
+            int linhaSelecionada = telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getSelectedRow();
+             
+            int codigoMP = (int) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getValueAt(linhaSelecionada, 0);
+
+            MMateriaPrima removerMP = null;
+             
+            for(MMateriaPrima i : itensAdicionados){
+                if(i.getCodigo() == codigoMP){
+                    removerMP = i;
+                }
+            }
+
+            itensAdicionados.remove(removerMP);
+            
+            DefaultTableModel model = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
+            model.removeRow(linhaSelecionada);
+            telaCadastrarTinta.getjTMateriasPrimasUtilizadas().setModel(model);
+
+        });
+        
+        telaCadastrarTinta.getjBCadastrarTinta().addActionListener((ActionEvent e) -> {
+            if(validarEntradas())
+                cadastrarTinta();
+        });
+        
+        telaCadastrarTinta.getjBCancelarTinta().addActionListener((ActionEvent e) -> {
+            cancelarCadastro();
+        });
+        
+        telaCadastrarTinta.getjTFFuncionalidade().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+             
+                if(invalido.equals("funcionalidade")){
+                    invalido = "";
+                    toolTip.hideToolTip();
+                }
+                
+            }
+        });
+        telaCadastrarTinta.getjTFCor().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+             
+                if(invalido.equals("cor")){
+                    invalido = "";
+                    toolTip.hideToolTip();
+                }
+                
+            }
+        });
         telaCadastrarTinta.getjBAdicionarMateriaPrima().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              
-                Integer codigoDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite o código da Materia Prima: "));
-                String nomeDaMateriaPrima = JOptionPane.showInputDialog("Digite o nome da Materia Prima: ");
-                Integer qtdDaMateriaprima = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade da Materia Prima: "));
-                
-                ArrayList<MMateriaPrima> ms = new MMateriaPrima().listar();
-                
-                for(MMateriaPrima m : ms){
-                    System.out.println(m.getCodigo()+", "+
-                                       m.getDescricao()+", "+
-                                        m.getCusto());
+             
+                if(invalido.equals("tabelaVazia")){
+                    invalido = "";
+                    toolTip.hideToolTip();
                 }
                 
-                DefaultTableModel modelo = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
-                modelo.addRow(new Object[]{codigoDaMateriaprima, nomeDaMateriaPrima, qtdDaMateriaprima});
-                
             }
         });
-        
-        telaCadastrarTinta.getjBRemoverMateriaPrima().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                int linha = telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getSelectedRow();
-                System.out.println("-"+linha);
-                DefaultTableModel modelo = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
-                modelo.removeRow(linha);
-                telaCadastrarTinta.getjTMateriasPrimasUtilizadas().setModel(modelo);
-                telaCadastrarTinta.getjBRemoverMateriaPrima().setEnabled(false);
-                
-            }
-        });
-        
-        telaCadastrarTinta.getjBCadastrarTinta().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              
-                if(validarEntradas()){
-                  
-                    cadastrarFornecedor();
-                  
-                }
-              
-            }
-        });
-        
-        telaCadastrarTinta.getjBCancelarTinta().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              
-                cancelarCadastro();
-              
-            }
-        });
-    
     }
 
     public TCadastrarTinta getTelaCadastrarTinta() {
@@ -187,60 +214,58 @@ public class ControleCadastrarTinta {
     
     public boolean validarEntradas(){
         
+        if(telaCadastrarTinta.getjTFFuncionalidade().getText().isEmpty()){
+            
+            invalido = "funcionalidade";
+            telaCadastrarTinta.getjTFFuncionalidade().requestFocus();
+            toolTip.showToolTip(telaCadastrarTinta.getjTFFuncionalidade(), "Insira uma Funcionalidae");
+            return false;
+
+        }else if(telaCadastrarTinta.getjTFCor().getText().isEmpty()){
+            
+            invalido = "cor";
+            telaCadastrarTinta.getjTFCor().requestFocus();
+            toolTip.showToolTip(telaCadastrarTinta.getjTFCor(), "Insira uma Cor");
+            return false;
+            
+        }else if(telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getRowCount() == 0){
+            
+            invalido = "tabelaVazia";
+            telaCadastrarTinta.getjBAdicionarMateriaPrima().requestFocus();
+            toolTip.showToolTip(telaCadastrarTinta.getjBAdicionarMateriaPrima(), "Adicione uma Materia Prima");
+            return false;
+            
+        }
+        
+        toolTip.hideToolTip();
         return true;
         
     }
     
-    public void cadastrarFornecedor(){
+    public void cadastrarTinta(){
         
         modeloTinta.setFuncionalidade(telaCadastrarTinta.getjTFFuncionalidade().getText());
         modeloTinta.setCor(telaCadastrarTinta.getjTFCor().getText());
-        
-        double custo = 0;
-        DefaultTableModel m = (DefaultTableModel) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getModel();
-        
-        ArrayList<MMateriaPrima> listaMP = new MMateriaPrima().listar();
-        
-        for(int i = 0; i < m.getRowCount(); i++){
-            
-            MNecessita n1 = new MNecessita();
-            
-            n1.setCodigoMateriaPrima((int) m.getValueAt(i, 0));
-            n1.setCodigoTinta(modeloTinta.getCodigo());
-            n1.setQtdMateriaPrima((int) m.getValueAt(i, 2));
-            
-            modeloNecessita.add(n1);
-            
-            for(int j = 0; j < listaMP.size(); j++){
-            
-                if(listaMP.get(j).getCodigo() == n1.getCodigoMateriaPrima()){
-                    
-                    custo += listaMP.get(j).getCusto()*n1.getQtdMateriaPrima();
-                    
-                }
-            
-            }
-            
-        }
-        
-        
-        JOptionPane.showMessageDialog(null, "Custo Calculado");
-
-        modeloTinta.setCusto(custo);
-        
-        for(MNecessita n : modeloNecessita){
-            
-            n.adicionar();
-            
-        }
-        
+        modeloTinta.setCusto(Double.parseDouble(telaCadastrarTinta.getjTFCusto().getText()));
         modeloTinta.adicionar();
+        
+        modeloNecessita.setCodigoTinta(modeloTinta.getCodigo());
+        
+        for(int i = 0; i < telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getRowCount(); i++){
+            
+            modeloNecessita.setCodigoMateriaPrima((int) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getValueAt(i, 0));
+            modeloNecessita.setQtdMateriaPrima((int) telaCadastrarTinta.getjTMateriasPrimasUtilizadas().getValueAt(i, 1));
+            modeloNecessita.adicionar();
+            
+        }
+        
         telaCadastrarTinta.dispose();
         
     }
     
     public void cancelarCadastro(){
         
+        toolTip.hideToolTip();
         telaCadastrarTinta.dispose();
         
     }

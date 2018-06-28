@@ -24,8 +24,17 @@ public class TInicial extends javax.swing.JFrame {
      * Creates new form TInicial
      */
     public TInicial() {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         initComponents();
-        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -48,6 +57,18 @@ public class TInicial extends javax.swing.JFrame {
         jDPPrincipal = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jPBarraDeStatus = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLUsuario = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLHoras = new javax.swing.JLabel();
+        jLHoras1 = new javax.swing.JLabel();
+        jLMinutos = new javax.swing.JLabel();
+        jLHoras3 = new javax.swing.JLabel();
+        jLSegundos = new javax.swing.JLabel();
+        jLMes = new javax.swing.JLabel();
+        jLHoras2 = new javax.swing.JLabel();
+        jLDia = new javax.swing.JLabel();
         jMBTelaInicial = new javax.swing.JMenuBar();
         jMNovo = new javax.swing.JMenu();
         jMINovoPedido = new javax.swing.JMenuItem();
@@ -93,6 +114,7 @@ public class TInicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Splash System");
+        setExtendedState(MAXIMIZED_BOTH);
 
         jPMenuAcessoRapido.setMaximumSize(new java.awt.Dimension(492, 42));
         jPMenuAcessoRapido.setMinimumSize(new java.awt.Dimension(492, 42));
@@ -181,10 +203,116 @@ public class TInicial extends javax.swing.JFrame {
         jDPPrincipalLayout.setVerticalGroup(
             jDPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDPPrincipalLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
+                .addContainerGap())
+        );
+
+        jPBarraDeStatus.setMaximumSize(new java.awt.Dimension(492, 42));
+        jPBarraDeStatus.setMinimumSize(new java.awt.Dimension(492, 42));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setText("Bem Vindo, ");
+
+        jLUsuario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLUsuario.setForeground(new java.awt.Color(255, 0, 51));
+        jLUsuario.setText("[Usuario]");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jPanel1.setForeground(new java.awt.Color(102, 102, 102));
+
+        jLHoras.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLHoras.setText("HH");
+
+        jLHoras1.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLHoras1.setText(":");
+
+        jLMinutos.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLMinutos.setText("MM");
+
+        jLHoras3.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLHoras3.setText(":");
+
+        jLSegundos.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLSegundos.setText("SS");
+
+        jLMes.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLMes.setText("MM");
+
+        jLHoras2.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLHoras2.setText("/");
+
+        jLDia.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        jLDia.setText("DD");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLHoras)
+                .addGap(5, 5, 5)
+                .addComponent(jLHoras1)
+                .addGap(5, 5, 5)
+                .addComponent(jLMinutos)
+                .addGap(5, 5, 5)
+                .addComponent(jLHoras3)
+                .addGap(5, 5, 5)
+                .addComponent(jLSegundos)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jLDia)
+                .addGap(3, 3, 3)
+                .addComponent(jLHoras2)
+                .addGap(0, 0, 0)
+                .addComponent(jLMes)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLHoras)
+                    .addComponent(jLHoras1)
+                    .addComponent(jLMinutos)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLHoras3)
+                        .addComponent(jLSegundos)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLDia)
+                            .addComponent(jLHoras2)
+                            .addComponent(jLMes))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPBarraDeStatusLayout = new javax.swing.GroupLayout(jPBarraDeStatus);
+        jPBarraDeStatus.setLayout(jPBarraDeStatusLayout);
+        jPBarraDeStatusLayout.setHorizontalGroup(
+            jPBarraDeStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBarraDeStatusLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(0, 0, 0)
+                .addComponent(jLUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPBarraDeStatusLayout.setVerticalGroup(
+            jPBarraDeStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPBarraDeStatusLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPBarraDeStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLUsuario))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBarraDeStatusLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -370,17 +498,19 @@ public class TInicial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPBarraDeStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPMenuAcessoRapido, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
-                    .addComponent(jDPPrincipal))
-                .addGap(0, 0, 0))
+                    .addComponent(jDPPrincipal)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jPMenuAcessoRapido, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(jDPPrincipal)
+                .addGap(0, 0, 0)
+                .addComponent(jPBarraDeStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
@@ -423,12 +553,28 @@ public class TInicial extends javax.swing.JFrame {
         return jDPPrincipal;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
+    public JLabel getjLDia() {
+        return jLDia;
     }
 
-    public JLabel getjLabel3() {
-        return jLabel3;
+    public JLabel getjLHoras() {
+        return jLHoras;
+    }
+
+    public JLabel getjLMes() {
+        return jLMes;
+    }
+
+    public JLabel getjLMinutos() {
+        return jLMinutos;
+    }
+
+    public JLabel getjLSegundos() {
+        return jLSegundos;
+    }
+
+    public JLabel getjLUsuario() {
+        return jLUsuario;
     }
 
     public JMenuBar getjMBTelaInicial() {
@@ -523,6 +669,10 @@ public class TInicial extends javax.swing.JFrame {
         return jMRelatorio;
     }
 
+    public JPanel getjPBarraDeStatus() {
+        return jPBarraDeStatus;
+    }
+
     public JPanel getjPMenuAcessoRapido() {
         return jPMenuAcessoRapido;
     }
@@ -609,7 +759,17 @@ public class TInicial extends javax.swing.JFrame {
     private javax.swing.JButton jBSobreOUsuario;
     private javax.swing.JCheckBoxMenuItem jCBMIVizualisarBarraDeAcessoRapido;
     private javax.swing.JDesktopPane jDPPrincipal;
+    private javax.swing.JLabel jLDia;
+    private javax.swing.JLabel jLHoras;
+    private javax.swing.JLabel jLHoras1;
+    private javax.swing.JLabel jLHoras2;
+    private javax.swing.JLabel jLHoras3;
+    private javax.swing.JLabel jLMes;
+    private javax.swing.JLabel jLMinutos;
+    private javax.swing.JLabel jLSegundos;
+    private javax.swing.JLabel jLUsuario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMBTelaInicial;
     private javax.swing.JMenu jMCadastrar;
@@ -634,7 +794,9 @@ public class TInicial extends javax.swing.JFrame {
     private javax.swing.JMenu jMListar;
     private javax.swing.JMenu jMNovo;
     private javax.swing.JMenu jMRelatorio;
+    private javax.swing.JPanel jPBarraDeStatus;
     private javax.swing.JPanel jPMenuAcessoRapido;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem jSMIEstoqueFornecedores;
     private javax.swing.JMenuItem jSMIEstoqueMateriaPrima;
     private javax.swing.JMenuItem jSMIExpedicaoEmAndamento;
